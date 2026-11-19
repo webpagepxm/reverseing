@@ -1,0 +1,249 @@
+{
+  "format": 1,
+  "date": "2026-11-17",
+  "scope": "partial authorized UI research",
+  "hash_algorithm": "SHA256",
+  "self_excluded": true,
+  "files": [
+    {
+      "path": "00_START_HERE/COVERAGE_MATRIX.csv",
+      "bytes": 1622,
+      "sha256": "2a87abf856e96e82af4bc996939701681f8290e51efbcfbe9619d06d614e06e4"
+    },
+    {
+      "path": "00_START_HERE/MASTER_INDEX.md",
+      "bytes": 1980,
+      "sha256": "ca28f26e721bbe288410ff663a616e8811f350413ca8cc99cdf1abd400b51065"
+    },
+    {
+      "path": "00_START_HERE/README_CODEX.md",
+      "bytes": 962,
+      "sha256": "c6d5f7d54e32f0995d07f259e4433d928b6c5f7c7d4ebb4b8a1cf79c3e994dce"
+    },
+    {
+      "path": "00_START_HERE/RESEARCH_SUMMARY.md",
+      "bytes": 1268,
+      "sha256": "7bc7386ee80ba197e923a4f8daebbf5c492ab77efb4a9b9595b4feb509848b64"
+    },
+    {
+      "path": "01_FEATURE_INVENTORY/FEATURES.csv",
+      "bytes": 4735,
+      "sha256": "3988f6b545b2d42736059a9ede1a3861632a618d20948a2c00fa44e2ebd45d4a"
+    },
+    {
+      "path": "01_FEATURE_INVENTORY/FEATURE_SPECIFICATIONS/ADDITIONAL.md",
+      "bytes": 967,
+      "sha256": "a25de051db24ebf7543a0a471dae0a0c9c2e71d297cda69e622326000f8364a0"
+    },
+    {
+      "path": "01_FEATURE_INVENTORY/FEATURE_SPECIFICATIONS/CORE.md",
+      "bytes": 3656,
+      "sha256": "6746085182daba86ef96b835dc43ff4247756258c8620905abcaceb58222bd24"
+    },
+    {
+      "path": "01_FEATURE_INVENTORY/FEATURE_SPECIFICATIONS/MARKETING.md",
+      "bytes": 2301,
+      "sha256": "81210850b65b8f7887eb7f68a24784346d55afe0a6d2cd2c3959b125442b290c"
+    },
+    {
+      "path": "01_FEATURE_INVENTORY/MODULES.csv",
+      "bytes": 1622,
+      "sha256": "2a87abf856e96e82af4bc996939701681f8290e51efbcfbe9619d06d614e06e4"
+    },
+    {
+      "path": "02_FUNCTIONAL_FLOWS/BUSINESS_RULES/RULES.md",
+      "bytes": 1207,
+      "sha256": "6d1abe99462dfeb14c48b5fbf6578fd5720c92622a209baa8698b6c1ccbca8a0"
+    },
+    {
+      "path": "02_FUNCTIONAL_FLOWS/STATE_TRANSITIONS/STATES.md",
+      "bytes": 533,
+      "sha256": "935f2f8e85abe802b832fe29cd0ec21a480eafe881f2b7e519e06c433aa7f357"
+    },
+    {
+      "path": "02_FUNCTIONAL_FLOWS/USER_FLOWS/FLOWS.md",
+      "bytes": 1047,
+      "sha256": "641502159c1113dbb63a61a3560a97a95d53f286368d50fc59ac95a88711f1a4"
+    },
+    {
+      "path": "03_FRONTEND_RESEARCH/COMPONENT_ANALYSIS/PATTERNS.md",
+      "bytes": 457,
+      "sha256": "c2bd4a8537f4b8662c3654451040f6ce95bf094cafae24da8b70b3eee7c090ad"
+    },
+    {
+      "path": "03_FRONTEND_RESEARCH/CSS/OBSERVATIONS.md",
+      "bytes": 395,
+      "sha256": "0b27e865359a5ea9762a53bf17c546cd431878c22fda6e23ad357e583272439f"
+    },
+    {
+      "path": "03_FRONTEND_RESEARCH/HTML_DOM/OBSERVATIONS.md",
+      "bytes": 741,
+      "sha256": "7a57418c06eedeb67f300b5dec86f98649f94f04874902c0f69e6f8dfe90c4a1"
+    },
+    {
+      "path": "03_FRONTEND_RESEARCH/JAVASCRIPT_FINDINGS/LIMITATIONS.md",
+      "bytes": 250,
+      "sha256": "24f419acb1e219ee4a8e696bf48ab979cda98b15293283f8969a37f5ae12d06c"
+    },
+    {
+      "path": "04_NETWORK_AND_APIS/API_FINDINGS.md",
+      "bytes": 465,
+      "sha256": "b0818265cd4f8348882d8ac31d9d4ad459a21e608ded690b115a3d9c13cf8847"
+    },
+    {
+      "path": "05_DATA_AND_ARCHITECTURE/ARCHITECTURE_FINDINGS.md",
+      "bytes": 727,
+      "sha256": "460c33100aa9a46e83598c54efae4605d4e20dbe5b2c8068fb8c1e038428d9da"
+    },
+    {
+      "path": "05_DATA_AND_ARCHITECTURE/ENTITY_MODELS/PROPOSED_MODEL.md",
+      "bytes": 1746,
+      "sha256": "ceb3f29d451cc5e1a2a071f17cdef3f13995f54b1a51d1174f81e2fb6c5c4478"
+    },
+    {
+      "path": "05_DATA_AND_ARCHITECTURE/PERMISSIONS/PERMISSIONS.md",
+      "bytes": 499,
+      "sha256": "357be1c5c7ec89521a57c6ac8543ac915737c016ba6e7b8b906d1ea1cbd9b5b2"
+    },
+    {
+      "path": "05_DATA_AND_ARCHITECTURE/RELATIONSHIP_DIAGRAMS/RELATIONS.md",
+      "bytes": 847,
+      "sha256": "912d4a24ac8f25f7f59a5ddfd080993d3dbf7b88899f2957eb462c54a8ef64ca"
+    },
+    {
+      "path": "06_UX_UI/COMPONENT_PATTERNS/UX.md",
+      "bytes": 653,
+      "sha256": "d385e799dfcb915a08fd3c94aebcb023f9242e4aa0d73e188b5f2a170eda21b5"
+    },
+    {
+      "path": "06_UX_UI/INTERACTION_SPECS/INTERACTIONS.md",
+      "bytes": 501,
+      "sha256": "0822511976c6b18a92a2bfc59820370b8eb90dfe1f821ac0e1319c2707347229"
+    },
+    {
+      "path": "06_UX_UI/SCREENSHOTS/E04_reminder.jpg",
+      "bytes": 59735,
+      "sha256": "927c749d1b80ad8bdaf91f3ad60c92ff544515f354a3d85da5a29ec74de1044d"
+    },
+    {
+      "path": "07_TESTS/OBSERVED_RESULTS/RESULTS.md",
+      "bytes": 401,
+      "sha256": "355185ebebf6bdc2371367725d97ab88f6f2a2863820e482af14eaa986e895d8"
+    },
+    {
+      "path": "07_TESTS/TEST_CASES/CASES.md",
+      "bytes": 1244,
+      "sha256": "a7c8594c628f9a00ed6b4cbe82f6f4af5d0b25b062dbc7a35fa9ea0799d2b4a2"
+    },
+    {
+      "path": "08_EVIDENCE/E02_automations_ax.txt",
+      "bytes": 12192,
+      "sha256": "dc307d00537512eb1e8e92a294d0f1bb43baa8add6708e2368cf05836bc15670"
+    },
+    {
+      "path": "08_EVIDENCE/E03_reminder_performance_ax.txt",
+      "bytes": 5638,
+      "sha256": "00c9eac181d9280a5aa9d7884ecde1ba3a6b1047fe32296bcaa45f64e795fd12"
+    },
+    {
+      "path": "08_EVIDENCE/E04_reminder_details_ax.txt",
+      "bytes": 3793,
+      "sha256": "295fe42f261080175fffff0432264e92ced34961f712a13773dbbd3ac43767d4"
+    },
+    {
+      "path": "08_EVIDENCE/E05_campaign_intro_ax.txt",
+      "bytes": 3030,
+      "sha256": "2f383e3f733cea5abeaf5eb10ba92a7f41c3689d157c49b4ca06074f30f9c4ed"
+    },
+    {
+      "path": "08_EVIDENCE/E06_campaign_fees_ax.txt",
+      "bytes": 2441,
+      "sha256": "2cf3c72aca283d4eea4c1cd2a2276863b4f3879666e62aafcfe9ac5755303ee3"
+    },
+    {
+      "path": "08_EVIDENCE/E07_offers_ax.txt",
+      "bytes": 3121,
+      "sha256": "345e001670ffc5512f1c1e9fb3a39b40cc0a441fcb8136fa89cf1e0fa5fe2c51"
+    },
+    {
+      "path": "08_EVIDENCE/E08_offer_types_ax.txt",
+      "bytes": 4499,
+      "sha256": "0837cc03d3aa1a6e5bafad837086995242a1a15bb4818fa4bbbd5060f5753b88"
+    },
+    {
+      "path": "08_EVIDENCE/E09_coupon_form_ax.txt",
+      "bytes": 8174,
+      "sha256": "abce2a00c665d3ba9797af64f7033e3890d7c59348112e02b52bac105f81fbdd"
+    },
+    {
+      "path": "08_EVIDENCE/E10_coupon_limits_ax.txt",
+      "bytes": 10604,
+      "sha256": "e0b7744709c3cd51814b87905b03af220bccf9e31fc4c1f378a846be2b46db4b"
+    },
+    {
+      "path": "08_EVIDENCE/E11_addons_ax.txt",
+      "bytes": 8133,
+      "sha256": "330f3cb58a583293ca0eda7fef1ed2645b516c79f72debad3ed86410f70c6890"
+    },
+    {
+      "path": "08_EVIDENCE/EVIDENCE_INDEX.csv",
+      "bytes": 1970,
+      "sha256": "63ea238b5c917387c8a53ea573a5a900a9a0e2d4d069d6d4204cf14bc8b9429c"
+    },
+    {
+      "path": "08_EVIDENCE/RECOVERY_CHECKPOINT.md",
+      "bytes": 5477,
+      "sha256": "3ea8d8dd652bc0343af18b8d01b8742c05438a07049acf1deb40856e4d7d0d12"
+    },
+    {
+      "path": "09_CODEX_HANDOFF/OPEN_QUESTIONS.md",
+      "bytes": 1109,
+      "sha256": "7338680779701f783db122b1dea82c88052558f10e6dd919c4ce0691cd75b2ea"
+    },
+    {
+      "path": "09_CODEX_HANDOFF/START_HERE_CODEX.md",
+      "bytes": 2442,
+      "sha256": "3fbc090cdb46735d48d3e1e6efe7409b8c810f68071dd3f04d7f2231f2497c60"
+    },
+    {
+      "path": "09_CODEX_HANDOFF/TECHNICAL_ANALYSIS_PLAN.md",
+      "bytes": 727,
+      "sha256": "59ed2e06a0e4aabdab0509847126f03435ee66c77d6794c79200a8fcbd49e544"
+    },
+    {
+      "path": "10_LIMITATIONS/RESEARCH_GAPS.md",
+      "bytes": 1109,
+      "sha256": "7338680779701f783db122b1dea82c88052558f10e6dd919c4ce0691cd75b2ea"
+    },
+    {
+      "path": "10_LIMITATIONS/UNVERIFIED_FEATURES.md",
+      "bytes": 1109,
+      "sha256": "7338680779701f783db122b1dea82c88052558f10e6dd919c4ce0691cd75b2ea"
+    },
+    {
+      "path": "COVERAGE_MATRIX.csv",
+      "bytes": 1622,
+      "sha256": "2a87abf856e96e82af4bc996939701681f8290e51efbcfbe9619d06d614e06e4"
+    },
+    {
+      "path": "FEATURE_INVENTORY.csv",
+      "bytes": 4735,
+      "sha256": "3988f6b545b2d42736059a9ede1a3861632a618d20948a2c00fa44e2ebd45d4a"
+    },
+    {
+      "path": "README.md",
+      "bytes": 962,
+      "sha256": "c6d5f7d54e32f0995d07f259e4433d928b6c5f7c7d4ebb4b8a1cf79c3e994dce"
+    },
+    {
+      "path": "RESEARCH_LOG.md",
+      "bytes": 786,
+      "sha256": "1503d03fe99d60df10740cf6ea970f09b87238d2736420a06b479748648bcb17"
+    },
+    {
+      "path": "UNVERIFIED_FEATURES.md",
+      "bytes": 1109,
+      "sha256": "7338680779701f783db122b1dea82c88052558f10e6dd919c4ce0691cd75b2ea"
+    }
+  ]
+}

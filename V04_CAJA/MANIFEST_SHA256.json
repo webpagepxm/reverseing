@@ -1,0 +1,220 @@
+{
+  "entries": [
+    {
+      "path": "CAJA_MOVIL_V04/CAPTURAS/M01_menu_ventas.jpg",
+      "bytes": 48342,
+      "sha256": "0f7d1bfe939f64606433cb79e622090cf8e817ba375392285567da14d261b2af"
+    },
+    {
+      "path": "CAJA_MOVIL_V04/CAPTURAS/M02_pantalla_introductoria.jpg",
+      "bytes": 85593,
+      "sha256": "98daf7aa3ba5a41e483f6a1d370cec0ca5713d1fadd2711aa83926be1b437c33"
+    },
+    {
+      "path": "CAJA_MOVIL_V04/CAPTURAS/M03_configuracion_opciones.jpg",
+      "bytes": 69248,
+      "sha256": "6459f92ce03f963d1734481a36bd9158cfc09daef13439dc7f901f76a3b72496"
+    },
+    {
+      "path": "CAJA_MOVIL_V04/CAPTURAS/M04_nombre_caja.jpg",
+      "bytes": 70716,
+      "sha256": "6030b221dccbe7c9788460c2d0cc09db5c60f25e59ab91d67bbb286b5df78e8f"
+    },
+    {
+      "path": "CAJA_MOVIL_V04/CAPTURAS/M05_caja_creada_cerrada.jpg",
+      "bytes": 56268,
+      "sha256": "fb1e32e37a48e34e5dc530439f1a5a00a684682843797da83c1222fdc836a572"
+    },
+    {
+      "path": "CAJA_MOVIL_V04/CAPTURAS/M06_formulario_apertura.jpg",
+      "bytes": 33238,
+      "sha256": "58ab4caf334a2a3a564e534c5ff341e57d2d310a6c7a379521545d9f0181ec2a"
+    },
+    {
+      "path": "CAJA_MOVIL_V04/CAPTURAS/M07_importe_2000.jpg",
+      "bytes": 44728,
+      "sha256": "0fb12033c8920ca9575ec8a9d9a87be4e3a6918a737e444e583a51ffc7d3a0ae"
+    },
+    {
+      "path": "CAJA_MOVIL_V04/CAPTURAS/M08_apertura_en_proceso.jpg",
+      "bytes": 55663,
+      "sha256": "6c96896a93b90ad4e4a1a32ca0a9b797fa69f67fa67500254a02f1edaa418d1b"
+    },
+    {
+      "path": "CAJA_MOVIL_V04/CAPTURAS/M09_caja_abierta_2000.jpg",
+      "bytes": 57097,
+      "sha256": "ce7c0f42c2396a6a417d045ef72a4e5fdab88a309f871c6a66c07f257725eaaa"
+    },
+    {
+      "path": "CAJA_MOVIL_V04/CAPTURAS/M10_menu_movimientos.jpg",
+      "bytes": 46584,
+      "sha256": "e5fb66a3a8520509c11817beb481ff27144604fa6bdce57c4bd5091129c21a04"
+    },
+    {
+      "path": "CAJA_MOVIL_V04/CRONOLOGIA.csv",
+      "bytes": 819,
+      "sha256": "509f3727e1ae25072b5cab7e967d1d91ecd46740005acc951dbcc33c310c0202"
+    },
+    {
+      "path": "CAJA_MOVIL_V04/GRABACION_ORIGINAL.mp4",
+      "bytes": 9951810,
+      "sha256": "119724dc9557ddb707c9396ce077c260ecf6039c65e62bfa1f19f93b83f36336"
+    },
+    {
+      "path": "CAJA_MOVIL_V04/HALLAZGOS.md",
+      "bytes": 3972,
+      "sha256": "c53c4dac407dc9db8ddd05ff0bac808ea74f3730c471c290dc0038ab1d8e61af"
+    },
+    {
+      "path": "CAJA_MOVIL_V04/PREGUNTAS_PENDIENTES.md",
+      "bytes": 1082,
+      "sha256": "967722b69b6031aaaa431807ceaaa39330ebe9da62b91026d803241bc88c1870"
+    },
+    {
+      "path": "HISTORICO/FRESHA_CAJA_EVIDENCIA_V02.zip",
+      "bytes": 259753,
+      "sha256": "030b345290af05175bce6ea00b4a211ed85d1714b33499f805d62aef7a49e0f7"
+    },
+    {
+      "path": "HISTORICO/FRESHA_REVERSE_ENGINEERING_FOR_CODEX_ORIGINAL.zip",
+      "bytes": 103895,
+      "sha256": "0f94cb5e9f6af45891f3c546aae2456ad8f80a40371a1d101e80a8a89ef05123"
+    },
+    {
+      "path": "INVESTIGACION_PREVIA_V03/HALLAZGOS_VIDEO.md",
+      "bytes": 9069,
+      "sha256": "53e513b4d2ff9d05fafdee924d4ba05ad6c9286b8e312fb4b2af9f72f791f6d0"
+    },
+    {
+      "path": "INVESTIGACION_PREVIA_V03/INDICE_EVIDENCIAS.csv",
+      "bytes": 2146,
+      "sha256": "e447f705d3dbd3422f4b22f99ea3517e0593fb16a4d2ccb3fbaefa7f2758240a"
+    },
+    {
+      "path": "INVESTIGACION_PREVIA_V03/MANIFEST.json",
+      "bytes": 4650,
+      "sha256": "8b2f1cbb67cbe9c527569e9b8fe68afb9b23879cdd9b5af64b0dd947a9a0dab0"
+    },
+    {
+      "path": "INVESTIGACION_PREVIA_V03/START_HERE_CODEX.md",
+      "bytes": 984,
+      "sha256": "fa7c5b42bded607dba88d3cdb4dd05187b172f915d285bb7e016bc4a8c41e016"
+    },
+    {
+      "path": "INVESTIGACION_PREVIA_V03/capturas_redactadas/015s_cliente_datos.jpg",
+      "bytes": 98568,
+      "sha256": "be3e19084a510c025f5061ebf7b4f749e4c48720a8909a80cd704754af53e875"
+    },
+    {
+      "path": "INVESTIGACION_PREVIA_V03/capturas_redactadas/025s_cliente_articulos.jpg",
+      "bytes": 83606,
+      "sha256": "260adc1b84b302d6b8cb914fb284496de8693bbe11a4bec90507c397a2363f86"
+    },
+    {
+      "path": "INVESTIGACION_PREVIA_V03/capturas_redactadas/035s_fidelidad_promocion.jpg",
+      "bytes": 105993,
+      "sha256": "e40539aa82355c47c74b1147fc24c404c84c573a5d04ff4752d954f32ebaba2b"
+    },
+    {
+      "path": "INVESTIGACION_PREVIA_V03/capturas_redactadas/065s_calendario.jpg",
+      "bytes": 110633,
+      "sha256": "e682715f464c7b4d2b080faf93511c9ec07006a860cf1dd64e3950127d4b5402"
+    },
+    {
+      "path": "INVESTIGACION_PREVIA_V03/capturas_redactadas/075s_carrito_vacio.jpg",
+      "bytes": 68088,
+      "sha256": "7ad2bcc7c6eeca2b20e894258ac82283e449cffa1a9a6e6ce34d3ccb55b306cf"
+    },
+    {
+      "path": "INVESTIGACION_PREVIA_V03/capturas_redactadas/085s_catalogo_servicios_venta.jpg",
+      "bytes": 59842,
+      "sha256": "e5bd5636079f34a790f37b0e86a503f478ab57400a4bebbf0f786083b05af357"
+    },
+    {
+      "path": "INVESTIGACION_PREVIA_V03/capturas_redactadas/095s_historial_ventas.jpg",
+      "bytes": 68059,
+      "sha256": "80f2a230e2a6a549962577d5f843ffea54b2163331987959537498ff87383901"
+    },
+    {
+      "path": "INVESTIGACION_PREVIA_V03/capturas_redactadas/105s_membresias.jpg",
+      "bytes": 54817,
+      "sha256": "32c949d4339ae97d209d997f5a8bbbe5c018eac9e0d579cb418240bce64650c0"
+    },
+    {
+      "path": "INVESTIGACION_PREVIA_V03/capturas_redactadas/115s_menu_clientes.jpg",
+      "bytes": 35643,
+      "sha256": "ff8bb1c80304d3f56ba6db178e2415a16f95145ec6277904dd0ddcab49badfb0"
+    },
+    {
+      "path": "INVESTIGACION_PREVIA_V03/capturas_redactadas/145s_catalogo_productos.jpg",
+      "bytes": 102243,
+      "sha256": "cd41ce8cfa0b73fcb1fbc0b327490b899738d6fbf4116af6bd51cab8cc16df1d"
+    },
+    {
+      "path": "INVESTIGACION_PREVIA_V03/capturas_redactadas/155s_menu_inventario.jpg",
+      "bytes": 102182,
+      "sha256": "d8b1ae7384433986ed3d1db9058bb2d4ea03ae7be9d57256fda037911a5fbce9"
+    },
+    {
+      "path": "INVESTIGACION_PREVIA_V03/capturas_redactadas/165s_crear_inventario.jpg",
+      "bytes": 58429,
+      "sha256": "4496792c94c5ca66278b0a43260c3e80a5ba412a1baf7a22658877a11b61b779"
+    },
+    {
+      "path": "INVESTIGACION_PREVIA_V03/capturas_redactadas/175s_marketing_stock.jpg",
+      "bytes": 100143,
+      "sha256": "88623e506c625e3e1440994c9770c591e3fd209a9927b09105e1f0bad0ca2e16"
+    },
+    {
+      "path": "INVESTIGACION_PREVIA_V03/capturas_redactadas/185s_recargos_mensajes.jpg",
+      "bytes": 40352,
+      "sha256": "00214df8bc376752321e441e56e4379bbb01dda42c3ad1b5a575525953644dd9"
+    },
+    {
+      "path": "INVESTIGACION_PREVIA_V03/capturas_redactadas/195s_equipo_lista.jpg",
+      "bytes": 77532,
+      "sha256": "f41058484abe03a548f3ffa7341aeb31c85f1da421a3eb39c8d395a3432890f0"
+    },
+    {
+      "path": "INVESTIGACION_PREVIA_V03/capturas_redactadas/205s_equipo_datos.jpg",
+      "bytes": 89532,
+      "sha256": "ccbd912c3dc7b90db1fed2b4fc4d842694362888c68d3d87affcb47a5f00997d"
+    },
+    {
+      "path": "INVESTIGACION_PREVIA_V03/capturas_redactadas/215s_equipo_workspace.jpg",
+      "bytes": 83169,
+      "sha256": "740a6d21fad0952334390b2761638c8a8da2fbbd97c4d64747af22550924252c"
+    },
+    {
+      "path": "INVESTIGACION_PREVIA_V03/capturas_redactadas/225s_informes_inicial.jpg",
+      "bytes": 108888,
+      "sha256": "698a54206210428b4f8f461d80e64efc3995bb8203d01bf83637ca075d05893a"
+    },
+    {
+      "path": "INVESTIGACION_PREVIA_V03/capturas_redactadas/235s_acciones_empleado.jpg",
+      "bytes": 84477,
+      "sha256": "d85092c3df3c88e9f2291a58e7a1fe04a4e1e7724a230f723317bf110bd4fddd"
+    },
+    {
+      "path": "INVESTIGACION_PREVIA_V03/capturas_redactadas/255s_proceso_pagos_equipo.jpg",
+      "bytes": 100849,
+      "sha256": "ac7a04c900875322ab46bb82b825d8cba17cb9ddf1010c7f2b33b54ca9c56f55"
+    },
+    {
+      "path": "INVESTIGACION_PREVIA_V03/capturas_redactadas/265s_informes_categorias.jpg",
+      "bytes": 111581,
+      "sha256": "e740edd872d4017638ee087661066aafdcc3ef777912a3ed3384f98c804a7811"
+    },
+    {
+      "path": "INVESTIGACION_PREVIA_V03/capturas_redactadas/275s_informes_paneles.jpg",
+      "bytes": 98404,
+      "sha256": "ddb3d45472875b53a56faefd5330ec53bf25aff1981de13c924056e4db4fb9dd"
+    },
+    {
+      "path": "START_HERE_CODEX.md",
+      "bytes": 1520,
+      "sha256": "8f4c125feb8fe4fbcc6ff6d7c1bc74f64532462aa74c168a54ecfe309322beab"
+    }
+  ],
+  "files": 43
+}

@@ -1,0 +1,9 @@
+rango_aproximado,evento,captura,nivel_evidencia
+00:00,Ventas: sección del menú,M01_menu_ventas.jpg,UI
+00:01–00:06,"Onboarding Cajas registradoras, Empezar ahora",M02_pantalla_introductoria.jpg,UI
+00:06–00:11,"Preferencias: nombre, 2 opciones avanzadas; se teclea Caja de",M03_configuracion_opciones.jpg,UI+entrada
+00:11–00:13,Confirmación Caja registradora creada; tarjeta Cerrada 0 MXN,M05_caja_creada_cerrada.jpg,confirmación
+00:19–00:22,Formulario de apertura con importe y comentario,M06_formulario_apertura.jpg,UI
+00:26–00:30,Se introduce 2000 MXN y se abre caja,M07_importe_2000.jpg,flujo
+00:29–00:31,Confirmación apertura; estado Abierta 2000 MXN,M09_caja_abierta_2000.jpg,confirmación+estado
+00:31–00:34,Acciones: Entrada de efectivo; Salida de efectivo,M10_menu_movimientos.jpg,UI

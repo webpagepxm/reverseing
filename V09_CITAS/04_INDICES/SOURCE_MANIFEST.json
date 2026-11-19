@@ -1,0 +1,72 @@
+{
+  "source": {
+    "Grabación de pantalla 2026-11-18 a la(s) 14.07.43.mov": {
+      "sha256": "611d0b1b7fd1f10ed8acd6f16c8435f9beaefd4b053d945fdcfc352d6f23a7af",
+      "size_bytes": 9959537,
+      "duration_seconds": 57.333333
+    }
+  },
+  "frames": {
+    "s00.jpg": {
+      "sha256": "7ef30d60aac2eaf2f4fb5fe636f9dcfd09599c9a1f453696cbcaa1a44674d70f",
+      "size_bytes": 84281
+    },
+    "s02.jpg": {
+      "sha256": "c5fffcd1415467d4f581757b71b4071745641fa0c2958e15ccc16f017c3a7671",
+      "size_bytes": 92438
+    },
+    "s10.jpg": {
+      "sha256": "cc7e816660a538ee597a329b3a6af8f909f0b5aeabea964f0ea0de5232a2f493",
+      "size_bytes": 85412
+    },
+    "s18.jpg": {
+      "sha256": "242f9f6be2865de43f19bf16dc6e36501b89551b496b0dd65c0e70c4f5a59c25",
+      "size_bytes": 109999
+    },
+    "s20.jpg": {
+      "sha256": "ff1151ba48a1b4b6a93d9e2bd2a40b0fe4cb7ab7d1a3f5c58caa126032a27cb6",
+      "size_bytes": 106939
+    },
+    "s34.jpg": {
+      "sha256": "2933ffee36f760a0c5ed5b497984193304763d501119e678adfb3db61880dbac",
+      "size_bytes": 91865
+    },
+    "s36.jpg": {
+      "sha256": "3feef8a38105ee95e4612391f89fd9d6e7f82c37679493c9c1b5b56ad7da9385",
+      "size_bytes": 85268
+    },
+    "s38.jpg": {
+      "sha256": "95f82062b3c60d51939f9082a037b9b70a11fcc19c3c26b7b921a06e2c39d5ab",
+      "size_bytes": 87464
+    },
+    "s40.jpg": {
+      "sha256": "5d88a4d897455c23a7af90403fa37e32677c23f732a09d6fd4b9fd857455887a",
+      "size_bytes": 88992
+    },
+    "s42.jpg": {
+      "sha256": "9ce8e78e67d385b66af242df77cebdda069efd66a309e62d9a6683f57b322c87",
+      "size_bytes": 81869
+    },
+    "s46.jpg": {
+      "sha256": "934ee490624bf6f700d2eb66de17e6638e43dac80ecdc2fdce43a86e43d7f901",
+      "size_bytes": 82734
+    },
+    "s48.jpg": {
+      "sha256": "85a739614ee4083bc8220f06f36553071e5c4ec82d398d521585c77ff10dcce3",
+      "size_bytes": 85036
+    },
+    "s50.jpg": {
+      "sha256": "2e7b10d8710d157a8f6dc43749486336a4a3091478ea088660eba32034edceea",
+      "size_bytes": 84687
+    },
+    "s52.jpg": {
+      "sha256": "3e7af158b0506c9d8f2b5ba68c7c9c002da6da0f9392938abd2c79b9a34c8fe8",
+      "size_bytes": 90799
+    },
+    "s56.jpg": {
+      "sha256": "ae8b45c8c1482537490b5d19b81f23f3fc33f2eebd9bda0b0db9b1af4a5720d0",
+      "size_bytes": 104831
+    }
+  },
+  "notes": "Hashes sobre bytes originales proporcionados; video y fotogramas seleccionados; los archivos documentales son interpretaciones."
+}

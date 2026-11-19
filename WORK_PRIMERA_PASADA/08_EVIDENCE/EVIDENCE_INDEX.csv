@@ -1,0 +1,13 @@
+evidence_id,tipo,archivo,fecha,alcance,confianza
+E01,histórico recuperado,08_EVIDENCE/RECOVERY_CHECKPOINT.md,16–17 nov 2026,Cliente cita POS catálogo permisos reportes,Media: narrativa sin capturas originales
+E02,árbol accesibilidad,08_EVIDENCE/E02_automations_ax.txt,17 nov 2026,Pantalla autenticada; ver contenido y ficha asociada,Alta para UI; no ejecución backend
+E03,árbol accesibilidad,08_EVIDENCE/E03_reminder_performance_ax.txt,17 nov 2026,Pantalla autenticada; ver contenido y ficha asociada,Alta para UI; no ejecución backend
+E04,árbol accesibilidad,08_EVIDENCE/E04_reminder_details_ax.txt,17 nov 2026,Pantalla autenticada; ver contenido y ficha asociada,Alta para UI; no ejecución backend
+E05,árbol accesibilidad,08_EVIDENCE/E05_campaign_intro_ax.txt,17 nov 2026,Pantalla autenticada; ver contenido y ficha asociada,Alta para UI; no ejecución backend
+E06,árbol accesibilidad,08_EVIDENCE/E06_campaign_fees_ax.txt,17 nov 2026,Pantalla autenticada; ver contenido y ficha asociada,Alta para UI; no ejecución backend
+E07,árbol accesibilidad,08_EVIDENCE/E07_offers_ax.txt,17 nov 2026,Pantalla autenticada; ver contenido y ficha asociada,Alta para UI; no ejecución backend
+E08,árbol accesibilidad,08_EVIDENCE/E08_offer_types_ax.txt,17 nov 2026,Pantalla autenticada; ver contenido y ficha asociada,Alta para UI; no ejecución backend
+E09,árbol accesibilidad,08_EVIDENCE/E09_coupon_form_ax.txt,17 nov 2026,Pantalla autenticada; ver contenido y ficha asociada,Alta para UI; no ejecución backend
+E10,árbol accesibilidad,08_EVIDENCE/E10_coupon_limits_ax.txt,17 nov 2026,Pantalla autenticada; ver contenido y ficha asociada,Alta para UI; no ejecución backend
+E11,árbol accesibilidad,08_EVIDENCE/E11_addons_ax.txt,17 nov 2026,Pantalla autenticada; ver contenido y ficha asociada,Alta para UI; no ejecución backend
+E04-IMG,captura,06_UX_UI/SCREENSHOTS/E04_reminder.jpg,17 nov 2026,Recordatorio activo sin canales,Alta para estado visible

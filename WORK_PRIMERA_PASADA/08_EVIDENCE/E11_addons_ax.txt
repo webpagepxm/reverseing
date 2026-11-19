@@ -1,0 +1,150 @@
+Browser tab: 3, Title: "Fresha - Partner Account", URL: "https://partners.fresha.com/add-ons".
+0 AXWebArea Fresha - Partner Account, URL: partners.fresha.com/add-ons
+	1 container app
+		2 container react
+			3 link Description: Fresha, Value: partners.fresha.com/calendar
+			4 checkbox Activar plan, Value: 0, ID: button-react-aria7077551636-_r_1k_
+				5 text Activar plan
+			6 checkbox Buscar, Value: 0, ID: button-react-aria7077551636-_r_2_
+			7 checkbox Análisis de rendimiento, Value: 0, ID: button-react-aria7077551636-_r_4_
+			8 checkbox Notificaciones, Value: 0, ID: button-react-aria7077551636-_r_8_
+				9 text 5
+			10 link Description: Fresha Connect, Value: partners.fresha.com/connect
+			11 checkbox (collapsed) Open user menu, Value: 0, ID: button-react-aria7077551636-_r_19_, Secondary Actions: Expand
+			12 container
+				13 link partners.fresha.com/dashboard
+				14 link partners.fresha.com/calendar
+				15 checkbox Value: 0, ID: button-react-aria7077551636-_r_e_
+				16 checkbox Value: 0, ID: button-react-aria7077551636-_r_h_
+				17 checkbox Value: 0, ID: button-react-aria7077551636-_r_k_
+				18 checkbox Value: 0, ID: button-react-aria7077551636-_r_1n_
+				19 checkbox Value: 0, ID: button-react-aria7077551636-_r_q_
+				20 checkbox Value: 0, ID: button-react-aria7077551636-_r_t_
+				21 link partners.fresha.com/reports
+				22 link partners.fresha.com/add-ons
+				23 link partners.fresha.com/setup
+				24 checkbox Value: 0, ID: button-react-aria7077551636-_r_14_
+			25 container
+				26 heading Complementos de Fresha, Value: 1
+					27 text Complementos de Fresha
+				28 text Lleva tu negocio al siguiente nivel con los complementos de Fresha.
+				29 container
+					30 tab group react-aria7077551636-_r_8u_
+						31 tab (selected, settable, boolean) Complementos, Value: 1, ID: react-aria7077551636-_r_8u_-tab-add-ons
+						32 tab (selectable, settable, boolean) Integraciones, Value: 0, ID: react-aria7077551636-_r_8u_-tab-integrations
+				33 container add-ons
+					34 container inner-PAYMENTS
+						35 image Pagos
+						36 text Pagos
+						37 text Los clientes pueden pagarte online y en el establecimiento con pagos de bajo coste, seguros y sencillos integrados directamente en tu workspace.
+						38 checkbox Ver, Value: 0, ID: button-view-payments
+							39 text Ver
+					40 container inner-PREMIUM_SUPPORT
+						41 image Servicio al cliente prémium
+						42 text En prueba gratuita
+						43 text Servicio al cliente prémium
+						44 text Saca el máximo partido de la plataforma de Fresha y de sus herramientas con la ayuda de nuestros especialistas de servicio al cliente.
+						45 checkbox Ver, Value: 0, ID: button-view-addOn-PREMIUM_SUPPORT
+							46 text Ver
+					47 container inner-FRESHA_INSIGHTS
+						48 image Insights
+						49 text Insights
+						50 text Obtén informes adicionales y crea tus propios informes que podrás compartir con tu equipo.
+						51 checkbox Ver, Value: 0, ID: button-view-integration-FRESHA_INSIGHTS
+							52 text Ver
+					53 container inner-GOOGLE_RATING_BOOST
+						54 image Reseñas de Google
+						55 text Reseñas de Google
+						56 text Invita a tus clientes a compartir su experiencia positiva con una reseña en Google y aumenta la visibilidad de tu negocio.
+						57 checkbox Ver, Value: 0, ID: button-view-integration-GOOGLE_RATING_BOOST
+							58 text Ver
+					59 container inner-LOYALTY
+						60 image Programa de fidelidad
+						61 text Programa de fidelidad
+						62 text Fomenta las visitas recurrentes y las compras de mayor importe recompensando a tus clientes con ofertas exclusivas que premian su fidelidad.
+						63 checkbox Ver, Value: 0, ID: button-view-integration-LOYALTY
+							64 text Ver
+					65 container inner-DATA_CONNECTOR
+						66 image Sincronización de datos
+						67 text Sincronización de datos
+						68 text Sincroniza los valiosos datos de Fresha con tus hojas de cálculo, sistemas y demás software externos.
+						69 checkbox Ver, Value: 0, ID: button-view-integration-DATA_CONNECTOR
+							70 text Ver
+					71 container inner-AI_RECEPTIONIST
+						72 image Recepcionista virtual con IA
+						73 container
+							74 text Recepcionista virtual con IA Beta
+						75 text Reserva citas, responde preguntas de clientes y gestiona mensajes y reseñas por ti
+						76 checkbox Ver, Value: 0, ID: button-view-integration-AI_RECEPTIONIST
+							77 text Ver
+					78 container inner-CLIENT_CONNECT
+						79 image Chat con los clientes
+						80 text Activo
+						81 text Chat con los clientes
+						82 text Mantén el contacto con tus clientes con mensajes bidireccionales y una bandeja de entrada compartida en la web y la app, todo en un único lugar.
+						83 checkbox Ver, Value: 0, ID: button-view-client-connect
+							84 text Ver
+					85 container inner-WEBSITE_BUILDER
+						86 image Sitio web inteligente
+						87 text Sitio web inteligente
+						88 text Tu propio sitio web profesional que se actualiza a medida que tu negocio evoluciona
+						89 checkbox Ver, Value: 0, ID: button-view-website-builder
+							90 text Ver
+					91 container inner-TEAM_CHAT
+						92 image Chat de equipo
+						93 text Chat de equipo
+						94 text Ofrece a tu equipo un espacio dedicado para colaborar, crear chats de grupo y compartir archivos sin salir de Fresha.
+						95 checkbox Ver, Value: 0, ID: button-view-integration-TEAM_CHAT
+							96 text Ver
+					97 container inner-BOOKABLE_RESOURCES
+						98 image Recursos reservables
+						99 text Recursos reservables
+						100 text Gestiona recursos como salas y equipos. Asígnalos a los servicios y lleva un seguimiento del uso con informes detallados.
+						101 checkbox Ver, Value: 0, ID: button-view-bookable-resources
+							102 text Ver
+				103 container integrations
+					104 text Integraciones
+					105 container inner-XERO
+						106 image Contabilidad con Xero
+						107 text Contabilidad con Xero
+						108 text Optimiza tus ventas y tu contabilidad con Fresha conectando Xero
+						109 checkbox Ver, Value: 0, ID: button-view-integration-XERO
+							110 text Ver
+					111 container inner-QUICKBOOKS
+						112 image Contabilidad con QuickBooks
+						113 text Contabilidad con QuickBooks
+						114 text Conecta Fresha con QuickBooks y agiliza los procesos de venta y contabilidad.
+						115 checkbox Ver, Value: 0, ID: button-view-integration-QUICKBOOKS
+							116 text Ver
+					117 container inner-google-reserve
+						118 image Reservar con Google
+						119 text Reservar con Google
+						120 text Con nuestra integración de Google, consigue reservas online directamente desde Google Search y Google Maps.
+						121 checkbox (disabled) Ver, Value: 0, ID: button-view-integration-google-reserve
+							122 text Ver
+					123 container inner-fb-and-ig-bookings
+						124 image Reservas de Facebook e Instagram
+						125 text Reservas de Facebook e Instagram
+						126 text Añade la reserva online a tus redes sociales.
+						127 checkbox Ver, Value: 0, ID: button-view-integration-fb-and-ig-bookings
+							128 text Ver
+					129 container inner-meta-pixel-ads
+						130 image Anuncios con el píxel de Meta
+						131 text Anuncios con el píxel de Meta
+						132 text Utiliza los anuncios con el píxel de Meta para hacer un seguimiento de los eventos y generar público según sus actividades.
+						133 checkbox Ver, Value: 0, ID: button-view-integration-meta-pixel-ads
+							134 text Ver
+					135 container inner-google-analytics
+						136 image Google Analytics
+						137 text Google Analytics
+						138 text Envía eventos sobre acciones determinadas a Google Analytics y crea objetivos basados en eventos para hacer seguimiento de las conversiones.
+						139 checkbox Ver, Value: 0, ID: button-view-integration-google-analytics
+							140 text Ver
+					141 container inner-google-ads-integration
+						142 image Google Ads
+						143 text Google Ads
+						144 text Rastrea las conversiones de reservas de tus campañas de Google Ads, optimiza las pujas y vuelve a captar a clientes potenciales en función de su actividad.
+						145 checkbox Ver, Value: 0, ID: button-view-integration-google-ads
+							146 text Ver
+
+The focused UI element is 22 link partners.fresha.com/add-ons

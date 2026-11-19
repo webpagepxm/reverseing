@@ -1,0 +1,23 @@
+t_seg,t_marca,archivo,descripcion
+15,00:15,capturas_redactadas/015s_cliente_datos.jpg,"Perfil del cliente: datos, etiquetas, direcciones y notificaciones"
+25,00:25,capturas_redactadas/025s_cliente_articulos.jpg,Ficha de cliente: artículos y Registros desplegados
+35,00:35,capturas_redactadas/035s_fidelidad_promocion.jpg,Pantalla de activación de fidelidad
+65,01:05,capturas_redactadas/065s_calendario.jpg,Vista de calendario
+75,01:15,capturas_redactadas/075s_carrito_vacio.jpg,Nueva venta: carrito vacío y categorías
+85,01:25,capturas_redactadas/085s_catalogo_servicios_venta.jpg,Selector de servicios dentro del carrito
+95,01:35,capturas_redactadas/095s_historial_ventas.jpg,Historial de ventas y borradores
+105,01:45,capturas_redactadas/105s_membresias.jpg,Membresías vendidas: búsqueda y filtros
+115,01:55,capturas_redactadas/115s_menu_clientes.jpg,Menú Clientes y fidelización
+145,02:25,capturas_redactadas/145s_catalogo_productos.jpg,Pantalla inicial de productos
+155,02:35,capturas_redactadas/155s_menu_inventario.jpg,"Secciones de inventarios, pedidos y proveedores"
+165,02:45,capturas_redactadas/165s_crear_inventario.jpg,Formulario de creación de inventario (sin guardar)
+175,02:55,capturas_redactadas/175s_marketing_stock.jpg,Menú Mensajería visible y pantalla informativa de inventario
+185,03:05,capturas_redactadas/185s_recargos_mensajes.jpg,Asistente: ejemplo de recargos en mensajería
+195,03:15,capturas_redactadas/195s_equipo_lista.jpg,Lista de miembros y roles
+205,03:25,capturas_redactadas/205s_equipo_datos.jpg,Ficha de miembro del equipo
+215,03:35,capturas_redactadas/215s_equipo_workspace.jpg,Ficha Workspace del miembro
+225,03:45,capturas_redactadas/225s_informes_inicial.jpg,Biblioteca de informes
+235,03:55,capturas_redactadas/235s_acciones_empleado.jpg,Menú de acciones del empleado
+255,04:15,capturas_redactadas/255s_proceso_pagos_equipo.jpg,Pantalla informativa de procesos de pago
+265,04:25,capturas_redactadas/265s_informes_categorias.jpg,Categorías y número visible de informes
+275,04:35,capturas_redactadas/275s_informes_paneles.jpg,Paneles de control disponibles en catálogo

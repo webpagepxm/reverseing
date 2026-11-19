@@ -1,0 +1,90 @@
+{
+  "README.md": {
+    "sha256": "2416a2615007bb9ce23564901a0e2ba4f72ee3191134390f3600f15791b17975",
+    "bytes": 412
+  },
+  "01_CIERRE_COMPLETADO_V07/VIDEO_ORIGINAL.mp4": {
+    "sha256": "1b31c47a8913ed5a565dfb1e880d1fe16557f15defe678709ea53c360488bda6",
+    "bytes": 15367618
+  },
+  "01_CIERRE_COMPLETADO_V07/HALLAZGOS_CIERRE_COMPLETADO.md": {
+    "sha256": "14de22fe5e4e6ed4b851478f34b7c005d6b8916ad80e02721e9989035d73ae5a",
+    "bytes": 2720
+  },
+  "01_CIERRE_COMPLETADO_V07/CRONOLOGIA.csv": {
+    "sha256": "d38993066492b8d621a60b88beeef23db8b4657ae46e98e1e544b2722e66fc24",
+    "bytes": 1194
+  },
+  "02_BACKUPS/FRESHA_CODEX_EVIDENCIA_V06.zip": {
+    "sha256": "31b5291a69e946693e4ddd696e4586702e8a35fcbc278a2a4df5862b81e50b4e",
+    "bytes": 45010390
+  },
+  "03_CODEX_HANDOFF/ANALISIS_Y_PRUEBAS_PARA_CODEX.md": {
+    "sha256": "8b49c2fe9e2b88f8f449747c8fffe63d83378b059773ac100b2b36cb2f128b1e",
+    "bytes": 2529
+  },
+  "01_CIERRE_COMPLETADO_V07/KEYFRAMES/53_7s_corrige_reserva.png": {
+    "sha256": "836a856cf877c08319d24caaad84d3eb9148d4363ccab2fa3c7cd5ed07cc8345",
+    "bytes": 100752
+  },
+  "01_CIERRE_COMPLETADO_V07/KEYFRAMES/70s_informe_sin_resultados.png": {
+    "sha256": "7fb7a5add0e6d03487b92535e4b74539d2573ca10db48f8b983c1da67cc57f59",
+    "bytes": 69855
+  },
+  "01_CIERRE_COMPLETADO_V07/KEYFRAMES/54_9s_cierre_confirmado.png": {
+    "sha256": "5fb4b60d477765513687ef52436c56788608211ef6250196ebff5bb2fc0355e6",
+    "bytes": 99639
+  },
+  "01_CIERRE_COMPLETADO_V07/KEYFRAMES/44s_error_reserva_mayor_contado.png": {
+    "sha256": "65c01857e40f4de0ab1e16d86e9eb452b19a84d3cbba00884859f229b444ba0e",
+    "bytes": 108647
+  },
+  "01_CIERRE_COMPLETADO_V07/KEYFRAMES/00s_resumen_previo.png": {
+    "sha256": "90ec39609d3e4c5a888c5f14f33ba311d0c1c1dc756ad33f818e04827f2d4e18",
+    "bytes": 77110
+  },
+  "01_CIERRE_COMPLETADO_V07/KEYFRAMES/36s_efectivo_prevision.png": {
+    "sha256": "a757f7fdf543d44ca534443f39f83df5f7d25f531f06e442287ec2fda9e21943",
+    "bytes": 98903
+  },
+  "01_CIERRE_COMPLETADO_V07/KEYFRAMES/52s_reserva_2000_error.png": {
+    "sha256": "96e61d89190478d6f88d16bf51858f87dac7aa85ef83d739fdf6cf70f0a593fa",
+    "bytes": 126105
+  },
+  "01_CIERRE_COMPLETADO_V07/KEYFRAMES/22s_configuracion_reserva_banco.png": {
+    "sha256": "6217f1d665412fd3a24462f594d0979464aa76c5895cc3f7e7f9e3265c12a82c",
+    "bytes": 123419
+  },
+  "01_CIERRE_COMPLETADO_V07/KEYFRAMES/42s_efectivo_contado_1000.png": {
+    "sha256": "cb9cf3300a22918ccbd67e6f489a427748a6b17f01cf654ff3fff9707720ab1d",
+    "bytes": 70233
+  },
+  "01_CIERRE_COMPLETADO_V07/KEYFRAMES/48s_diferencia_negativa.png": {
+    "sha256": "a51cb465b3925c342b4125b869cee20cb1bd897d2f8e56c0a194734d9f93cd4f",
+    "bytes": 132402
+  },
+  "01_CIERRE_COMPLETADO_V07/KEYFRAMES/66s_informe_caja.png": {
+    "sha256": "3f2e34723af4d169bf4eaa1086d8d7e4de5db54b6f351f447f704d560ad1449b",
+    "bytes": 46280
+  },
+  "01_CIERRE_COMPLETADO_V07/KEYFRAMES/74s_menu_informes.png": {
+    "sha256": "c4071b3d781d15bb7331c9d4d79da3a4ec611f296a73979c980e537b6025d3ee",
+    "bytes": 75526
+  },
+  "01_CIERRE_COMPLETADO_V07/KEYFRAMES/64s_opciones_caja_cerrada.png": {
+    "sha256": "1788fca2e6162a2852bae38dd4ff0d7c928e268ec51cf54b1d5e55243bfe5693",
+    "bytes": 69431
+  },
+  "01_CIERRE_COMPLETADO_V07/KEYFRAMES/60s_resumen_movimientos.png": {
+    "sha256": "552fe4d74902b77c844ec02a17d772ed49182d5bb4fc62a971e380b30c4bd4ad",
+    "bytes": 104332
+  },
+  "01_CIERRE_COMPLETADO_V07/KEYFRAMES/56s_caja_cerrada.png": {
+    "sha256": "1227aec41b0a3f36d3173b0dac38f8f0456422cda6aaa9aec44d6678a0f94fa5",
+    "bytes": 104723
+  },
+  "01_CIERRE_COMPLETADO_V07/KEYFRAMES/38s_conteo.png": {
+    "sha256": "9e66af1c532cae4229b173653b43b7b5bfedc8df2ef4dbc35e1d2051d6ca1a48",
+    "bytes": 75766
+  }
+}

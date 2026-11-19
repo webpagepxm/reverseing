@@ -1,0 +1,13 @@
+ID,Área,Operación,Estado,Segundos_video,Captura,Limitación
+CL-01,Ficha cliente,Navegación por perfil,OBSERVADO,0-45,t_006s.jpg; t_018s.jpg; t_030s.jpg,"Se observa navegación, no mutaciones"
+CL-02,Datos,Campos de identidad y adicionales,OBSERVADO,4-8,t_006s.jpg,Botón Editar no probado
+CL-03,Artículos,Servicios productos membresías bonos,VISIBLE,12-20,t_018s.jpg,Sin registros
+CL-04,Billetera,Métodos y recompensas,VISIBLE,24-28,t_030s.jpg,Estado vacío
+CL-05,Acciones,Menú de acciones en ficha,VISIBLE,40-45,t_042s.png; t_045s.jpg,No confirma ejecución
+SE-01,Segmentos,Lista estándar/personalizada,OBSERVADO,48-80,t_050s.jpg; t_072s.jpg,No verifica membresías reales
+SE-02,Segmentos,Editar clientes fieles 2 ventas/5 meses,VERIFICADO_UI,54-64,t_055s.png; t_062s.jpg,Se observa toast; no efecto en destinatarios
+SE-03,Segmentos,Editar clientes que más gastan 500/12 meses,VERIFICADO_UI,64-72,t_068s.png; t_072s.jpg,"Se observa toast, no resultados"
+FI-01,Fidelidad,Pantalla de complemento,NO_ACTIVADO,28-36 y 80-84,t_030s.jpg; t_084s.jpg,Sin programa activo
+RE-01,Reputación,Resumen de reseñas,OBSERVADO,84-92,t_089s.jpg,0 reseñas
+RE-02,Reputación,Responder con IA,NO_VERIFICADO,92-100,t_089s.jpg,Sin reseña ni respuesta generada
+RE-03,Reputación,Vinculación Google,VISIBLE,88-92,t_089s.jpg,No se ejecuta conexión

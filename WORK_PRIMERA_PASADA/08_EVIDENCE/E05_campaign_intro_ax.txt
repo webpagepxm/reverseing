@@ -1,0 +1,44 @@
+Browser tab: 3, Title: "Fresha - Partner Account", URL: "https://partners.fresha.com/marketing/blast-campaigns/home".
+0 AXWebArea Fresha - Partner Account, URL: partners.fresha.com/marketing/blast-campaigns/home
+	1 container app
+		2 container react
+			3 link Description: Fresha, Value: partners.fresha.com/calendar
+			4 checkbox Activar plan, Value: 0, ID: button-react-aria7077551636-_r_1k_
+				5 text Activar plan
+			6 checkbox Buscar, Value: 0, ID: button-react-aria7077551636-_r_2_
+			7 checkbox Análisis de rendimiento, Value: 0, ID: button-react-aria7077551636-_r_4_
+			8 checkbox Notificaciones, Value: 0, ID: button-react-aria7077551636-_r_8_
+				9 text 5
+			10 link Description: Fresha Connect, Value: partners.fresha.com/connect
+			11 checkbox (collapsed) Open user menu, Value: 0, ID: button-react-aria7077551636-_r_19_, Secondary Actions: Expand
+			12 container
+				13 link partners.fresha.com/dashboard
+				14 link partners.fresha.com/calendar
+				15 checkbox Value: 0, ID: button-react-aria7077551636-_r_e_
+				16 checkbox Value: 0, ID: button-react-aria7077551636-_r_h_
+				17 checkbox Value: 0, ID: button-react-aria7077551636-_r_k_
+				18 checkbox Value: 0, ID: button-react-aria7077551636-_r_1n_
+				19 checkbox Value: 0, ID: button-react-aria7077551636-_r_q_
+				20 checkbox Value: 0, ID: button-react-aria7077551636-_r_t_
+				21 link partners.fresha.com/reports
+				22 link partners.fresha.com/add-ons
+				23 link partners.fresha.com/setup
+				24 checkbox Value: 0, ID: button-react-aria7077551636-_r_14_
+			25 container
+				26 checkbox Ocultar menú de navegación, Value: 0, ID: button-react-aria7077551636-_r_15_
+					27 text Ocultar menú de navegación
+				28 text Mensajería
+				29 link Description: Campañas de difusión, Value: partners.fresha.com/marketing/blast-campaigns/home
+				30 link Description: Automatizaciones, Value: partners.fresha.com/marketing/automated-messages
+				31 link Description: Historial de mensajes, Value: partners.fresha.com/marketing/notifications
+				32 text Promoción
+				33 link Description: Ofertas, Value: partners.fresha.com/marketing/deals
+				34 link Description: Precios inteligentes, Value: partners.fresha.com/marketing/peak-pricing
+			35 container
+				36 container
+					37 text Promociona tu negocio con las campañas de difusión Comparte con tus clientes ofertas especiales y novedades importantes por email o SMS y aumenta tus reservas. Personaliza el contenido del mensaje para adaptarlo a tu estilo Dirígete a todos los clientes, a grupos de clientes específicos o a personas concretas Accede de inmediato a valiosos informes sobre la campaña
+					38 checkbox Empezar ahora, Value: 0, ID: button-react-aria7077551636-_r_4q_
+						39 text Empezar ahora
+					40 link Description: Más información, Value: fresha.com/es/help-center/knowledge-base/marketing/101369-blast-campaigns-overview, ID: react-aria7077551636-_r_4s_
+
+The focused UI element is 29 link Description: Campañas de difusión, URL: partners.fresha.com/marketing/blast-campaigns/home

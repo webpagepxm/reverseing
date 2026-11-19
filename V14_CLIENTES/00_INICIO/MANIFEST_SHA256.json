@@ -1,0 +1,107 @@
+[
+  {
+    "relative_path": "00_INICIO/README_CODEX.md",
+    "size_bytes": 1561,
+    "sha256": "763f23b6231ec243f7117c3576e03079bb481783d22b3232728d2dd4302769c1"
+  },
+  {
+    "relative_path": "01_VIDEO/CLIENTES_SEGMENTOS_REPUTACION_2026-11-18.mov",
+    "size_bytes": 24993998,
+    "sha256": "27cfed69085ac0790739a6a8fb255ff70448ad3bb1350dea1329ca1d86f44cb6"
+  },
+  {
+    "relative_path": "02_CAPTURAS/t_006s.jpg",
+    "size_bytes": 56537,
+    "sha256": "6f6ab4936a8f1e9ec973dfd9ed6ab4c067a53a082c41e6e74f33ab3e901ca71f"
+  },
+  {
+    "relative_path": "02_CAPTURAS/t_018s.jpg",
+    "size_bytes": 48324,
+    "sha256": "8f503c8dd41d67cb5dceeb0db35e49fde2f77dab024c49c875ca13d53722d201"
+  },
+  {
+    "relative_path": "02_CAPTURAS/t_030s.jpg",
+    "size_bytes": 60201,
+    "sha256": "47ade2772b7b8c0935bf4e5be9e8d5255fc8c5a81e8415d71b3fc6ad55923614"
+  },
+  {
+    "relative_path": "02_CAPTURAS/t_042s.png",
+    "size_bytes": 258644,
+    "sha256": "0aed162ae489fa7571a83d8031879f4da7e52512fc4a4782a7a3a190d97c3b08"
+  },
+  {
+    "relative_path": "02_CAPTURAS/t_045s.jpg",
+    "size_bytes": 69502,
+    "sha256": "f405ee56056f1e017ec085049d0bd49042989313c5ec291ade5f8c95c85e06a1"
+  },
+  {
+    "relative_path": "02_CAPTURAS/t_050s.jpg",
+    "size_bytes": 69512,
+    "sha256": "4abd5f735a45f516c47b3d05048ade065eacfe99e23cde7776ae2788ed2804a2"
+  },
+  {
+    "relative_path": "02_CAPTURAS/t_055s.png",
+    "size_bytes": 47830,
+    "sha256": "3ced394c5dab65e01e71aa93f618a2db1da9cb32118256910de71e4bb3bed4df"
+  },
+  {
+    "relative_path": "02_CAPTURAS/t_058s.jpg",
+    "size_bytes": 25687,
+    "sha256": "29b442b5482781b4af361e819c73e415ef7a994980d7de68ef932d6e2768f7a1"
+  },
+  {
+    "relative_path": "02_CAPTURAS/t_062s.jpg",
+    "size_bytes": 63724,
+    "sha256": "5a8625f61bc0a53048e7df2b630768ae9300013a49dc1b56f2835ddd604c0d50"
+  },
+  {
+    "relative_path": "02_CAPTURAS/t_066s.jpg",
+    "size_bytes": 64620,
+    "sha256": "f82ecc8ae5007b151ce0198a32833550a05b3ee3113811d9adb66376f88aaca5"
+  },
+  {
+    "relative_path": "02_CAPTURAS/t_068s.png",
+    "size_bytes": 167857,
+    "sha256": "39e78c91f78a64a714d9485f6658085609ae73bf1d33215326d78272061f5c24"
+  },
+  {
+    "relative_path": "02_CAPTURAS/t_072s.jpg",
+    "size_bytes": 65212,
+    "sha256": "c0dd9d94d9aa71eebd28ac7adc8bffe349dc54d8fb82aaf6ef536aa6405a7d9f"
+  },
+  {
+    "relative_path": "02_CAPTURAS/t_084s.jpg",
+    "size_bytes": 42863,
+    "sha256": "31fb3841d4e5102da8ebf8549daf582d1e739bd7e3c1e2b17abe7e06a22c5c6e"
+  },
+  {
+    "relative_path": "02_CAPTURAS/t_089s.jpg",
+    "size_bytes": 64380,
+    "sha256": "8df0c7b2ecbd85b02e74476592cd2b8247c8964574b74e2c19dddb77db3c6632"
+  },
+  {
+    "relative_path": "03_DOCUMENTACION/HALLAZGOS_VERIFICADOS.md",
+    "size_bytes": 4347,
+    "sha256": "d2d94f93392525eb68fd2f7fbae6175cad755c0b70e71cbfad35e172903e0584"
+  },
+  {
+    "relative_path": "03_DOCUMENTACION/PENDIENTES_CODEx.md",
+    "size_bytes": 805,
+    "sha256": "ac1c1a506c874b6782de4d6742fce322630a53195e9e6668103c1d1ddea3e18d"
+  },
+  {
+    "relative_path": "03_DOCUMENTACION/UX_INTERACCIONES.md",
+    "size_bytes": 983,
+    "sha256": "2184dcc66d0de8981d13ae8c0151a2b45b0efd26f6c505e975df9d47d8487708"
+  },
+  {
+    "relative_path": "04_MATRIZ/COBERTURA.csv",
+    "size_bytes": 1349,
+    "sha256": "11fbd0449149c2f09855e17b59e5b43c5e053ce9c8e2951070fd70a50ef28637"
+  },
+  {
+    "relative_path": "04_MATRIZ/INDICE_CAPTURAS.csv",
+    "size_bytes": 1379,
+    "sha256": "3dd40f4bfacc60984314a51e02d73f52690cb4554ce1a2ce1d96d49036646496"
+  }
+]

@@ -1,0 +1,42 @@
+Browser tab: 3, Title: "Fresha - Partner Account", URL: "https://partners.fresha.com/legal-entities/wizard/source/blast-marketing/fees-overview".
+0 AXWebArea Fresha - Partner Account, URL: partners.fresha.com/legal-entities/wizard/source/blast-marketing/fees-overview
+	1 container app
+		2 container react
+			3 link Description: Fresha, Value: partners.fresha.com/calendar
+			4 checkbox Activar plan, Value: 0, ID: button-react-aria7077551636-_r_1k_
+				5 text Activar plan
+			6 checkbox Buscar, Value: 0, ID: button-react-aria7077551636-_r_2_
+			7 checkbox Análisis de rendimiento, Value: 0, ID: button-react-aria7077551636-_r_4_
+			8 checkbox Notificaciones, Value: 0, ID: button-react-aria7077551636-_r_8_
+				9 text 5
+			10 link Description: Fresha Connect, Value: partners.fresha.com/connect
+			11 checkbox (collapsed) Open user menu, Value: 0, ID: button-react-aria7077551636-_r_19_, Secondary Actions: Expand
+			12 container
+				13 link partners.fresha.com/dashboard
+				14 link partners.fresha.com/calendar
+				15 checkbox Value: 0, ID: button-react-aria7077551636-_r_e_
+				16 checkbox Value: 0, ID: button-react-aria7077551636-_r_h_
+				17 checkbox Value: 0, ID: button-react-aria7077551636-_r_k_
+				18 checkbox Value: 0, ID: button-react-aria7077551636-_r_1n_
+				19 checkbox Value: 0, ID: button-react-aria7077551636-_r_q_
+				20 checkbox Value: 0, ID: button-react-aria7077551636-_r_t_
+				21 link partners.fresha.com/reports
+				22 link partners.fresha.com/add-ons
+				23 link partners.fresha.com/setup
+				24 checkbox Value: 0, ID: button-react-aria7077551636-_r_14_
+			25 container
+				26 progress indicator Value: 50, ID: react-aria7077551636-_r_4t_
+				27 container
+					28 text Resumen de los recargos
+					29 checkbox Cerrar, Value: 0, ID: button-react-aria7077551636-_r_4u_
+						30 text Cerrar
+					31 checkbox Siguiente paso, Value: 0, ID: button-react-aria7077551636-_r_50_
+						32 text Siguiente paso
+				33 text Puedes controlar cuántos mensajes envías a tus clientes.
+				34 heading Resumen de los recargos, Value: 1
+					35 text Resumen de los recargos
+				36 container
+					37 text SMS del cliente Envía promociones por SMS a tus clientes 17,60 MXN por mensaje
+					38 text Emails del cliente Envía promociones por email a tus clientes 0,10 MXN por email
+
+The focused UI element is 0 AXWebArea Fresha - Partner Account, URL: partners.fresha.com/legal-entities/wizard/source/blast-marketing/fees-overview

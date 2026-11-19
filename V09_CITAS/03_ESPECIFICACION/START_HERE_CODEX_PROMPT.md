@@ -1,0 +1,3 @@
+# Instrucción para Codex — Citas
+
+Lee el ZIP completamente, incluido el respaldo anterior. El video nuevo ofrece evidencia verificada de un flujo de creación de cita. Primero redacta la especificación técnica independiente del módulo Agenda/Citas y una matriz de trazabilidad: ID de requisito -> archivo de evidencia -> fotograma/segundo -> nivel de certeza. No confundas opciones visibles con comportamiento probado. Después crea un modelo de datos y API propios, un plan de UX móvil y pruebas QA. No implementes sin revisar vacíos críticos: conflictos horarios, edición, cancelación y pagos. No necesitas copiar el código fuente de Fresha.

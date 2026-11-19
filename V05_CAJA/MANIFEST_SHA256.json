@@ -1,0 +1,118 @@
+{
+  "version": "V05",
+  "source_video_duration_seconds": 81.333,
+  "observations": {
+    "cash_opening": 2000,
+    "cash_in": 200,
+    "cash_out": 50,
+    "cash_final": 2150
+  },
+  "files": [
+    {
+      "path": "01_CAJA_OPERACIONES_V05/HALLAZGOS_CAJA.md",
+      "bytes": 4560,
+      "sha256": "7abc54c416ff2934543c4d07cbbbc2c1f831d79052f5090d895525f6ff271064"
+    },
+    {
+      "path": "01_CAJA_OPERACIONES_V05/KEYFRAMES/004s_caja_abierta_inicial.jpg",
+      "bytes": 73378,
+      "sha256": "975c16373e6763120dfb1acc9e86b54316de5850f22b0d8ce66cdbc214175bff"
+    },
+    {
+      "path": "01_CAJA_OPERACIONES_V05/KEYFRAMES/010s_motivos_entrada.jpg",
+      "bytes": 62612,
+      "sha256": "e170f1898ea8a3ca57758bc0dafe120b8e59f757475a3c48cda862ec8088cef9"
+    },
+    {
+      "path": "01_CAJA_OPERACIONES_V05/KEYFRAMES/028s_formulario_entrada.jpg",
+      "bytes": 63439,
+      "sha256": "4cfd2004f84cb50f5cfa0e56aeb7c47acb316e30c45d3c8b35df20571c185256"
+    },
+    {
+      "path": "01_CAJA_OPERACIONES_V05/KEYFRAMES/032s_entrada_200.jpg",
+      "bytes": 68856,
+      "sha256": "78639b55737635bcba73891e289389fb2db3172065c26806e88b7273d4aacee0"
+    },
+    {
+      "path": "01_CAJA_OPERACIONES_V05/KEYFRAMES/034s_saldo_2200.jpg",
+      "bytes": 73280,
+      "sha256": "268f01400a0a8879e8922794f1e0daf1bde0a11635e73cc724c54340b62380ce"
+    },
+    {
+      "path": "01_CAJA_OPERACIONES_V05/KEYFRAMES/038s_acciones_caja.jpg",
+      "bytes": 57586,
+      "sha256": "151bff26edadbd386e85c1c3a9a5e7d625428111a99109cb1a5ad51522ba5af3"
+    },
+    {
+      "path": "01_CAJA_OPERACIONES_V05/KEYFRAMES/040s_motivos_salida.jpg",
+      "bytes": 67827,
+      "sha256": "662aa8f3ee616a96630863cdb676dbfdbdfb6908b50af72093d1895212e516a6"
+    },
+    {
+      "path": "01_CAJA_OPERACIONES_V05/KEYFRAMES/050s_formulario_salida.jpg",
+      "bytes": 66092,
+      "sha256": "feea39820cb949156ee4ceccb8bc6688a903a5058c6a805da9c55fa8ba3cfe53"
+    },
+    {
+      "path": "01_CAJA_OPERACIONES_V05/KEYFRAMES/052s_salida_50.jpg",
+      "bytes": 68356,
+      "sha256": "f3ec7456a53bd16fc5f5e9a5fc5c7a19002825c1a0d3f8acd7890628b5ec412f"
+    },
+    {
+      "path": "01_CAJA_OPERACIONES_V05/KEYFRAMES/054s_saldo_2150.jpg",
+      "bytes": 73005,
+      "sha256": "6d63fbfbb378780a1b9b04a6e3221f73e92d3f9b3ae16d3c43075b208a83dfe2"
+    },
+    {
+      "path": "01_CAJA_OPERACIONES_V05/KEYFRAMES/058s_filtros_fecha.jpg",
+      "bytes": 53661,
+      "sha256": "a0abddc1221e5303443f8d3b3d8641c516a5bf629488e89e37c1f78569104223"
+    },
+    {
+      "path": "01_CAJA_OPERACIONES_V05/KEYFRAMES/062s_resumen_caja.jpg",
+      "bytes": 75774,
+      "sha256": "583d175693e040763470922d78eba6ddde74ffc41d13e00f9145be8202e1b739"
+    },
+    {
+      "path": "01_CAJA_OPERACIONES_V05/KEYFRAMES/066s_actividad_historial.jpg",
+      "bytes": 93425,
+      "sha256": "5b3c5186979748713622a35aa1016a47ced6caa2ce40d4ed2504586d4b88eb2c"
+    },
+    {
+      "path": "01_CAJA_OPERACIONES_V05/KEYFRAMES/068s_resumen_movimientos.jpg",
+      "bytes": 81969,
+      "sha256": "6300919f6d25f3c578e30026fb1f05a405ed993664571866df202db3bbc59172"
+    },
+    {
+      "path": "01_CAJA_OPERACIONES_V05/KEYFRAMES/072s_acciones_rapidas.jpg",
+      "bytes": 61183,
+      "sha256": "4f02c36e448c7c212380f3e34fc3bbb0d94c90c7d210c8889b509f98f2d97876"
+    },
+    {
+      "path": "01_CAJA_OPERACIONES_V05/SECUENCIA_VERIFICADA.csv",
+      "bytes": 1484,
+      "sha256": "8a23f8d5826e47add119a60af36cbe5fbad612b9036d166658e19c4cce4dfbbf"
+    },
+    {
+      "path": "01_CAJA_OPERACIONES_V05/VIDEO_ORIGINAL.mp4",
+      "bytes": 16120940,
+      "sha256": "067dfe411f8375cfb1fb978e6f004b62d8d9bd308d43d1badd0df4f51ceba8ea"
+    },
+    {
+      "path": "02_BACKUPS/FRESHA_CODEX_EVIDENCIA_V04.zip",
+      "bytes": 12277139,
+      "sha256": "bae4c1c7848602a933209b2df188afaf8a13d57fb4346cbe2194ff520fc9d23f"
+    },
+    {
+      "path": "03_CODEX_HANDOFF/START_HERE_CODEX.md",
+      "bytes": 2749,
+      "sha256": "8a385078d693b1881e4590aa7aeab3a2d9be20c9fbf8659f58390d58c5b31038"
+    },
+    {
+      "path": "README.md",
+      "bytes": 2329,
+      "sha256": "0ed59c6e90b4496397d6d345f21106bfeca24533802f74c72d737ca5410cb82b"
+    }
+  ],
+  "warning": "Footage may contain personal data; inspect before external distribution."
+}

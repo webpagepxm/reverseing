@@ -1,0 +1,35 @@
+feature_id,module_id,nombre,estado,evidencias,observacion,pendiente
+F001,CRM,Alta de cliente,Comportamiento verificado,E01,Guardar sin nombre produce error; nombre y apellido ficticios sin contacto guardan,Otros campos obligatorios y duplicados
+F002,CRM,Perfil ampliado,Parcialmente verificado,E01,Nacimiento género pronombres origen referencia idioma ocupación país etiquetas direcciones contacto emergencia,Edición persistida y segmentación
+F003,AGENDA,Alta de cita,Comportamiento verificado,E01,Cliente ficticio servicio 90 minutos 25 MXN; guardado confirmado,Disponibilidad concurrente
+F004,AGENDA,Estados de cita,Descubierto,E01,Reservada confirmada en espera iniciada inasistencia cancelar,Solo reservada persistida
+F005,AGENDA,Disponibilidad online,Parcialmente verificado,E01,12 meses; inmediata; intervalos15m; cancelación/reprogramación sin límite en cuenta,No universal; límites no ensayados
+F006,AGENDA,Grupos recurrencia bloqueos lista espera,Descubierto,E01,Acciones ofrecidas en agenda,Flujos completos
+F007,POS,Transferir cita a carrito,Comportamiento verificado,E01,Cliente servicio empleado e importe conservados,Impuestos descuentos
+F008,POS,Propina y métodos de pago,Parcialmente verificado,E01,Ninguna10%18%25%custom; efectivo regalo dividido otros; guardar impago,No se ejecutó cobro
+F009,POS,Descartar borrador,Comportamiento verificado,E01,Confirmación de descarte ejecutada,No prueba devolución
+F010,SERV,Editar catálogo,Parcialmente verificado,E01,Nombre255 descripción1000 categoría precio duración tiempo adicional,Guardar cambios
+F011,SERV,Asignar equipo y recursos,Parcialmente verificado,E01,Equipo múltiple visible; recursos complementos formularios online comisiones,Restricciones recursos
+F012,TEAM,Perfil y métricas,Parcialmente verificado,E01,Ventas citas clientes ocupación retención; salario fichaje pagos adelantos,Cálculos
+F013,TEAM,Turnos,Parcialmente verificado,E01,Grilla semanal; independiente de horario público,Ausencias excepciones
+F014,ROLE,Niveles de acceso,Descubierto,E01,Básico bajo medio alto propietario sin acceso,Autorización efectiva
+F015,COMM,Política de comisiones,Parcialmente verificado,E01,Deducciones descuentos impuestos costes; facturas pagadas; topes,Liquidaciones y reversión
+F016,INV,Producto,Parcialmente verificado,E01,Barcode marca unidad coste margen venta impuestos SKU proveedor stock alertas,Sin guardado
+F017,INV,Pedidos conteos proveedores,Descubierto,E01,Submódulos visibles,Entradas salidas conciliación
+F018,REPORT,Catálogo de informes,Descubierto,E01,64 informes; 56 estándar8 premium5 paneles; categorías no disjuntas,Resto de reportes
+F019,REPORT,Resumen de citas,Comportamiento verificado,E01,Mes y centro muestran1 cita1 servicio25MXN1 cliente nuevo,No demuestra cobro
+F020,REPORT,Personalización exportación,Descubierto,E01,CSV Excel PDF; columnas gráficos filtros vistas premium,Descarga y permisos
+F021,MARK,Automatizaciones por evento,Parcialmente verificado,E02,Recordatorios estados citas espera reseña rebooking cumpleaños fidelidad chat,Entrega
+F022,MARK,Detalle recordatorio,Comportamiento verificado,E03;E04,Activo;3 días antes;canales ninguno; métricas0,Programación y entrega
+F023,MARK,Campañas,Parcialmente verificado,E05;E06,Introducción segmentos/personas; empezar abre alta y tarifas,Editor bloqueado por alta no completada
+F024,MARK,Tipos de ofertas,Descubierto,E07;E08,Flash código última hora madrugador,Guardar aplicar y vencer
+F025,MARK,Cupón configuración,Parcialmente verificado,E09;E10,Nombre código descripción600 descuento%/cantidad vigencia centros equipo artículos,Validaciones y aplicación
+F026,MARK,Límites cupón,Parcialmente verificado,E10,Por cliente global segmentos mínimo venta máximo artículos POS/online,Enforcement no probado
+F027,MARK,Historial mensajes y precios inteligentes,Descubierto,E02,Rutas de menú visibles,Contenido y cálculos
+F028,ADMIN,Ajustes del negocio,Descubierto,E01,Sucursal horarios impuestos recibos tarifas formularios facturación,Edición
+F029,ONLINE,Canales reserva,Descubierto,E01;E11,Marketplace Google redes enlaces QR,Reserva pública
+F030,PACK,Bonos membresías tarjetas regalo,Descubierto,E01;E09,Referencias en POS ofertas y comisiones,Alta venta canje vencimiento
+F031,DASH,Dashboard,Pendiente,E02,Ruta visible,Indicadores no inspeccionados
+F032,MOBILE,Móvil onboarding,Pendiente,,No evidencia conservada,Todos los flujos
+F033,INTEG,Complementos,Descubierto,E11,Pagos soporte Insights reseñas fidelidad datos IA chat web recursos,Activación funcional
+F034,INTEG,Integraciones contables y adquisición,Descubierto,E11,Xero QuickBooks Google reservas Meta Analytics Ads,Sincronización

@@ -1,0 +1,199 @@
+Browser tab: 3, Title: "Fresha - Partner Account", URL: "https://partners.fresha.com/marketing/automated-messages".
+0 AXWebArea Fresha - Partner Account, URL: partners.fresha.com/marketing/automated-messages
+	1 container app
+		2 container react
+			3 link Description: Fresha, Value: partners.fresha.com/calendar
+			4 checkbox Activar plan, Value: 0, ID: button-react-aria7077551636-_r_1k_
+				5 text Activar plan
+			6 checkbox Buscar, Value: 0, ID: button-react-aria7077551636-_r_2_
+			7 checkbox Análisis de rendimiento, Value: 0, ID: button-react-aria7077551636-_r_4_
+			8 checkbox Notificaciones, Value: 0, ID: button-react-aria7077551636-_r_8_
+				9 text 5
+			10 link Description: Fresha Connect, Value: partners.fresha.com/connect
+			11 checkbox (collapsed) Open user menu, Value: 0, ID: button-react-aria7077551636-_r_19_, Secondary Actions: Expand
+			12 container
+				13 link partners.fresha.com/dashboard
+				14 link partners.fresha.com/calendar
+				15 checkbox Value: 0, ID: button-react-aria7077551636-_r_e_
+				16 checkbox Value: 0, ID: button-react-aria7077551636-_r_h_
+				17 checkbox Value: 0, ID: button-react-aria7077551636-_r_k_
+				18 checkbox Value: 0, ID: button-react-aria7077551636-_r_1n_
+				19 checkbox Value: 0, ID: button-react-aria7077551636-_r_q_
+				20 checkbox Value: 0, ID: button-react-aria7077551636-_r_t_
+				21 link partners.fresha.com/reports
+				22 link partners.fresha.com/add-ons
+				23 link partners.fresha.com/setup
+				24 checkbox Value: 0, ID: button-react-aria7077551636-_r_14_
+			25 container
+				26 checkbox Ocultar menú de navegación, Value: 0, ID: button-react-aria7077551636-_r_15_
+					27 text Ocultar menú de navegación
+				28 text Mensajería
+				29 link Description: Campañas de difusión, Value: partners.fresha.com/marketing/blast-campaigns/home
+				30 link Description: Automatizaciones, Value: partners.fresha.com/marketing/automated-messages
+				31 link Description: Historial de mensajes, Value: partners.fresha.com/marketing/notifications
+				32 text Promoción
+				33 link Description: Ofertas, Value: partners.fresha.com/marketing/deals
+				34 link Description: Precios inteligentes, Value: partners.fresha.com/marketing/peak-pricing
+			35 container
+				36 text Automatizaciones Consulta y administra todos los mensajes automáticos que se envían a tus clientes. 
+				37 link Description: Más información, Value: fresha.com/es/help-center/knowledge-base/marketing/101299-automated-messages-overview, ID: react-aria7077551636-_r_1s_
+				38 text Saldo de comunicación
+				39 text 0 MXN
+				40 checkbox (collapsed) Mostrar acciones de gestión de saldos, Value: 0, ID: button-react-aria7077551636-_r_3k_, Secondary Actions: Expand
+					41 text Mostrar acciones de gestión de saldos
+				42 text Saldo de mensajería insuficiente Activa las recargas automáticas para asegurarte de que nunca dejes de enviar mensajes importantes a tus clientes cuando tu saldo esté bajo
+				43 checkbox Configurar ahora, Value: 0, ID: button-react-aria7077551636-_r_1t_
+					44 text Configurar ahora
+				45 container
+					46 tab group react-aria7077551636-_r_21_
+						47 tab (selected, settable, boolean) Recordatorios, Value: 1, ID: react-aria7077551636-_r_21_-tab-REMINDERS
+						48 tab (selectable, settable, boolean) Info. sobre las citas, Value: 0, ID: react-aria7077551636-_r_21_-tab-APPOINTMENT_UPDATES
+						49 tab (selectable, settable, boolean) Info. sobre la lista de espera, Value: 0, ID: react-aria7077551636-_r_21_-tab-WAITLIST
+						50 tab (selectable, settable, boolean) Aumento de las reservas, Value: 0, ID: react-aria7077551636-_r_21_-tab-INCREASE_BOOKINGS
+						51 tab (selectable, settable, boolean) Metas de los clientes, Value: 0, ID: react-aria7077551636-_r_21_-tab-CELEBRATE_MILESTONES
+						52 tab (selectable, settable, boolean) Conversaciones, Value: 0, ID: react-aria7077551636-_r_21_-tab-CLIENT_MESSAGES
+						53 tab (selectable, settable, boolean) Programa de fidelidad, Value: 0, ID: react-aria7077551636-_r_21_-tab-LOYALTY
+					54 checkbox (disabled) Desplazar a la izquierda, Value: 0, ID: button-react-aria7077551636-_r_3g_
+						55 text Desplazar a la izquierda
+					56 checkbox Desplazar a la derecha, Value: 0, ID: button-react-aria7077551636-_r_3i_
+						57 text Desplazar a la derecha
+				58 container REMINDERS
+					59 text Recordatorios
+					60 container
+						61 checkbox Value: 0, ID: button-react-aria7077551636-_r_2a_
+						62 heading Recordatorio de próxima cita 3 días antes, Value: 3
+							63 text Recordatorio de próxima cita 3 días antes
+						64 text Envía una notificación a los clientes para recordarles cuándo es su próxima cita. Activo
+					65 container
+						66 checkbox Value: 0, ID: button-react-aria7077551636-_r_2b_
+						67 heading Recordatorio de próxima cita 24 horas antes, Value: 3
+							68 text Recordatorio de próxima cita 24 horas antes
+						69 text Envía una notificación a los clientes para recordarles cuándo es su próxima cita. Activo
+					70 container
+						71 checkbox Value: 0, ID: button-react-aria7077551636-_r_2c_
+						72 heading Recordatorio de próxima cita 1 hora antes, Value: 3
+							73 text Recordatorio de próxima cita 1 hora antes
+						74 text Envía una notificación a los clientes para recordarles cuándo es su próxima cita. Activo
+				75 container APPOINTMENT_UPDATES
+					76 text Info. sobre las citas
+					77 container
+						78 checkbox Value: 0, ID: button-react-aria7077551636-_r_2d_
+						79 heading Nueva cita, Value: 3
+							80 text Nueva cita
+						81 text Envía una notificación a los clientes cuando se les reserva una cita. Activo
+					82 container
+						83 checkbox Value: 0, ID: button-react-aria7077551636-_r_2e_
+						84 heading Cita reprogramada, Value: 3
+							85 text Cita reprogramada
+						86 text Envía una notificación automática a los clientes cuando se modifique la hora de inicio de su cita. Activo
+					87 container
+						88 checkbox Value: 0, ID: button-react-aria7077551636-_r_2f_
+						89 heading Cita cancelada, Value: 3
+							90 text Cita cancelada
+						91 text Envía una notificación automática a los clientes cuando se cancele su cita. Activo
+					92 container
+						93 checkbox Value: 0, ID: button-react-aria7077551636-_r_2g_
+						94 heading Inasistencia, Value: 3
+							95 text Inasistencia
+						96 text Envía una notificación automática a los clientes cuando su cita se marque como inasistencia. Activo
+					97 container
+						98 checkbox Value: 0, ID: button-react-aria7077551636-_r_2h_
+						99 heading Mensaje de agradecimiento por la visita, Value: 3
+							100 text Mensaje de agradecimiento por la visita
+						101 text Envía una notificación a los clientes cuando se complete su cita, con un enlace para que dejen una reseña. Activo
+				102 container WAITLIST
+					103 text Info. sobre la lista de espera
+					104 container
+						105 checkbox Value: 0, ID: button-react-aria7077551636-_r_2i_
+						106 heading Mensaje de incorporación a la lista de espera, Value: 3
+							107 text Mensaje de incorporación a la lista de espera
+						108 text Envía una notificación automática a los clientes cuando se unan a la lista de espera. Activo
+					109 container
+						110 checkbox Value: 0, ID: button-react-aria7077551636-_r_2j_
+						111 heading Franja horaria disponible, Value: 3
+							112 text Franja horaria disponible
+						113 text Se envía automáticamente a los clientes cuando hay una franja horaria disponible para reservar. Activo
+				114 container INCREASE_BOOKINGS
+					115 text Aumento de las reservas
+					116 container
+						117 checkbox Value: 0, ID: button-react-aria7077551636-_r_2k_
+						118 heading Mensaje de recordatorio para volver a reservar, Value: 3
+							119 text Mensaje de recordatorio para volver a reservar
+						120 text Envía una notificación a tus clientes para recordarles que vuelvan a reservar unas semanas después de su última cita. Activo
+					121 container
+						122 checkbox Value: 0, ID: button-react-aria7077551636-_r_2l_
+						123 heading Mensaje de cumpleaños, Value: 3
+							124 text Mensaje de cumpleaños
+						125 text Envía una notificación a tus clientes para sorprenderles en su día y logra promover la fidelidad y la retención de los clientes.
+						126 checkbox Activar, Value: 0, ID: button-react-aria7077551636-_r_2m_
+							127 text Activar
+					128 container
+						129 checkbox Value: 0, ID: button-react-aria7077551636-_r_2o_
+						130 heading Mensaje de recuperación de antiguos clientes, Value: 3
+							131 text Mensaje de recuperación de antiguos clientes
+						132 text Envía una notificación a los clientes que lleven un tiempo sin visitarte y anímalos a reservar su próxima cita.
+						133 checkbox Activar, Value: 0, ID: button-react-aria7077551636-_r_2p_
+							134 text Activar
+					135 container
+						136 checkbox Value: 0, ID: button-react-aria7077551636-_r_2r_
+						137 heading Mensaje para recompensar a tus clientes fieles, Value: 3
+							138 text Mensaje para recompensar a tus clientes fieles
+						139 text Envía una notificación a los clientes que más gastan y fidelízalos aún más con ofertas especiales.
+						140 checkbox Activar, Value: 0, ID: button-react-aria7077551636-_r_2s_
+							141 text Activar
+				142 container CELEBRATE_MILESTONES
+					143 text Metas de los clientes
+					144 container
+						145 checkbox Value: 0, ID: button-react-aria7077551636-_r_2u_
+						146 heading Mensaje de bienvenida de nuevos clientes, Value: 3
+							147 text Mensaje de bienvenida de nuevos clientes
+						148 text Envía una notificación para celebrar la llegada de nuevos clientes a tu negocio enviándoles un descuento.
+						149 checkbox Activar, Value: 0, ID: button-react-aria7077551636-_r_2v_
+							150 text Activar
+					151 container
+						152 checkbox Value: 0, ID: button-react-aria7077551636-_r_31_
+						153 text Crear nuevo
+				154 container CLIENT_MESSAGES
+					155 text Conversaciones
+					156 container
+						157 checkbox Value: 0, ID: button-react-aria7077551636-_r_32_
+						158 heading Nuevo mensaje de chat, Value: 3
+							159 text Nuevo mensaje de chat
+						160 text Notifica a los clientes cuando les envías un mensaje a través de Fresha Connect. Activo
+					161 container
+						162 checkbox Value: 0, ID: button-react-aria7077551636-_r_33_
+						163 heading Mensaje recibido, Value: 3
+							164 text Mensaje recibido
+						165 text Notifica a los clientes que recibiste el mensaje que enviaron a través de tu página de contacto Activo
+				166 container LOYALTY
+					167 text Programa de fidelidad
+					168 container
+						169 checkbox Value: 0, ID: button-react-aria7077551636-_r_34_
+						170 heading Resumen de puntos obtenidos, Value: 3
+							171 text Resumen de puntos obtenidos
+						172 text Enviar a los clientes un resumen de los puntos obtenidos
+						173 checkbox Activar, Value: 0, ID: button-react-aria7077551636-_r_35_
+							174 text Activar
+					175 container
+						176 checkbox Value: 0, ID: button-react-aria7077551636-_r_37_
+						177 heading Nivel de fidelidad alcanzado, Value: 3
+							178 text Nivel de fidelidad alcanzado
+						179 text Notificar a los clientes cuando alcancen un nuevo nivel
+						180 checkbox Activar, Value: 0, ID: button-react-aria7077551636-_r_38_
+							181 text Activar
+					182 container
+						183 checkbox Value: 0, ID: button-react-aria7077551636-_r_3a_
+						184 heading Resumen de recompensas conseguidas, Value: 3
+							185 text Resumen de recompensas conseguidas
+						186 text Envía a tus clientes un resumen de sus recompensas
+						187 checkbox Activar, Value: 0, ID: button-react-aria7077551636-_r_3b_
+							188 text Activar
+					189 container
+						190 checkbox Value: 0, ID: button-react-aria7077551636-_r_3d_
+						191 heading Recompensas obtenidas por las recomendaciones, Value: 3
+							192 text Recompensas obtenidas por las recomendaciones
+						193 text Notifica a los clientes actuales cuando sus amigos completen sus primeras citas
+						194 checkbox Activar, Value: 0, ID: button-react-aria7077551636-_r_3e_
+							195 text Activar
+
+The focused UI element is 0 AXWebArea Fresha - Partner Account, URL: partners.fresha.com/marketing/automated-messages

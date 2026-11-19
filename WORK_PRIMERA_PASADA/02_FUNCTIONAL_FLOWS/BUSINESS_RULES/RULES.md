@@ -1,0 +1,11 @@
+# Reglas y nivel de certeza
+- BR01 OBSERVADO E01: alta vacía rechazada, alta ficticia sin contacto aceptada en prueba concreta.
+- BR02 OBSERVADO E01: POS hereda selección de cita. Conservación histórica de precio frente a cambios futuros DESCONOCIDA.
+- BR03 OBSERVADO E01: reportes separan indicadores de citas;25MXN observados no prueban pago.
+- BR04 OBSERVADO E01: intervalo/anticipación/cancelación son ajustes cuenta, no reglas universales.
+- BR05 OBSERVADO E04: Activo coexiste con canales Ninguno; entrega DESCONOCIDA.
+- BR06 OBSERVADO E10: oferta permite filtrar personal/centros/artículos/segmentos/venta/canal. Orden de evaluación, combinación de descuentos y redondeo DESCONOCIDOS.
+- BR07 OBSERVADO E06: acceso al editor campaña pasa por alta con tarifas en esta cuenta. No afirmar requisito universal.
+- BR08 OBSERVADO E01: configuración de comisión posee bases y deducciones independientes. Fórmula aplicada DESCONOCIDA.
+- BR09 INFERIDO: implementación propia debe reservar recursos atómicamente y proteger idempotencia de cobros/cupones/mensajes.
+- BR10 PROPUESTO: separar estado cita, venta, pago, devolución, stock y comisión; nunca representar todos con un booleano pagado.

@@ -1,0 +1,121 @@
+{
+  "title": "FRESHA_CODEX_EVIDENCIA_V06",
+  "source_video_duration_seconds": 64.766667,
+  "files": [
+    {
+      "path": "01_CIERRE_CAJA_V06/CRONOLOGIA.csv",
+      "bytes": 1424,
+      "sha256": "0526864f79ace4e87cbd5e1a7aeb2313ac3ae5cc73632e0139dc1d7554f94cbc"
+    },
+    {
+      "path": "01_CIERRE_CAJA_V06/HALLAZGOS_CIERRE.md",
+      "bytes": 5058,
+      "sha256": "dc053284feb18484831209c5163eee2dd59fa7bda1bd53f61a631e7eb8a572e6"
+    },
+    {
+      "path": "01_CIERRE_CAJA_V06/KEYFRAMES/00s_inicio_caja_abierta_y_acciones.jpg",
+      "bytes": 58967,
+      "sha256": "2e0e90d451652870ecfc15f21f1a4d154301b9da60d711e98066266b55c644d3"
+    },
+    {
+      "path": "01_CIERRE_CAJA_V06/KEYFRAMES/02s_filtro_fechas.jpg",
+      "bytes": 53596,
+      "sha256": "65cadf58300ba046baabcdfa1dca35700ca2a462fedcf5349a8dcad528a05736"
+    },
+    {
+      "path": "01_CIERRE_CAJA_V06/KEYFRAMES/06s_menu_opciones_informes_ajustes.jpg",
+      "bytes": 57450,
+      "sha256": "a5ff080069d573d0083d4e604b244cfea287cf3f594c34c690c0c491b37439cb"
+    },
+    {
+      "path": "01_CIERRE_CAJA_V06/KEYFRAMES/08s_ajustes_cajas_lista.jpg",
+      "bytes": 49926,
+      "sha256": "2df9397ac235b752253e88face9a924fca993cefe83a131bcdab0a8906be7fec"
+    },
+    {
+      "path": "01_CIERRE_CAJA_V06/KEYFRAMES/14s_editar_caja_opciones_avanzadas.jpg",
+      "bytes": 86298,
+      "sha256": "bc71afd9411c8f1d9f9c899b42d503162ae27cafee1076984238e90e1d91507c"
+    },
+    {
+      "path": "01_CIERRE_CAJA_V06/KEYFRAMES/20s_modulo_ventas_movil.jpg",
+      "bytes": 58640,
+      "sha256": "a18c4c900ef6027abcf58ebb0478c55abc4d99edf8161db757018d7e96031ca8"
+    },
+    {
+      "path": "01_CIERRE_CAJA_V06/KEYFRAMES/24s_caja_abierta_saldo2150.jpg",
+      "bytes": 66106,
+      "sha256": "c7ef68f4272396b5d719ef96ef7776590d073f7440524c6bfdcfb3dc145013f5"
+    },
+    {
+      "path": "01_CIERRE_CAJA_V06/KEYFRAMES/26s_detalle_caja_abierta.jpg",
+      "bytes": 69280,
+      "sha256": "ea0cc46b6948ca69cb7db897c6291d8e351347ee4403397624af4b72c343abee"
+    },
+    {
+      "path": "01_CIERRE_CAJA_V06/KEYFRAMES/30s_cierre_tipos_pago.jpg",
+      "bytes": 57457,
+      "sha256": "ededce17e1417372c89f865bda6a3aafff170e25742365999f35a48623563c00"
+    },
+    {
+      "path": "01_CIERRE_CAJA_V06/KEYFRAMES/34s_cierre_canjes_depositos_credito.jpg",
+      "bytes": 60949,
+      "sha256": "10186cd15bb8b32016afe72e5d5b33d562a800eadd81077f475c25bc97d17b92"
+    },
+    {
+      "path": "01_CIERRE_CAJA_V06/KEYFRAMES/36s_prevision_efectivo_saldo_total.jpg",
+      "bytes": 61999,
+      "sha256": "6800b74356111fe2a525b09dac18d369c84790487fdb4353449045a928f717f0"
+    },
+    {
+      "path": "01_CIERRE_CAJA_V06/KEYFRAMES/38s_campos_reserva_banco_comentario.jpg",
+      "bytes": 65631,
+      "sha256": "4d680014a07f0cb0d7d97061a2ac8d393f07b7eb9f7731be00cd316ad43ce314"
+    },
+    {
+      "path": "01_CIERRE_CAJA_V06/KEYFRAMES/50s_formulario_importes_cero.jpg",
+      "bytes": 68010,
+      "sha256": "c73f5ee3371b522a3bc8ce920260b7b224014a7ce9079ef065891baba8dc0e87"
+    },
+    {
+      "path": "01_CIERRE_CAJA_V06/KEYFRAMES/52s_importe_reserva_55.jpg",
+      "bytes": 66446,
+      "sha256": "c137724df89c912422bf4a7fb74879627cb1ed9390c1a60c3ec976f08ec1bef0"
+    },
+    {
+      "path": "01_CIERRE_CAJA_V06/KEYFRAMES/54s_importe_banco_85.jpg",
+      "bytes": 60359,
+      "sha256": "6ee532f72a732d518b6b49669bce1f4691ecd2fb4f7301a9880b5000089e309f"
+    },
+    {
+      "path": "01_CIERRE_CAJA_V06/KEYFRAMES/58s_valores55_y85_y_comentario.jpg",
+      "bytes": 55370,
+      "sha256": "0a2d909e952eff114467964e7752401ce5e6e508f087b0d393a0e5f8fe91b2ec"
+    },
+    {
+      "path": "01_CIERRE_CAJA_V06/KEYFRAMES/64s_formulario_sin_confirmar.jpg",
+      "bytes": 54404,
+      "sha256": "ec74f7eced1a49664f94710d2e0f460e6fd1e33d3df3eedbd63bd3aaf1bc7706"
+    },
+    {
+      "path": "01_CIERRE_CAJA_V06/VIDEO_ORIGINAL.mp4",
+      "bytes": 15040916,
+      "sha256": "d71dd107e0a4aeaff5d2cd4e3fe91f66cfdda6f6d905ba56bd968ce7c73f8f9e"
+    },
+    {
+      "path": "02_BACKUPS/FRESHA_CODEX_EVIDENCIA_V05.zip",
+      "bytes": 29170290,
+      "sha256": "33de37698b89058d44aedb10d76e9ced2cd9f712277d41ec1548ce7f71349752"
+    },
+    {
+      "path": "03_CODEX_HANDOFF/START_HERE_CODEX.md",
+      "bytes": 1121,
+      "sha256": "da1276d8c362baf523f9f5fa4682101eb01030691e667983c5dcf86034ba223c"
+    },
+    {
+      "path": "README.md",
+      "bytes": 1627,
+      "sha256": "8bfdb13e5ff79c653545c2713c072143b57078de7c1973b913ab93be49437544"
+    }
+  ]
+}

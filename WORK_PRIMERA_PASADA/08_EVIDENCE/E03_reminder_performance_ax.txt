@@ -1,0 +1,121 @@
+Browser tab: 3, Title: "Fresha - Partner Account", URL: "https://partners.fresha.com/marketing/automated-messages/overview/appointment-reminder-3".
+0 AXWebArea Fresha - Partner Account, URL: partners.fresha.com/marketing/automated-messages/overview/appointment-reminder-3
+	1 container app
+		2 container react
+			3 link Description: Fresha, Value: partners.fresha.com/calendar
+			4 checkbox Activar plan, Value: 0, ID: button-react-aria7077551636-_r_1k_
+				5 text Activar plan
+			6 checkbox Buscar, Value: 0, ID: button-react-aria7077551636-_r_2_
+			7 checkbox Análisis de rendimiento, Value: 0, ID: button-react-aria7077551636-_r_4_
+			8 checkbox Notificaciones, Value: 0, ID: button-react-aria7077551636-_r_8_
+				9 text 5
+			10 link Description: Fresha Connect, Value: partners.fresha.com/connect
+			11 checkbox (collapsed) Open user menu, Value: 0, ID: button-react-aria7077551636-_r_19_, Secondary Actions: Expand
+			12 container
+				13 link partners.fresha.com/dashboard
+				14 link partners.fresha.com/calendar
+				15 checkbox Value: 0, ID: button-react-aria7077551636-_r_e_
+				16 checkbox Value: 0, ID: button-react-aria7077551636-_r_h_
+				17 checkbox Value: 0, ID: button-react-aria7077551636-_r_k_
+				18 checkbox Value: 0, ID: button-react-aria7077551636-_r_1n_
+				19 checkbox Value: 0, ID: button-react-aria7077551636-_r_q_
+				20 checkbox Value: 0, ID: button-react-aria7077551636-_r_t_
+				21 link partners.fresha.com/reports
+				22 link partners.fresha.com/add-ons
+				23 link partners.fresha.com/setup
+				24 checkbox Value: 0, ID: button-react-aria7077551636-_r_14_
+			25 container
+				26 checkbox Ocultar menú de navegación, Value: 0, ID: button-react-aria7077551636-_r_15_
+					27 text Ocultar menú de navegación
+				28 text Mensajería
+				29 link Description: Campañas de difusión, Value: partners.fresha.com/marketing/blast-campaigns/home
+				30 link Description: Automatizaciones, Value: partners.fresha.com/marketing/automated-messages
+				31 link Description: Historial de mensajes, Value: partners.fresha.com/marketing/notifications
+				32 text Promoción
+				33 link Description: Ofertas, Value: partners.fresha.com/marketing/deals
+				34 link Description: Precios inteligentes, Value: partners.fresha.com/marketing/peak-pricing
+			35 container
+				36 checkbox Atrás, Value: 0, ID: button-react-aria7077551636-_r_3s_
+					37 text Atrás
+				38 content list
+					39 link Description: Automatizaciones •, Value: partners.fresha.com/marketing/automated-messages
+					40 text Recordatorio de próxima cita
+				41 heading Recordatorio de próxima cita 3 días antes, Value: 1
+					42 text Recordatorio de próxima cita 3 días antes
+				43 text Activo
+				44 checkbox (collapsed) Opciones, Value: 0, ID: button-react-aria7077551636-_r_3u_, Secondary Actions: Expand
+					45 text Opciones
+				46 text Envía una notificación a los clientes para recordarles cuándo es su próxima cita.
+				47 container
+					48 tab group react-aria7077551636-_r_44_
+						49 tab (selected, settable, boolean) Rendimiento, Value: 1, ID: react-aria7077551636-_r_44_-tab-PERFORMANCE_TAB
+						50 tab (selectable, settable, boolean) Vista previa, Value: 0, ID: react-aria7077551636-_r_44_-tab-PREVIEW_TAB
+						51 tab (selectable, settable, boolean) Detalles, Value: 0, ID: react-aria7077551636-_r_44_-tab-DETAILS_TAB
+				52 container Description: Rendimiento, ID: react-aria7077551636-_r_44_-tabpanel-PERFORMANCE_TAB
+					53 checkbox (collapsed) Año actual, Value: 0, ID: button-react-aria7077551636-_r_4a_, Secondary Actions: Expand
+						54 text Año actual
+					55 container inner-history
+						56 text Mensajes enviados a lo largo del tiempo
+						57 checkbox (collapsed) Mensajes enviados, Value: 0, ID: button-react-aria7077551636-_r_4e_, Secondary Actions: Expand
+							58 text Mensajes enviados
+						59 container
+							60 image
+							61 text Email
+							62 image
+							63 text SMS
+							64 image
+							65 text WhatsApp
+							66 container
+								67 text ene
+								68 text feb
+								69 text mar
+								70 text abr
+								71 text may
+								72 text jun
+								73 text jul
+								74 text ago
+								75 text sept
+								76 text oct
+								77 text nov
+					78 container inner-sent
+						79 text Enviada
+						80 image Total de mensajes enviados en todos los canales durante el periodo seleccionado
+						81 text 0
+						82 container
+							83 text Email :  0
+						84 container
+							85 text SMS :  0
+						86 container
+							87 text WhatsApp :  0
+					88 container inner-delivered
+						89 text Entregado
+						90 image Total de mensajes entregados en todos los canales durante el periodo seleccionado
+						91 text 0
+						92 container
+							93 text Email :  0 (0 %)
+						94 container
+							95 text SMS :  0 (0 %)
+						96 container
+							97 text WhatsApp :  0 (0 %)
+					98 container inner-opened
+						99 text Abierto
+						100 image Total de mensajes abiertos en todos los canales durante el periodo seleccionado
+						101 text 0
+						102 container
+							103 text Email :  0 (0 %)
+						104 container
+							105 text SMS :  -
+						106 container
+							107 text WhatsApp :  -
+					108 container inner-clicked
+						109 text Con clicks
+						110 image Total de mensajes en los que se ha hecho clic en todos los canales durante el periodo seleccionado
+						111 text 0
+						112 container
+							113 text Email :  0 (0 %)
+						114 container
+							115 text SMS :  0 (0 %)
+						116 container
+							117 text WhatsApp :  0 (0 %)
+
+The focused UI element is 0 AXWebArea Fresha - Partner Account, URL: partners.fresha.com/marketing/automated-messages/overview/appointment-reminder-3

@@ -1,0 +1,132 @@
+{
+  "source": "Grabación de pantalla 2026-11-17 a la(s) 23.32.13.mov",
+  "duration_seconds": 333.366667,
+  "scope": "Evidencia visual de interfaz; no código fuente ni peticiones de red",
+  "files": [
+    {
+      "path": "HALLAZGOS_VIDEO.md",
+      "bytes": 9069,
+      "sha256": "53e513b4d2ff9d05fafdee924d4ba05ad6c9286b8e312fb4b2af9f72f791f6d0"
+    },
+    {
+      "path": "INDICE_EVIDENCIAS.csv",
+      "bytes": 2146,
+      "sha256": "e447f705d3dbd3422f4b22f99ea3517e0593fb16a4d2ccb3fbaefa7f2758240a"
+    },
+    {
+      "path": "START_HERE_CODEX.md",
+      "bytes": 984,
+      "sha256": "fa7c5b42bded607dba88d3cdb4dd05187b172f915d285bb7e016bc4a8c41e016"
+    },
+    {
+      "path": "capturas_redactadas/015s_cliente_datos.jpg",
+      "bytes": 98568,
+      "sha256": "be3e19084a510c025f5061ebf7b4f749e4c48720a8909a80cd704754af53e875"
+    },
+    {
+      "path": "capturas_redactadas/025s_cliente_articulos.jpg",
+      "bytes": 83606,
+      "sha256": "260adc1b84b302d6b8cb914fb284496de8693bbe11a4bec90507c397a2363f86"
+    },
+    {
+      "path": "capturas_redactadas/035s_fidelidad_promocion.jpg",
+      "bytes": 105993,
+      "sha256": "e40539aa82355c47c74b1147fc24c404c84c573a5d04ff4752d954f32ebaba2b"
+    },
+    {
+      "path": "capturas_redactadas/065s_calendario.jpg",
+      "bytes": 110633,
+      "sha256": "e682715f464c7b4d2b080faf93511c9ec07006a860cf1dd64e3950127d4b5402"
+    },
+    {
+      "path": "capturas_redactadas/075s_carrito_vacio.jpg",
+      "bytes": 68088,
+      "sha256": "7ad2bcc7c6eeca2b20e894258ac82283e449cffa1a9a6e6ce34d3ccb55b306cf"
+    },
+    {
+      "path": "capturas_redactadas/085s_catalogo_servicios_venta.jpg",
+      "bytes": 59842,
+      "sha256": "e5bd5636079f34a790f37b0e86a503f478ab57400a4bebbf0f786083b05af357"
+    },
+    {
+      "path": "capturas_redactadas/095s_historial_ventas.jpg",
+      "bytes": 68059,
+      "sha256": "80f2a230e2a6a549962577d5f843ffea54b2163331987959537498ff87383901"
+    },
+    {
+      "path": "capturas_redactadas/105s_membresias.jpg",
+      "bytes": 54817,
+      "sha256": "32c949d4339ae97d209d997f5a8bbbe5c018eac9e0d579cb418240bce64650c0"
+    },
+    {
+      "path": "capturas_redactadas/115s_menu_clientes.jpg",
+      "bytes": 35643,
+      "sha256": "ff8bb1c80304d3f56ba6db178e2415a16f95145ec6277904dd0ddcab49badfb0"
+    },
+    {
+      "path": "capturas_redactadas/145s_catalogo_productos.jpg",
+      "bytes": 102243,
+      "sha256": "cd41ce8cfa0b73fcb1fbc0b327490b899738d6fbf4116af6bd51cab8cc16df1d"
+    },
+    {
+      "path": "capturas_redactadas/155s_menu_inventario.jpg",
+      "bytes": 102182,
+      "sha256": "d8b1ae7384433986ed3d1db9058bb2d4ea03ae7be9d57256fda037911a5fbce9"
+    },
+    {
+      "path": "capturas_redactadas/165s_crear_inventario.jpg",
+      "bytes": 58429,
+      "sha256": "4496792c94c5ca66278b0a43260c3e80a5ba412a1baf7a22658877a11b61b779"
+    },
+    {
+      "path": "capturas_redactadas/175s_marketing_stock.jpg",
+      "bytes": 100143,
+      "sha256": "88623e506c625e3e1440994c9770c591e3fd209a9927b09105e1f0bad0ca2e16"
+    },
+    {
+      "path": "capturas_redactadas/185s_recargos_mensajes.jpg",
+      "bytes": 40352,
+      "sha256": "00214df8bc376752321e441e56e4379bbb01dda42c3ad1b5a575525953644dd9"
+    },
+    {
+      "path": "capturas_redactadas/195s_equipo_lista.jpg",
+      "bytes": 77532,
+      "sha256": "f41058484abe03a548f3ffa7341aeb31c85f1da421a3eb39c8d395a3432890f0"
+    },
+    {
+      "path": "capturas_redactadas/205s_equipo_datos.jpg",
+      "bytes": 89532,
+      "sha256": "ccbd912c3dc7b90db1fed2b4fc4d842694362888c68d3d87affcb47a5f00997d"
+    },
+    {
+      "path": "capturas_redactadas/215s_equipo_workspace.jpg",
+      "bytes": 83169,
+      "sha256": "740a6d21fad0952334390b2761638c8a8da2fbbd97c4d64747af22550924252c"
+    },
+    {
+      "path": "capturas_redactadas/225s_informes_inicial.jpg",
+      "bytes": 108888,
+      "sha256": "698a54206210428b4f8f461d80e64efc3995bb8203d01bf83637ca075d05893a"
+    },
+    {
+      "path": "capturas_redactadas/235s_acciones_empleado.jpg",
+      "bytes": 84477,
+      "sha256": "d85092c3df3c88e9f2291a58e7a1fe04a4e1e7724a230f723317bf110bd4fddd"
+    },
+    {
+      "path": "capturas_redactadas/255s_proceso_pagos_equipo.jpg",
+      "bytes": 100849,
+      "sha256": "ac7a04c900875322ab46bb82b825d8cba17cb9ddf1010c7f2b33b54ca9c56f55"
+    },
+    {
+      "path": "capturas_redactadas/265s_informes_categorias.jpg",
+      "bytes": 111581,
+      "sha256": "e740edd872d4017638ee087661066aafdcc3ef777912a3ed3384f98c804a7811"
+    },
+    {
+      "path": "capturas_redactadas/275s_informes_paneles.jpg",
+      "bytes": 98404,
+      "sha256": "ddb3d45472875b53a56faefd5330ec53bf25aff1981de13c924056e4db4fb9dd"
+    }
+  ]
+}

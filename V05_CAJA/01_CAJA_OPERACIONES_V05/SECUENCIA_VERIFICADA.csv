@@ -1,0 +1,16 @@
+segundo_video,flujo,observacion,certeza,fotograma
+4,Caja abierta,Saldo visible 2000 MXN,OBSERVADO,004s_caja_abierta_inicial.jpg
+10,Entrada: motivos,Se muestran tres categorías; ninguna confirmación todavía,OBSERVADO,010s_motivos_entrada.jpg
+28,Entrada: formulario,"Cantidad, comentario 0/100, archivo adjunto, confirmar",OBSERVADO,028s_formulario_entrada.jpg
+32,Entrada: importe,Cantidad final 200 MXN,OBSERVADO,032s_entrada_200.jpg
+34,Entrada: resultado,Toast Efectivo añadido y saldo 2200 MXN,VERIFICADO,034s_saldo_2200.jpg
+38,Acciones,Menú: entrada / salida,OBSERVADO,038s_acciones_caja.jpg
+40,Salida: motivos,Cuatro categorías listadas,OBSERVADO,040s_motivos_salida.jpg
+50,Salida: formulario,Cantidad y comentario 0/100,OBSERVADO,050s_formulario_salida.jpg
+52,Salida: importe,Cantidad 50 MXN,OBSERVADO,052s_salida_50.jpg
+54,Salida: resultado,Toast Efectivo retirado y saldo 2150 MXN,VERIFICADO,054s_saldo_2150.jpg
+58,Filtros del listado,Opciones de periodo visibles,OBSERVADO,058s_filtros_fecha.jpg
+62,Detalle Resumen,"Caja Abierta, saldo 2150 MXN, previsiones de métodos",OBSERVADO,062s_resumen_caja.jpg
+66,Detalle Actividad,"−50, +200, +2000 y apertura 0 por separado",VERIFICADO,066s_actividad_historial.jpg
+68,Detalle Resumen,"Efectivo 2150; inicial 2000, pagos en efectivo 0, entrada 200, salida −50",VERIFICADO,068s_resumen_movimientos.jpg
+72,Menú acciones rápidas,"Nueva venta, entrada y salida de efectivo",OBSERVADO,072s_acciones_rapidas.jpg

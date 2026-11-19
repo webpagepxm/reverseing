@@ -1,0 +1,17 @@
+id,modulo,estado,evidencia_recuperada,pendiente
+AGENDA,Agenda y reservas,Parcialmente verificado,Alta persistente y traspaso a POS,"Reprogramación, cancelación, conflictos, grupos"
+CRM,Clientes,Parcialmente verificado,Alta y validación vacía,"Segmentación, historial, fidelidad"
+SERV,Servicios,Parcialmente verificado,Formulario y asignación de equipo,"Guardar cambios, recursos, complementos"
+TEAM,Equipo y horarios,Parcialmente verificado,Perfil y turnos visibles,Conflictos y edición
+ROLE,Roles y permisos,Descubierto,Niveles visibles,Pruebas con cada rol
+COMM,Comisiones,Parcialmente verificado,Configuración visible,Cálculos y liquidaciones
+POS,Ventas y pagos,Parcialmente verificado,"Carrito propina pago, borrador descartado","Cobros, devoluciones, caja"
+INV,Inventario,Parcialmente verificado,Formulario de producto,"Movimientos, pedidos y proveedores"
+REPORT,Reportes,Parcialmente verificado,Resumen refleja cita de prueba,"Exportaciones, fórmulas restantes"
+MARK,Marketing,Parcialmente verificado,Lista de automatizaciones,Editor y campañas
+ADMIN,Administración,Descubierto,Categorías de ajustes,"Sucursales, impuestos y recibos"
+ONLINE,Reservas online,Parcialmente verificado,Configuración de disponibilidad,Reserva pública extremo a extremo
+PACK,Bonos y membresías,Descubierto,Referencias en interfaz,"Compra, canje, vencimiento"
+DASH,Dashboard,Pendiente,Acceso en navegación,Indicadores
+INTEG,Integraciones,Descubierto,Marketplace Google Meta enlaces QR,Conexión y sincronización
+MOBILE,Móvil y onboarding,Pendiente,Sin prueba conservada,"Responsive, táctil, onboarding"

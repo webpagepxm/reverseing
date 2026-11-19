@@ -1,0 +1,16 @@
+segundo_aprox,hallazgo,estado_evidencia
+0,Cierre abierto; panel muestra previsión de efectivo y resumen,observado
+3,Cierre: tipos de pago. Aviso de contabilizar efectivo disponible en caja,observado
+22,"Formulario: efectivo al cierre inicialmente 2,000; transferencia al banco 1,000",observado
+38,Se abre el teclado de Cantidad contada,observado
+42,"Cantidad contada escrita 1,000 MXN",observado
+44,Validación roja: importe de efectivo al cierre mayor que efectivo contabilizado,observado
+48,"El panel de resumen muestra previsto 2,150, contado 1,000 y diferencia -1,150",observado
+53,"Se modifica el importe reservado para cierre, eliminando la validación",observado
+55,Toast de caja registradora cerrada y cambio de estado a Cerrada,observado
+56,"Ficha histórica: saldo de caja mostrado 1,000; pagos previstos 2,150",observado
+60,Resumen posterior desglosa movimientos del efectivo,observado
+64,"Menú: Ver actividad; Ver informe; Reabrir caja registradora cerrada; PDF, Excel, CSV",observado
+66,Ver informe abre Resumen de la caja registradora,observado
+70,Informe muestra No se han encontrado resultados en filtros activos,observado
+74,Navegación de informes,observado

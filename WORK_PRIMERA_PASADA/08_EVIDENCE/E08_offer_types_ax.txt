@@ -1,0 +1,68 @@
+Browser tab: 3, Title: "Fresha - Partner Account", URL: "https://partners.fresha.com/marketing/deals/configuration/new/deal-types".
+0 AXWebArea Fresha - Partner Account, URL: partners.fresha.com/marketing/deals/configuration/new/deal-types
+	1 container app
+		2 container react
+			3 link Description: Fresha, Value: partners.fresha.com/calendar
+			4 checkbox Activar plan, Value: 0, ID: button-react-aria7077551636-_r_1k_
+				5 text Activar plan
+			6 checkbox Buscar, Value: 0, ID: button-react-aria7077551636-_r_2_
+			7 checkbox Análisis de rendimiento, Value: 0, ID: button-react-aria7077551636-_r_4_
+			8 checkbox Notificaciones, Value: 0, ID: button-react-aria7077551636-_r_8_
+				9 text 5
+			10 link Description: Fresha Connect, Value: partners.fresha.com/connect
+			11 checkbox (collapsed) Open user menu, Value: 0, ID: button-react-aria7077551636-_r_19_, Secondary Actions: Expand
+			12 container
+				13 link partners.fresha.com/dashboard
+				14 link partners.fresha.com/calendar
+				15 checkbox Value: 0, ID: button-react-aria7077551636-_r_e_
+				16 checkbox Value: 0, ID: button-react-aria7077551636-_r_h_
+				17 checkbox Value: 0, ID: button-react-aria7077551636-_r_k_
+				18 checkbox Value: 0, ID: button-react-aria7077551636-_r_1n_
+				19 checkbox Value: 0, ID: button-react-aria7077551636-_r_q_
+				20 checkbox Value: 0, ID: button-react-aria7077551636-_r_t_
+				21 link partners.fresha.com/reports
+				22 link partners.fresha.com/add-ons
+				23 link partners.fresha.com/setup
+				24 checkbox Value: 0, ID: button-react-aria7077551636-_r_14_
+			25 container
+				26 checkbox Ocultar menú de navegación, Value: 0, ID: button-react-aria7077551636-_r_52_
+					27 text Ocultar menú de navegación
+				28 text Mensajería
+				29 link Description: Campañas de difusión, Value: partners.fresha.com/marketing/blast-campaigns/home
+				30 link Description: Automatizaciones, Value: partners.fresha.com/marketing/automated-messages
+				31 link Description: Historial de mensajes, Value: partners.fresha.com/marketing/notifications
+				32 text Promoción
+				33 link Description: Ofertas, Value: partners.fresha.com/marketing/deals
+				34 link Description: Precios inteligentes, Value: partners.fresha.com/marketing/peak-pricing
+			35 container
+				36 progress indicator Paso 1 de 2, Value: 50, ID: react-aria7077551636-_r_5l_
+				37 container
+					38 text Selecciona el tipo de oferta
+					39 checkbox Cerrar, Value: 0, ID: button-react-aria7077551636-_r_5m_
+						40 text Cerrar
+				41 heading Selecciona el tipo de oferta, Value: 1
+					42 text Selecciona el tipo de oferta
+				43 text Elige el tipo de oferta que quieres crear. 
+				44 link Description: Más información, Value: fresha.com/es/help-center/knowledge-base/marketing/103914-deals-overview, ID: react-aria7077551636-_r_5o_
+				45 checkbox Value: 0, ID: button-react-aria7077551636-_r_5p_
+				46 heading Venta flash, Value: 3, ID: deal-type-flash_sale-title
+					47 text Venta flash
+				48 heading Aplica un descuento automáticamente en línea o permite que tu equipo lo añada en el establecimiento, Value: 4
+					49 text Aplica un descuento automáticamente en línea o permite que tu equipo lo añada en el establecimiento
+				50 checkbox Value: 0, ID: button-react-aria7077551636-_r_5s_
+				51 heading Código de descuento, Value: 3, ID: deal-type-manual-title
+					52 text Código de descuento
+				53 heading Crea un código que los clientes puedan usar al reservar en línea o al pagar en el establecimiento, Value: 4
+					54 text Crea un código que los clientes puedan usar al reservar en línea o al pagar en el establecimiento
+				55 checkbox Value: 0, ID: button-react-aria7077551636-_r_5v_
+				56 heading Descuento de última hora, Value: 3, ID: deal-type-last_minute-title
+					57 text Descuento de última hora
+				58 heading Aplica un descuento para reservas realizadas justo antes del inicio de la cita, Value: 4
+					59 text Aplica un descuento para reservas realizadas justo antes del inicio de la cita
+				60 checkbox Value: 0, ID: button-react-aria7077551636-_r_62_
+				61 heading Oferta madrugador, Value: 3, ID: deal-type-early_bird-title
+					62 text Oferta madrugador
+				63 heading Aplica un descuento para reservas realizadas con bastante antelación a una cita, Value: 4
+					64 text Aplica un descuento para reservas realizadas con bastante antelación a una cita
+
+The focused UI element is 0 AXWebArea Fresha - Partner Account, URL: partners.fresha.com/marketing/deals/configuration/new/deal-types

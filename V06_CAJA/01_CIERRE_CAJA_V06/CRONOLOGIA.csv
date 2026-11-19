@@ -1,0 +1,18 @@
+segundo,evento,estado_evidencia,captura
+0,Listado de caja abierta y acciones,observado,00s_inicio_caja_abierta_y_acciones.jpg
+2,Filtro temporal,observado,02s_filtro_fechas.jpg
+6,Menú informes y ajustes,observado,06s_menu_opciones_informes_ajustes.jpg
+8,Administración de cajas y filtro activo,observado,08s_ajustes_cajas_lista.jpg
+14,Editar caja: nombre y opciones avanzadas,observado,14s_editar_caja_opciones_avanzadas.jpg
+20,Menú principal Ventas,observado,20s_modulo_ventas_movil.jpg
+24,Caja activa con 2150 MXN,observado,24s_caja_abierta_saldo2150.jpg
+26,Detalle de caja abierta,observado,26s_detalle_caja_abierta.jpg
+30,Cierre por tipo de pago,observado,30s_cierre_tipos_pago.jpg
+34,"Canjes, depósitos, crédito de Fresha",observado,34s_cierre_canjes_depositos_credito.jpg
+36,Previsión efectivo y saldo total,observado,36s_prevision_efectivo_saldo_total.jpg
+38,"Campos de reserva, transferencia, comentario",observado,38s_campos_reserva_banco_comentario.jpg
+50,Campos de importe antes de introducir valores,observado,50s_formulario_importes_cero.jpg
+52,Introducción 55 MXN para cierre,observado,52s_importe_reserva_55.jpg
+54,Introducción 85 MXN para banco,observado,54s_importe_banco_85.jpg
+58,"Valores 55 y 85, comentario en edición",observado,58s_valores55_y85_y_comentario.jpg
+64,Formulario aún abierto con valores escritos,observado: cierre NO completado,64s_formulario_sin_confirmar.jpg

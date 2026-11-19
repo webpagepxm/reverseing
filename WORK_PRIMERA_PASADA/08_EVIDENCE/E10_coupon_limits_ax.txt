@@ -1,0 +1,175 @@
+Browser tab: 3, Title: "Fresha - Partner Account", URL: "https://partners.fresha.com/marketing/deals/configuration/new/details".
+0 AXWebArea Fresha - Partner Account, URL: partners.fresha.com/marketing/deals/configuration/new/details
+	1 container app
+		2 container react
+			3 link Description: Fresha, Value: partners.fresha.com/calendar
+			4 checkbox Activar plan, Value: 0, ID: button-react-aria7077551636-_r_1k_
+				5 text Activar plan
+			6 checkbox Buscar, Value: 0, ID: button-react-aria7077551636-_r_2_
+			7 checkbox Análisis de rendimiento, Value: 0, ID: button-react-aria7077551636-_r_4_
+			8 checkbox Notificaciones, Value: 0, ID: button-react-aria7077551636-_r_8_
+				9 text 5
+			10 link Description: Fresha Connect, Value: partners.fresha.com/connect
+			11 checkbox (collapsed) Open user menu, Value: 0, ID: button-react-aria7077551636-_r_19_, Secondary Actions: Expand
+			12 container
+				13 link partners.fresha.com/dashboard
+				14 link partners.fresha.com/calendar
+				15 checkbox Value: 0, ID: button-react-aria7077551636-_r_e_
+				16 checkbox Value: 0, ID: button-react-aria7077551636-_r_h_
+				17 checkbox Value: 0, ID: button-react-aria7077551636-_r_k_
+				18 checkbox Value: 0, ID: button-react-aria7077551636-_r_1n_
+				19 checkbox Value: 0, ID: button-react-aria7077551636-_r_q_
+				20 checkbox Value: 0, ID: button-react-aria7077551636-_r_t_
+				21 link partners.fresha.com/reports
+				22 link partners.fresha.com/add-ons
+				23 link partners.fresha.com/setup
+				24 checkbox Value: 0, ID: button-react-aria7077551636-_r_14_
+			25 container
+				26 checkbox Ocultar menú de navegación, Value: 0, ID: button-react-aria7077551636-_r_52_
+					27 text Ocultar menú de navegación
+				28 text Mensajería
+				29 link Description: Campañas de difusión, Value: partners.fresha.com/marketing/blast-campaigns/home
+				30 link Description: Automatizaciones, Value: partners.fresha.com/marketing/automated-messages
+				31 link Description: Historial de mensajes, Value: partners.fresha.com/marketing/notifications
+				32 text Promoción
+				33 link Description: Ofertas, Value: partners.fresha.com/marketing/deals
+				34 link Description: Precios inteligentes, Value: partners.fresha.com/marketing/peak-pricing
+			35 container
+				36 container
+					37 text Crea un código de descuento
+					38 checkbox Cerrar, Value: 0, ID: button-react-aria7077551636-_r_65_
+						39 text Cerrar
+					40 checkbox Crear oferta, Value: 0, ID: button-react-aria7077551636-_r_67_
+						41 text Crear oferta
+				42 heading Crea un código de descuento, Value: 1
+					43 text Crea un código de descuento
+				44 text Configura tu oferta y establece dónde, cuándo y cómo se puede aplicar. 
+				45 link Description: Más información, Value: fresha.com/es/help-center/knowledge-base/marketing/101316-create-promotions, ID: react-aria7077551636-_r_69_
+				46 heading Información básica, Value: 2
+					47 text Información básica
+				48 text Elige a qué aplica la oferta y el descuento que debe aplicar Nombre de la oferta
+				49 text field (settable) Nombre de la oferta, ID: input-react-aria7077551636-_r_6a_
+				50 text Código de descuento
+				51 text field (settable) Código de descuento, ID: input-react-aria7077551636-_r_6c_
+				52 text Descripción  ( Opcional ) 0/600
+				53 text entry area (settable) Descripción (Opcional) 0/600, ID: input-react-aria7077551636-_r_6e_
+				54 text La descripción no es visible para los clientes Valor del descuento
+				55 container react-aria7077551636-_r_6g_
+					56 text %
+					57 stepper (settable, integer) Valor del descuento, Value: 10, ID: input-react-aria7077551636-_r_6g_
+				58 checkbox Porcentaje, Value: 0, ID: button-segmented-control-percentage
+					59 text Porcentaje
+				60 checkbox Cantidad, Value: 0, ID: button-segmented-control-fixed
+					61 text Cantidad
+				62 text Inicio de la oferta
+				63 container startDate
+					64 text field Inicio de la oferta, Value: martes, 17 de noviembre de 2026, ID: input-startDate
+					65 checkbox Value: 0, ID: button-react-aria7077551636-_r_6l_
+				66 text Fin de la oferta
+				67 pop up button (collapsed) En curso Fin de la oferta, ID: select-structure-react-aria7077551636-_r_6n_, Secondary Actions: Expand
+					68 text En curso
+				69 text Elige cuándo se muestra esta oferta a los clientes en línea y a los miembros del equipo en el calendario y en el proceso de pago Centros
+				70 checkbox Editar, Value: 0, ID: button-react-aria7077551636-_r_71_
+					71 container text-field-preview-deal-locations
+						72 text Todos los centros
+						73 text Editar
+				74 text Miembros del equipo
+				75 checkbox Editar, Value: 0, ID: button-react-aria7077551636-_r_74_
+					76 container text-field-preview-booked-team-members
+						77 text Todos los miembros del equipo
+						78 text Editar
+				79 text Restringir la oferta a citas y ventas asignadas a miembros del equipo específicos
+				80 heading La oferta se aplica a, Value: 2
+					81 text La oferta se aplica a
+				82 text Selecciona los artículos a los que se aplica esta oferta
+				83 container scope-services
+					84 text Servicios
+					85 checkbox (settable, integer) Description: Servicios, Value: 1, ID: input-scope-services
+				86 heading Servicios, Value: 3
+					87 text Servicios
+				88 heading Todos los servicios incluidos, Value: 4
+					89 text Todos los servicios incluidos
+				90 checkbox Personalizar Servicios, Value: 0, ID: button-react-aria7077551636-_r_79_
+				91 container scope-products
+					92 text Productos
+					93 checkbox (settable, integer) Description: Productos, Value: 0, ID: input-scope-products
+				94 heading Productos, Value: 3
+					95 text Productos
+				96 heading Ninguno incluido, Value: 4
+					97 text Ninguno incluido
+				98 checkbox Personalizar Productos, Value: 0, ID: button-react-aria7077551636-_r_7d_
+				99 container scope-packages
+					100 text Bonos
+					101 checkbox (settable, integer) Description: Bonos, Value: 0, ID: input-scope-packages
+				102 heading Bonos, Value: 3
+					103 text Bonos
+				104 heading Ninguno incluido, Value: 4
+					105 text Ninguno incluido
+				106 checkbox Personalizar Bonos, Value: 0, ID: button-react-aria7077551636-_r_7h_
+				107 container scope-memberships
+					108 text Membresías
+					109 checkbox (settable, integer) Description: Membresías, Value: 0, ID: input-scope-memberships
+				110 heading Membresías, Value: 3
+					111 text Membresías
+				112 heading Ninguno incluido, Value: 4
+					113 text Ninguno incluido
+				114 checkbox Personalizar Membresías, Value: 0, ID: button-react-aria7077551636-_r_7l_
+				115 container scope-giftCards
+					116 text Tarjetas regalo
+					117 checkbox (settable, integer) Description: Tarjetas regalo, Value: 0, ID: input-scope-giftCards
+				118 heading Tarjetas regalo, Value: 3
+					119 text Tarjetas regalo
+				120 heading Ninguno incluido, Value: 4
+					121 text Ninguno incluido
+				122 heading Límites de gestión de citas, Value: 2
+					123 text Límites de gestión de citas
+				124 text Restringir esta oferta a las citas reservadas para horas específicas
+				125 container schedulingLimitsEnabled
+					126 text Límites de gestión de citas
+					127 switch (settable, boolean) Description: Límites de gestión de citas, Value: 0, ID: input-schedulingLimitsEnabled
+				128 heading Límites de clientes, Value: 2
+					129 text Límites de clientes
+				130 text Controla quién puede canjear esta oferta y con qué frecuencia
+				131 container clientLimitsEnabled
+					132 text Límites de clientes
+					133 switch (settable, boolean) Description: Límites de clientes, Value: 1, ID: input-clientLimitsEnabled
+				141 container limitToOneUsePerClient
+					142 text Limit usage per client
+					143 text Set the maximum number of sales this deal can be applied to for each client.
+					144 checkbox (settable, integer) Description: Limit usage per client, Value: 0, ID: input-limitToOneUsePerClient
+				145 container limitTotalNumberOfUseEnabled
+					146 text Limit usage across all clients
+					147 text Set the maximum number of sales this deal can be applied to across all clients.
+					148 checkbox (settable, integer) Description: Limit usage across all clients, Value: 0, ID: input-limitTotalNumberOfUseEnabled
+				149 container clientSegmentsEnabled
+					150 text Restringir a segmentos de clientes elegibles
+					151 text Solo permitir que esta oferta se aplique a los clientes en los segmentos seleccionados
+					152 checkbox (settable, integer) Description: Restringir a segmentos de clientes elegibles, Value: 0, ID: input-clientSegmentsEnabled
+				134 heading Límites de ventas, Value: 2
+					135 text Límites de ventas
+				136 text Controla a qué ventas se aplica esta oferta
+				137 container saleLimitsEnabled
+					138 text Límites de ventas
+					139 switch (settable, boolean) Description: Límites de ventas, Value: 1, ID: input-saleLimitsEnabled
+				153 container minimumPurchaseAmountEnabled
+					154 text Establecer valor mínimo de venta
+					155 text La venta o cita debe tener al menos el siguiente valor total para aplicar esta oferta
+					156 checkbox (settable, integer) Description: Establecer valor mínimo de venta, Value: 0, ID: input-minimumPurchaseAmountEnabled
+				157 container limitUsesPerSaleEnabled
+					158 text Limit usage for sale
+					159 text Set the maximum number of items this deal can be applied to in each sale
+					160 checkbox (settable, integer) Description: Limit usage for sale, Value: 0, ID: input-limitUsesPerSaleEnabled
+				140 checkbox (expanded) Opciones avanzadas, Value: 0, ID: button-react-aria7077551636-_r_8i_, Secondary Actions: Collapse
+				161 heading Dónde se puede usar, Value: 2
+					162 text Dónde se puede usar
+				163 text Selecciona dónde se puede usar esta oferta y cómo se aplica
+				164 container pointOfSalePromotionEnabled
+					165 text Activar para el calendario y el sistema de TPV
+					166 text Ofrece a los miembros del equipo la posibilidad de aplicar esta oferta manualmente a través del calendario o durante el proceso de pago
+					167 checkbox (settable, integer) Description: Activar para el calendario y el sistema de TPV, Value: 1, ID: input-pointOfSalePromotionEnabled
+				168 container onlineEnabled
+					169 text Activar para reservas y compras online
+					170 text Los clientes pueden aplicar el código de descuento al reservar online
+					171 checkbox (settable, integer) Description: Activar para reservas y compras online, Value: 1, ID: input-onlineEnabled
+
+The focused UI element is 140 checkbox (expanded) Opciones avanzadas, Value: 0, ID: button-react-aria7077551636-_r_8i_, Secondary Actions: Collapse
