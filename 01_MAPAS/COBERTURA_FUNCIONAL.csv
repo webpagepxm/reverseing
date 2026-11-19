@@ -1,0 +1,40 @@
+﻿id,modulo,funcion,estado,videos_ids,evidencia_o_limitacion
+CAJ-01,Caja,Abrir caja / importe inicial,VERIFICADO,CAJA_MOVIL_01;CAJA_ROLLOVER,Apertura registrada y saldo inicial visible
+CAJ-02,Caja,Entrada manual de efectivo,VERIFICADO,CAJA_OPERACIONES,+200 y saldo 2200
+CAJ-03,Caja,Salida manual de efectivo,VERIFICADO,CAJA_OPERACIONES,-50 y saldo 2150
+CAJ-04,Caja,Historial de actividad y filtros,OBSERVADO,CAJA_OPERACIONES;CAPTURAS_CAJA,"Eventos y filtro vistos, no todas las variantes"
+CAJ-05,Caja,Arqueo y diferencia,VERIFICADO,CAJA_CIERRE;CAJA_ROLLOVER,Cierre con diferencias negativas
+CAJ-06,Caja,Cierre de sesión / historial cerrado,VERIFICADO,CAJA_CIERRE;CAJA_ROLLOVER,Estado cerrado e historial visible
+CAJ-07,Caja,Apertura posterior con efectivo sugerido,VERIFICADO,CAJA_ROLLOVER,280 sugerido; 2820 introducido
+CAJ-08,Caja,Reabrir sesión cerrada,OBSERVADO,CAJA_CIERRE,Acción visible; no probada
+CAJ-09,Caja,Exportación PDF/Excel/CSV,OBSERVADO,CAJA_CIERRE,"Menú visible, archivos no verificados"
+VEN-01,Ventas,"Carrito, servicio y total",OBSERVADO,REGISTRO_VENTA,Pantalla de venta y servicio
+VEN-02,Ventas,Selección de efectivo/tarjeta/dividido,OBSERVADO,REGISTRO_VENTA,Métodos visibles; no se demuestra conciliación final
+VEN-03,Ventas,Ventas y borradores,OBSERVADO,REGISTRO_VENTA;CAPTURAS_UI,Pestañas y estados visibles
+VEN-04,Ventas,Relación venta-pago-caja-inventario,NO PROBADO,REGISTRO_VENTA,Falta prueba cruzada de sistemas
+CIT-01,Citas,Alta de cita sin cliente,VERIFICADO,ALTA_CITA,Toast Cita creada y evento en calendario
+CIT-02,Citas,Vistas y filtros calendario,OBSERVADO,ALTA_CITA,"Opciones visibles, no todas ejercitadas"
+CIT-03,Citas,Editar / reprogramar cita,OBSERVADO,ACCIONES_CITA,"Menú identificado, no cambio confirmado"
+CIT-04,Citas,"Cancelación, inasistencia, recurrencia",OBSERVADO,ACCIONES_CITA,"Opciones visibles, sin cambios verificados"
+CIT-05,Citas,Choques de agenda y restricciones,NO PROBADO,ALTA_CITA,Falta prueba solapamiento
+INV-01,Inventario,Alta de inventario/recuento,OBSERVADO,INVENTARIO_PROVEEDORES,Inicio y listado; no recuento completado
+INV-02,Inventario,Alta de producto y stock inicial,VERIFICADO,INVENTARIO_PROVEEDORES,Producto creado con stock 12
+INV-03,Inventario,Alta de proveedor,VERIFICADO,INVENTARIO_PROVEEDORES,Proveedor creado
+INV-04,Inventario,Entrada stock por pedido,NO PROBADO,INVENTARIO_PROVEEDORES,No observado
+INV-05,Inventario,Stock descontado por venta,NO PROBADO,INVENTARIO_PROVEEDORES;REGISTRO_VENTA,No probado
+EQP-01,Equipo,Ficha de empleado y secciones,OBSERVADO,EQUIPO_SIN_CODIGO,"Ficha con accesos, salarios, servicios"
+EQP-02,Equipo,Comisión fija 20% guardada,VERIFICADO,EQUIPO_SIN_CODIGO,Configuración y confirmación
+EQP-03,Equipo,Horarios recurrentes guardados,VERIFICADO,EQUIPO_SIN_CODIGO,Horario laboral establecido
+EQP-04,Equipo,Proceso pago marcado manualmente,VERIFICADO,EQUIPO_SIN_CODIGO,"6.25 MXN completado manualmente, no transferencia"
+EQP-05,Equipo,Roles y restricciones efectivas,NO PROBADO,EQUIPO_SIN_CODIGO,Solo niveles visibles
+EQP-06,Equipo,Fichajes digitales reales,NO PROBADO,EQUIPO_SIN_CODIGO,Pantallas introductorias
+INF-01,Informes,Abrir informes con datos,VERIFICADO,INFORMES,"Ventas, finanzas, citas, equipo; valores observados"
+INF-02,Informes,"Filtros, columnas, exportaciones",OBSERVADO,INFORMES,"Controles visibles, no resultados probados"
+INF-03,Informes,Dashboards y widgets,OBSERVADO,INFORMES,Paneles visibles; algunas métricas cargadas
+INT-01,Integraciones,"Catálogo Xero, QuickBooks, Google, Meta",OBSERVADO,INFORMES,Solo catálogo
+CLI-01,Clientes,Perfil y secciones laterales,OBSERVADO,CLIENTES,Pantallas navegadas
+CLI-02,Clientes,Editar segmentos estándar,VERIFICADO,CLIENTES,Toast segmento actualizado
+CLI-03,Clientes,Segmentos personalizados,OBSERVADO,CLIENTES,"Lista y botón, no alta confirmada"
+CLI-04,Clientes,Fidelidad y reputación IA,OBSERVADO,CLIENTES,Pantallas bloqueadas o vacías
+TEC-01,Técnico,DOM/CSS/JavaScript/API reales,NO PROBADO,NINGUNO,No hay dumps ni capturas de red
+UX-01,UX/UI,Responsive y accesibilidad sistemática,NO PROBADO,CAJA_MOVIL_01,Vista móvil de Caja únicamente
