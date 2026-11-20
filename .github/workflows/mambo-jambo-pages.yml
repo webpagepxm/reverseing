@@ -39,6 +39,10 @@ jobs:
         run: npm run build
       - name: Permitir archivos _next en GitHub Pages
         run: touch app/out/.nojekyll
+      - name: Verificar y configurar GitHub Pages
+        uses: actions/configure-pages@v5
+        with:
+          enablement: true
       - name: Subir sitio preparado
         uses: actions/upload-pages-artifact@v3
         with:
