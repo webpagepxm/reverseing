@@ -1,0 +1,57 @@
+name: Publicar demo MAMBO JAMBO en GitHub Pages
+
+on:
+  push:
+    branches:
+      - codex/mambo-pages-preview
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: mambo-jambo-pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    name: Compilar sitio estatico
+    runs-on: ubuntu-latest
+    steps:
+      - name: Obtener repositorio
+        uses: actions/checkout@v4
+      - name: Configurar Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+          cache-dependency-path: app/package-lock.json
+      - name: Instalar dependencias
+        working-directory: app
+        run: npm ci
+      - name: Revisar tipos
+        working-directory: app
+        run: npm run typecheck
+      - name: Exportar sitio estatico
+        working-directory: app
+        run: npm run build
+      - name: Permitir archivos _next en GitHub Pages
+        run: touch app/out/.nojekyll
+      - name: Subir sitio preparado
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: app/out
+
+  deploy:
+    name: Publicar en Pages
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Desplegar
+        id: deployment
+        uses: actions/deploy-pages@v4
