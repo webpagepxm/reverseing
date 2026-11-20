@@ -1,31 +1,51 @@
-# Mambo Jambo · Frontend Foundation V1
+# MAMBO JAMBO V2
 
-Aplicación visual de demostración basada en el blueprint UX de `115468d0d552cdf3e712bb3de565fa8a23c60814`.
+Demo estática de operación para salones y barberías. La navegación se organiza por riel, menú contextual, área de trabajo y panel lateral. El estilo, los datos, el código y el Inicio son propios de MAMBO JAMBO.
 
-## Abrir
+- [Abrir la demo en GitHub Pages](https://webpagepxm.github.io/reverseing/)
+- [Blueprint de MAMBO JAMBO](../MAMBO_JAMBO_UX_BLUEPRINT/)
+- [Blueprint de evidencia y pruebas](../CODEX_REVERSE_ENGINEERING_BLUEPRINT/)
 
-Desde la raíz del repositorio, con Node.js 22 o posterior:
+## Abrir en local
+
+Con Node.js 22 o posterior, desde `app/`:
 
 ```bash
-cd app
 npm ci
 npm run dev
 ```
 
-Abrir `http://localhost:3000`. La raíz lleva a Agenda en la sucursal ficticia Roma Norte. La Agenda abre el **18 de noviembre de 2026** para mostrar el conjunto de citas de prueba. **Hoy** utiliza la fecha actual en Ciudad de México.
+Entra a `http://localhost:3000/reverseing/`. El selector superior cambia la sucursal. Agenda abre el 18 de noviembre de 2026, fecha del conjunto ficticio. Roma Norte tiene citas y el producto **Bruma botánica** con 12 unidades a $123. Condesa tiene una venta pagada, una sesión cerrada, un pedido recibido parcialmente, un recuento aplicado y una liquidación de muestra.
 
-## Recorrido de revisión
+Los cambios se guardan en este navegador. En **Configuración → Preferencias → Restablecer demostración** puedes recuperar ese conjunto inicial. Usa datos ficticios en todos los formularios.
 
-| Interacción operativa en el frontend | Base de demostración |
+## Qué se puede recorrer
+
+| Grupo | Operaciones disponibles |
 |---|---|
-| Rutas para Agenda, Clientes, Catálogo, Equipo y Configuración. Menús contextuales para Turnos, Negocio, Sucursales y Accesos. | Contexto fijo Estudio Mambo / Roma Norte y perfiles ilustrativos. |
-| Día, Semana y Lista. Fecha y profesional seleccionables. Detalle por cita y alta a partir de una franja o de **Nueva cita**. | Citas, clientes, horarios, servicios y precios ficticios. La carga breve, la comprobación de solape y la confirmación del alta ocurren en el cliente. La cita nueva se pierde al recargar o salir de Agenda. |
-| Búsqueda en listas, categorías de servicio y fichas contextuales. | Listas de lectura con datos estáticos. El historial de Clientes usa las citas iniciales de muestra. |
-| Apertura, cierre y retorno en los paneles. | Los enlaces de paneles usan `?cita=` o `?ficha=` en la URL de origen. Una cita añadida temporalmente solo se abre mientras exista en memoria. |
+| Inicio | Citas del día, próximas reservas, ventas, estado de Caja y accesos directos derivados del mismo estado. |
+| Agenda | Día, Semana y Lista. Selección de fecha, profesional y sucursal. Alta, edición, reprogramación, historial y transiciones. Enlaces a la ficha del cliente y al POS. |
+| Ventas | Búsqueda y filtros, borradores y pendientes, carrito de servicios/productos, propina, cobro en efectivo, recibo y anulación con ajuste. Vistas de citas, pagos y artículos vendidos. |
+| Caja | Un registro principal por sucursal. Apertura con sugerencia, entradas/salidas, actividad con origen, arqueo, cierre e historial. |
+| Clientes | Alta, edición, coincidencias por correo/teléfono, archivo, citas y compras. Segmentos estándar y personalizados con conteo y lista de miembros. |
+| Catálogo | Servicios agrupados por categoría, edición, archivo y asignación por sucursal. Productos, proveedores, movimientos, pedidos con recepción parcial y recuentos con revisión. |
+| Equipo | Miembros, asignaciones, turnos semanales con vigencia, comisiones por familia, devengos, ajustes y liquidaciones con referencia ficticia. |
+| Informes | Biblioteca y paneles. Cinco informes derivados de los registros con filtros, corte y detalle. La existencia actual se calcula con el saldo al momento de abrir el informe. |
+| Configuración | Datos del negocio, preferencias, alta/edición de sucursal y vista de navegación según rol de demostración. |
 
-El alcance termina en la capa visual. Autenticación, permisos efectivos, edición de directorios y reprogramación de citas quedan para la siguiente etapa.
+Fichajes, fidelización, reputación, tarjetas regalo, bonos, membresías, recargos e integraciones están reservados en el blueprint. Los cambios de turno usan una franja por patrón semanal. La moneda operativa de la demo es MXN. Los movimientos de Caja se corrigen mediante el ajuste de una venta o un movimiento posterior con motivo.
 
-## Compilación y pruebas
+### Caso para revisar los importes
+
+En Roma Norte, abre Caja. Crea una cita de **Corte de prueba · 25 MXN** en un hueco de Inés o Luna. Desde la cita, selecciona **Cobrar cita**. Ingresa **6.25** de propina y **40** de efectivo recibido. El recibo muestra **31.25** de total y **8.75** de cambio. Consulta el folio en Ventas, el movimiento en Caja y el total en Informes → Ventas. La cita mantiene su estado.
+
+### Decisiones propias de simulación
+
+El efectivo necesita una sesión activa. Su confirmación añade al mismo estado local el pago, el asiento de Caja, las salidas de inventario rastreado y los devengos. Los importes de POS, Caja y remuneración se calculan en centavos. La comisión se aplica al importe de la familia elegible sin propina. La tasa y el resultado se vinculan a la versión de la regla correspondiente. Una anulación deja un ajuste enlazado y revierte las existencias rastreadas. Las liquidaciones registran una referencia ficticia. Los segmentos usan una condición y una ventana de días relativa a la fecha de corte.
+
+La persistencia local es para revisión en un navegador y los roles son una simulación de navegación. La operación real requerirá PostgreSQL/Supabase, autenticación, aislamiento por negocio y sucursal, RLS, transacciones, auditoría e idempotencia de servidor. Las pruebas de concurrencia, recuperación, exportación CSV, pagos mixtos e integraciones de T01–T16 quedan para la etapa correspondiente.
+
+## Verificación
 
 ```bash
 npm run typecheck
@@ -34,23 +54,22 @@ npx playwright install chromium
 npm test
 ```
 
-La compilación y el chequeo TypeScript pasaron. Las seis pruebas en Chromium cubren navegación, filtros, retorno del foco, alta por franja, validación de solapes y los tres anchos.
+El build estático genera `out/`. Playwright sirve esa carpeta bajo `/reverseing/`. Si Chromium ya está instalado puedes usar `MAMBO_CHROMIUM=/usr/bin/chromium npm test`. Usa `MAMBO_CAPTURE=1` para regenerar las capturas y `MAMBO_PORT` para cambiar el puerto de pruebas.
 
-En un entorno con Chromium instalado, ejecutar `MAMBO_CHROMIUM=/usr/bin/chromium npm test`. Playwright inicia el build en el puerto 3100 durante las pruebas. Si está ocupado, usar `MAMBO_PORT` para elegir otro. Para regenerar las capturas, agregar `MAMBO_CAPTURE=1`.
+La suite local cubre los recorridos A–E, enlaces profundos y recarga, navegación y filtros, errores de turno/solape, cierre y ajuste de Caja, persistencia y restablecimiento. Incluye seis anchos de 360 a 1440 px y retorno de foco con teclado. El workflow comprueba en Chromium el SHA servido por Pages, las rutas y los recursos públicos después del despliegue.
 
-## Capturas y comparación visual
+## Capturas y evidencia
 
-| Tamaño | Capturas |
-|---|---|
-| 1280 px | [Agenda](review/agenda-1280.png) · [Detalle de cita](review/cita-1280.png) · [Editor](review/editor-1280.png) |
-| 768 px | [Agenda](review/agenda-768.png) |
-| 360 px | [Agenda](review/agenda-360.png) · [Detalle de cita](review/cita-360.png) |
+| Interfaz | Capturas V2 | Patrón y diferencias |
+|---|---|---|
+| Agenda | [Calendario](review/v2/agenda.png) · [Detalle](review/v2/detalle-cita.png) · [Editor](review/v2/editor-cita.png) | Cuadrícula visible junto a selección de franja y panel. Se añaden notas, historial y enlaces al cliente y al POS con la identidad propia. [Ref. de cita](../05_EVIDENCIAS/FOTOGRAMAS/CITAS/s46.jpg) |
+| Clientes | [Lista](review/v2/clientes.png) | Búsqueda, estado y ficha contextual. Las pestañas reflejan citas y compras del conjunto local. [Ref. de ficha](../05_EVIDENCIAS/FOTOGRAMAS/CLIENTES/t_006s.jpg) |
+| POS | [Carrito y cobro](review/v2/pos.png) | Catálogo y carrito persisten lado a lado en escritorio. Propina y efectivo aparecen en el mismo formulario de demostración, con cambio explícito. [Ref. de cobro](../VIDEOS/REGISTRO_VENTA.mp4) · 48 s |
+| Caja | [Actividad](review/v2/caja-abierta.png) · [Arqueo](review/v2/arqueo.png) | Saldo, Resumen/Actividad y acciones de movimiento. El arqueo usa un panel contextual propio con la diferencia visible y reparto entre retenido y retirado. [Ref. de sesión](../CAJA_ROLLOVER/t_028s.jpg) · [Ref. de cierre](../VIDEOS/CAJA_CIERRE.mp4) · 44 s |
+| Inventario | [Productos](review/v2/productos.png) · [Existencias y movimientos](review/v2/inventario.png) | Tabla de productos y estados de recuento. Las recepciones y el ajuste se reflejan en un libro local de stock. [Ref. de producto](../FOTOGRAMAS/INVENTARIO/175s.jpg) · [Ref. de recuento](../FOTOGRAMAS/INVENTARIO/185s.jpg) |
+| Comisiones e informes | [Comisiones](review/v2/comisiones.png) · [Informe de ventas](review/v2/informes.png) | Reglas y vigencia juntas en Equipo. Biblioteca separada del informe, con filtros encima del resultado. [Ref. de regla](../FOTOGRAMAS/EQUIPO/98s.jpg) · [Ref. de informe](../INFORMES/seg_66.jpg) |
+| Móvil | [Menú global](review/v2/navegacion-movil.png) · [Detalle](review/v2/cita-movil.png) | Lista en Agenda, navegación desplegable y panel a pantalla completa. Adaptación propia. La evidencia móvil disponible corresponde a Caja. [Ref. de acciones móviles](../V04_CAJA/M10_menu_movimientos.jpg) |
 
-| Referencia del blueprint | Resultado y diferencia |
-|---|---|
-| **S02 · Calendario.** La fecha, el equipo y la vista se ajustan sobre una cuadrícula horaria. [Selector documentado](../05_EVIDENCIAS/FOTOGRAMAS/CITAS/s02.jpg) | La barra agrupa período a la izquierda y profesional/vista a la derecha. Día usa columnas por profesional. Semana usa una columna por día y un profesional. Fundación usa un filtro individual, con opción Todo el equipo en Día y Lista. |
-| **S03 · Panel.** El editor lateral mantiene la cuadrícula de origen y presenta servicio, cliente y total. [Editor documentado](../05_EVIDENCIAS/FOTOGRAMAS/CITAS/s46.jpg) | A 1280 px se reserva espacio para el panel. El calendario se estrecha y permanece legible. El diálogo gestiona foco y Escape. El detalle distingue profesional, duración y total con un resumen propio. A 768 px el panel se superpone. |
-| **S05, S06 y S12 · Riel, navegación contextual y directorios.** [Clientes](../V03_EXPLORACION/115s_menu_clientes.jpg) · [Servicios](../FOTOGRAMAS/INVENTARIO/085s.jpg) · [Equipo](../V03_EXPLORACION/195s_equipo_lista.jpg) | Riel con iconos y nombres visibles, menú local textual y espacio de trabajo. Catálogo conserva categorías junto al listado. Mambo Jambo usa riel verde petróleo, iconos Lucide, superficies marfil, tipografía Fraunces/Manrope y bloques suaves por profesional. |
-| **Móvil · Patrón vertical disponible en Caja.** [Hoja de acciones](../V04_CAJA/M10_menu_movimientos.jpg) | La Agenda de 360 px abre Lista con hora, servicio y profesional, menú global desplegable y detalle a pantalla completa. Es una decisión propia basada en el blueprint. La evidencia existente de Caja solo respalda el uso de un patrón vertical en pantalla estrecha. |
+### Punto de partida
 
-Los cinco documentos utilizados están en [MAMBO_JAMBO_UX_BLUEPRINT](../MAMBO_JAMBO_UX_BLUEPRINT/). Las comparaciones se hicieron con las capturas originales ya citadas por el blueprint.
+La rama de Pages en `f0ac7fb` ya exportaba V1 al mismo dominio y prerenderizaba sus rutas. Agenda tenía tres vistas y alta temporal. Clientes, Catálogo, Equipo y Configuración tenían vistas básicas de consulta. Los componentes reutilizables, el diseño y la estructura se conservaron. V2 incorpora el estado persistente, las operaciones y los módulos de Inicio, Ventas, Caja, Inventario, remuneración, segmentación e informes.

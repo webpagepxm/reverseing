@@ -35,6 +35,8 @@ jobs:
         working-directory: app
         run: npm run typecheck
       - name: Exportar sitio estatico
+        env:
+          NEXT_PUBLIC_MAMBO_REVISION: ${{ github.sha }}
         working-directory: app
         run: npm run build
       - name: Permitir archivos _next en GitHub Pages
@@ -59,3 +61,25 @@ jobs:
       - name: Desplegar
         id: deployment
         uses: actions/deploy-pages@v4
+
+  verify:
+    name: Verificar URL pública
+    runs-on: ubuntu-latest
+    needs: deploy
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+          cache-dependency-path: app/package-lock.json
+      - name: Instalar dependencias y Chromium
+        working-directory: app
+        run: |
+          npm ci
+          npx playwright install --with-deps chromium
+      - name: Abrir la demo publicada
+        working-directory: app
+        env:
+          MAMBO_PUBLIC_URL: https://webpagepxm.github.io/reverseing/
+        run: node tests/public-review.mjs

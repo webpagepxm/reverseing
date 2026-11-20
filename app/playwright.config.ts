@@ -15,8 +15,8 @@ export default defineConfig({
     timezoneId: "America/Mexico_City",
   },
   webServer: {
-    command: `npm run start -- --hostname 127.0.0.1 --port ${port}`,
-    url: `http://127.0.0.1:${port}`,
+    command: "node tests/serve.mjs",
+    url: `http://127.0.0.1:${port}/reverseing/`,
     timeout: 45_000,
   },
 });
