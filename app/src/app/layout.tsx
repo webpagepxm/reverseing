@@ -5,6 +5,7 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: "Mambo Jambo · Estudio Mambo",
+  other: { "mambo-revision": process.env.NEXT_PUBLIC_MAMBO_REVISION ?? "local" },
   description: "Entorno de demostración de Mambo Jambo",
 };
 

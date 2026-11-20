@@ -232,3 +232,36 @@ h2, h3 { letter-spacing: -.024em; }
 @media (prefers-reduced-motion: no-preference) {
   .button, .rail-link, .appointment { transition: background-color .15s ease, filter .15s ease; }
 }
+.branch-select { box-sizing: border-box; border: 0; padding: 0; background: transparent; color: var(--muted); font-size: 12px; max-width: 145px; }
+.form-stack { display: grid; gap: 12px; }
+.editor .checks { padding: 9px; border: 1px solid var(--line); border-radius: 8px; gap: 7px; }
+.editor .checks legend { margin-bottom: 0; }
+.editor .checks label { display: flex; align-items: center; gap: 8px; }
+.editor .checks input { width: 17px; min-height: 17px; }
+.actions { display: flex; gap: 7px; flex-wrap: wrap; align-items: flex-start; margin: 12px 0; }
+.metrics { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(155px, 100%), 1fr)); gap: 12px; margin-bottom: 18px; }
+.metric { padding: 17px; display: grid; gap: 6px; }
+.metric span { color: var(--muted); font-size: 12px; font-weight: 800; }
+.metric strong { font: 600 24px/1.2 "Fraunces", Georgia, serif; overflow-wrap: anywhere; }
+.pos-layout { display: grid; grid-template-columns: 1fr minmax(280px, .9fr); gap: 15px; align-items: start; }
+.pos-layout > * { min-width: 0; }
+.v2-card { padding: 16px; margin-bottom: 12px; }
+.v2-card p { margin: 8px 0; line-height: 1.55; }
+.v2-card h2 { margin-bottom: 10px; }
+.v2-card label:not(.search), .directory-toolbar > label:not(.search):not(.select-control) { display: grid; gap: 5px; font-size: 12px; font-weight: 800; }
+.v2-card input, .v2-card select, .directory-toolbar input[type="date"], .directory-toolbar select { min-height: 39px; padding: 6px 8px; border: 1px solid var(--line); border-radius: 8px; background: var(--paper); max-width: 100%; }
+.v2-form { display: grid; gap: 9px; }
+.line-item { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 8px; align-items: center; border-bottom: 1px solid var(--line); padding: 10px 0; }
+.line-item input { width: 60px; }
+.library { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(215px, 100%), 1fr)); gap: 12px; margin: 12px 0; }
+.library a { display: grid; gap: 7px; padding: 15px; font-weight: 800; }
+.library a:hover { background: var(--soft); }
+.library small { color: var(--muted); font-weight: 650; }
+.rail { max-height: 100dvh; overflow-y: auto; }
+.appointment.cancelled { opacity: .62; text-decoration: line-through; }
+@media (max-width: 1024px) { .pos-layout { grid-template-columns: 1fr; } }
+@media (max-width: 600px) { .rail.expanded { max-height: calc(100dvh - 62px); } .v2-card { padding: 12px; } .record-arrow { display: none; } }
+.time-column { grid-template-rows: repeat(var(--slots, 36), 1fr); }
+.editor .inline-check { display: flex; align-items: center; }
+.editor .inline-check input { width: 17px; min-height: 17px; }
+.status-breakdown { display: flex; flex-wrap: wrap; gap: 8px; padding: 8px 16px; color: var(--muted); border-bottom: 1px solid var(--line); font-size: 11px; font-weight: 750; }
