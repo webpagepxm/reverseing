@@ -1,14 +1,17 @@
 "use client";
 
 import Link from "next/link";
+import { useRouter } from "next/navigation";
+import { ArrowRight, Banknote, ShoppingBag } from "lucide-react";
 import { useRef, useState } from "react";
 import { href } from "../../lib/navigation";
 import { useQuery } from "../../lib/query";
-import { byId, cents, currency, saleTotal, stockFor, upsert, uuid, type Sale, type SaleLine } from "../../lib/v2/model";
+import { byId, currency, openSession, saleTotal, stockFor, upsert, uuid, type Sale, type SaleLine } from "../../lib/v2/model";
 import { checkout, newSale, voidSale } from "../../lib/v2/operations";
 import { commit, useDemo } from "../../lib/v2/store";
 import { Heading, Panel } from "../ui";
 import { Action, Details, includes, Metrics, Rows, Search } from "./common";
+import { MoneyField, readMoney } from "./money-field";
 
 export function Sales({ route }: { route: string }) {
   const demo = useDemo();
@@ -56,40 +59,53 @@ function Receipt({ sale, close }: { sale: Sale; close?: () => void }) {
     ]}/>
     <div className="actions">
       {appointment && <Link className="button" href={href("agenda", { cita: appointment.id, fecha: appointment.date, sucursal: appointment.branch })}>Volver a la cita</Link>}
+      {payment && <Link className="button" href={href("ventas/caja", { ficha: payment.session, sucursal: sale.branch })}>Ver sesión de Caja</Link>}
       {["Borrador", "Pendiente de pago"].includes(sale.status) && <Link className="button primary" href={href("ventas/nueva", { ficha: sale.id })}>Continuar venta</Link>}
       {sale.status !== "Anulada" && <Action label="Anular venta" confirmation="¿Anular la venta y registrar los ajustes de demostración que correspondan?" run={() => commit((current) => voidSale(current, sale))}/>}
     </div>
   </>;
-  return close ? <Panel title="Detalle de venta" close={close}>{content}</Panel> : <div className="surface v2-card">{content}</div>;
+  return close ? <Panel title="Detalle de venta" close={close}>{content}</Panel> : <div className="surface v2-card receipt-ticket">{content}</div>;
 }
 
 function Pos({ sale, appointmentId, invalid }: { sale?: Sale; appointmentId?: string; invalid: boolean }) {
   const demo = useDemo();
-  const { update } = useQuery();
-  const appointment = byId(demo.appointments, appointmentId ?? "");
+  const router = useRouter();
+  const { params, update } = useQuery();
+  const appointment = byId(demo.appointments, appointmentId || sale?.appointment || "");
   const existing = sale ?? (appointment && demo.sales.find((item) => item.appointment === appointment.id && item.status !== "Anulada"));
   const [draft, setDraft] = useState<Sale>(() => existing ?? newSale(demo, appointment, ""));
   const stagedId = useRef("");
   const [search, setSearch] = useState("");
   const [kind, setKind] = useState<"service" | "product">("service");
+  const [tip, setTip] = useState(String(draft.tip / 100));
   const [received, setReceived] = useState("");
   const [problem, setProblem] = useState("");
+  const [moneyError, setMoneyError] = useState("");
+  const paying = params.get("paso") === "efectivo";
+  const session = openSession(demo, draft.branch);
   const total = saleTotal(draft);
+  const amount = readMoney(received);
   if (invalid || (appointmentId && (!appointment || (!existing && ["Cancelada", "Inasistencia"].includes(appointment.status))))) return <><Heading title="Venta no disponible"/><Link className="button" href={href("ventas")}>Volver a Ventas</Link></>;
   if (existing && ["Pagada", "Anulada"].includes(existing.status)) return <><Heading title="Detalle de venta"/><Receipt sale={existing}/><Link className="button" href={href("ventas")}>Ver ventas</Link></>;
+
   const products = demo.products.filter((item) => item.branch === draft.branch && !item.archived);
   const offerings = demo.services.filter((item) => item.branches.includes(draft.branch) && !item.archived);
-  const available = kind === "service"
+  const available = (kind === "service"
     ? offerings.map((item) => ({ ...item, unit: Math.round(item.price * 100), detail: item.duration + " min", available: true }))
-    : products.map((item) => ({ ...item, unit: item.price, detail: item.tracked ? stockFor(demo, item.id) + " disponibles" : "Sin seguimiento", available: !item.tracked || stockFor(demo, item.id) > 0 }));
+    : products.map((item) => ({ ...item, unit: item.price, detail: item.tracked ? stockFor(demo, item.id) + " disponibles" : "Sin seguimiento", available: !item.tracked || stockFor(demo, item.id) > 0 })))
+    .filter((item) => includes(item.name + " " + item.category, search));
+
   function add(line: SaleLine) {
     setDraft((value) => {
       const previous = value.lines.find((item) => item.item === line.item && item.kind === line.kind);
       return { ...value, lines: previous ? value.lines.map((item) => item === previous ? { ...item, quantity: item.quantity + 1 } : item) : [...value.lines, line] };
     });
   }
-  function save(status: Sale["status"], pay = false) {
+
+  function save(status: Sale["status"], action: "save" | "pay" | "open" = "save") {
     setProblem("");
+    if (tip && !Number.isSafeInteger(readMoney(tip))) { setProblem("Revisa la propina antes de guardar."); return; }
+    if (action === "pay" && (!Number.isSafeInteger(amount) || amount < total)) { setMoneyError("Introduce un importe que cubra el total."); return; }
     try {
       let id = draft.id || existing?.id || stagedId.current || uuid();
       stagedId.current = id;
@@ -100,35 +116,60 @@ function Pos({ sale, appointmentId, invalid }: { sale?: Sale; appointmentId?: st
         if (currentDraft && ["Pagada", "Anulada"].includes(currentDraft.status)) return current;
         const next = { ...draft, id, folio: currentDraft?.folio ?? durable.folio, status };
         const staged = { ...current, sales: upsert(current.sales, next) };
-        return pay ? checkout(staged, id, cents(received)) : staged;
+        return action === "pay" ? checkout(staged, id, amount) : staged;
       });
-      update({ ficha: id, citaOrigen: null }, true);
+      if (action === "open") router.push(href("ventas/caja", { volverVenta: id, ficha: "abrir", sucursal: draft.branch }));
+      else update({ ficha: id, citaOrigen: null, paso: paying ? "efectivo" : null }, true);
     } catch (error) { setProblem((error as Error).message); }
   }
+
   return <>
     <Heading title="Nueva venta"/>
-    <div className="pos-layout">
-      <section className="surface v2-card"><h2>Catálogo</h2>
-        <div className="segmented" role="group" aria-label="Tipo de artículo"><button aria-pressed={kind === "service"} onClick={() => setKind("service")}>Servicios</button><button aria-pressed={kind === "product"} onClick={() => setKind("product")}>Productos</button></div>
-        <Search label="Buscar artículos" value={search} set={setSearch}/>
-        {available.filter((item) => includes(item.name, search)).map((item) => <div className="line-item" key={item.id}><div><strong>{item.name}</strong><p>{item.detail} · {currency(item.unit)}</p></div><button className="button" aria-label={"Agregar " + item.name} disabled={!item.available} onClick={() => add({ kind, item: item.id, name: item.name, quantity: 1, unit: item.unit })}>Agregar</button></div>)}
+    <div className={`pos-layout ${paying ? "pos-paying" : ""}`}>
+      <section className="surface v2-card pos-work">
+        {paying ? <>
+          <div className="pos-title"><Banknote size={20}/><h2>Cobro en efectivo</h2></div>
+          <p className="pos-help">El cobro se registra en la sesión activa como una operación de demostración.</p>
+          {session ? <form id="cash-payment" className="v2-form" onSubmit={(event) => { event.preventDefault(); save("Pendiente de pago", "pay"); }}>
+            <div className="cash-form-callout"><span>Total a cobrar</span><strong>{currency(total)} MXN</strong></div>
+            <MoneyField label="Efectivo recibido (MXN)" value={received} change={(next) => { setReceived(next); setMoneyError(""); }} error={moneyError}/>
+            <button type="button" className="button exact-cash" onClick={() => { setReceived(String(total / 100)); setMoneyError(""); }}>Importe exacto</button>
+            <div className="cash-variance" aria-live="polite"><span>Cambio</span><strong>{currency(Number.isFinite(amount) ? Math.max(0, amount - total) : 0)}</strong></div>
+          </form> : <div className="pos-blocked">
+            <strong>Caja cerrada</strong><p>Abre una sesión para recibir efectivo. El carrito quedará guardado y podrás retomar el cobro desde Caja.</p>
+            <button className="button primary" onClick={() => save("Pendiente de pago", "open")}>Guardar carrito y abrir caja</button>
+          </div>}
+          <div className="actions"><button className="button" onClick={() => update({ paso: null }, true)}>Volver al carrito</button></div>
+        </> : <>
+          <div className="pos-title"><ShoppingBag size={20}/><h2>Catálogo</h2><a className="text-button pos-jump" href="#carrito">Ver carrito ({draft.lines.length})</a></div>
+          <div className="segmented" role="group" aria-label="Tipo de artículo"><button aria-pressed={kind === "service"} onClick={() => setKind("service")}>Servicios</button><button aria-pressed={kind === "product"} onClick={() => setKind("product")}>Productos</button></div>
+          <Search label="Buscar artículos" value={search} set={setSearch}/>
+          {!available.length && <p className="pos-help">No hay artículos que coincidan con la búsqueda.</p>}
+          {available.map((item) => <div className="line-item" key={item.id}><div><strong>{item.name}</strong><p>{item.category} · {item.detail}</p></div><span className="pos-price">{currency(item.unit)}</span><button className="button" aria-label={"Agregar " + item.name} disabled={!item.available} onClick={() => add({ kind, item: item.id, name: item.name, quantity: 1, unit: item.unit })}>Agregar</button></div>)}
+        </>}
       </section>
-      <section className="surface v2-card"><h2>Carrito</h2>
-        {appointment && <p>Cita de origen · {appointment.label} · {appointment.date}</p>}
+      <section className="surface v2-card pos-ticket" id="carrito" aria-label="Carrito">
+        <h2>Carrito</h2>
+        {appointment && <p className="pos-source">Cita de origen · {appointment.label} · {appointment.date}</p>}
         {!draft.lines.length && <p>Elige un servicio o producto.</p>}
-        {draft.lines.map((line, index) => <div className="line-item" key={line.kind + line.item}><div><strong>{line.name}</strong><p>{currency(line.unit)} por unidad</p></div><div><label>Cantidad<input aria-label={"Cantidad de " + line.name} type="number" min={1} max={10000} value={line.quantity} onChange={(event) => {
-          const quantity = Number(event.target.value);
-          if (Number.isInteger(quantity) && quantity >= 1 && quantity <= 10000) setDraft({ ...draft, lines: draft.lines.map((item, i) => i === index ? { ...item, quantity } : item) });
-        }}/></label><button className="text-button" onClick={() => setDraft({ ...draft, lines: draft.lines.filter((_, i) => i !== index) })}>Quitar</button></div></div>)}
-        <form className="v2-form" onSubmit={(event) => { event.preventDefault(); save("Pendiente de pago", true); }}>
+        {!paying && <div className="v2-form pos-assignment">
           <label>Cliente<select value={draft.client} onChange={(event) => setDraft({ ...draft, client: event.target.value })}><option value="">Sin cliente</option>{demo.clients.filter((item) => !item.archived || item.id === draft.client).map((item) => <option key={item.id} value={item.id}>{item.name}</option>)}</select></label>
           <label>Profesional<select value={draft.staff} onChange={(event) => setDraft({ ...draft, staff: event.target.value })}><option value="">Sin profesional</option>{demo.staff.filter((item) => item.branches.includes(draft.branch) && !item.archived).map((item) => <option key={item.id} value={item.id}>{item.name}</option>)}</select></label>
-          <label>Propina (MXN)<input type="number" min={0} step=".01" value={draft.tip / 100} onChange={(event) => { const value = cents(event.target.value); if (value >= 0 && Number.isSafeInteger(value)) setDraft({ ...draft, tip: value }); }}/></label>
-          <Details fields={[["Subtotal", currency(total - draft.tip)], ["Total", currency(total)], ["Cambio", currency(Math.max(0, cents(received) - total))]]}/>
-          <label>Efectivo recibido (MXN)<input type="number" min={0} step=".01" value={received} onChange={(event) => setReceived(event.target.value)} required/></label>
-          {problem && <p className="error-box" role="alert">{problem}</p>}
-          <div className="actions"><button type="button" className="button" onClick={() => save("Borrador")}>Guardar borrador</button><button type="button" className="button" onClick={() => save("Pendiente de pago")}>Dejar pendiente</button><button className="button primary" disabled={!draft.lines.length}>Confirmar efectivo simulado</button></div>
-        </form>
+        </div>}
+        {draft.lines.map((line, index) => <div className="line-item" key={line.kind + line.item}><div><strong>{line.name}</strong><p>{line.quantity} × {currency(line.unit)}</p></div>
+          {!paying && <div><label>Cantidad<input aria-label={"Cantidad de " + line.name} type="number" min={1} max={10000} value={line.quantity} onChange={(event) => {
+            const quantity = Number(event.target.value);
+            if (Number.isInteger(quantity) && quantity >= 1 && quantity <= 10000) setDraft({ ...draft, lines: draft.lines.map((item, i) => i === index ? { ...item, quantity } : item) });
+          }}/></label><button className="text-button" onClick={() => setDraft({ ...draft, lines: draft.lines.filter((_, i) => i !== index) })}>Quitar</button></div>}
+        </div>)}
+        {!paying && <MoneyField label="Propina (MXN)" value={tip} change={(next) => { setTip(next); const value = readMoney(next); if (Number.isSafeInteger(value) || !next.trim()) setDraft({ ...draft, tip: value || 0 }); }} error={tip && !Number.isSafeInteger(readMoney(tip)) ? "Usa hasta dos decimales." : undefined}/>}
+        <div className="pos-totals"><Details fields={[["Subtotal", currency(total - draft.tip)], ...(paying ? [["Propina", currency(draft.tip)]] as [string, string][] : [])]}/><div className="pos-total"><span>Total</span><strong>{currency(total)} MXN</strong></div></div>
+        {problem && <p className="error-box" role="alert">{problem}</p>}
+        <div className="pos-ticket-actions">
+          {!paying && <button className="button primary" disabled={!draft.lines.length || (tip !== "" && !Number.isSafeInteger(readMoney(tip)))} onClick={() => { setProblem(""); update({ paso: "efectivo" }); }}>Continuar a efectivo<ArrowRight size={16}/></button>}
+          {paying && session && <button form="cash-payment" className="button primary" disabled={!draft.lines.length}>Confirmar efectivo simulado</button>}
+          <div className="actions"><button className="button" onClick={() => save("Borrador")}>Guardar borrador</button><button className="button" onClick={() => save("Pendiente de pago")}>Dejar pendiente</button></div>
+        </div>
       </section>
     </div>
   </>;
