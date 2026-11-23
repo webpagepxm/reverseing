@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useQuery } from "../lib/query";
 import { CalendarDays, ChevronDown, ChevronRight, CircleHelp, Clock3, FlaskConical, MapPin, Menu, Settings2, Shapes, UsersRound, UserRound, House, Receipt, ChartNoAxesCombined } from "lucide-react";
-import { useEffect, useState } from "react";
+import { Fragment, useEffect, useState } from "react";
 import { href, modules, scope } from "../lib/navigation";
 import { Agenda } from "./agenda";
 import { Directory } from "./directory";
@@ -37,12 +37,13 @@ function Shell({ route }: { route: string }) {
     try { commit((current) => ({ ...current, branch: linkedBranch })); }
     catch (error) { setStorageError((error as Error).message); }
   }, [linkedBranch, demo.branch]);
-  const panel = Boolean(params.get("cita") || params.get("ficha"));
+  const panel = Boolean(params.get("cita") || (params.get("ficha") && route !== "ventas/nueva"));
+  const groups: Record<string, string> = { "ventas": "Operaciones", "ventas/pagos": "Seguimiento", "ventas/caja": "Registro", "catalogo/servicios": "Catálogo", "catalogo/inventario": "Inventario", "equipo/comisiones": "Remuneración", "informes/citas": "Por operación" };
   return (
     <div className={`workspace ${panel ? "has-panel" : ""}`}>
       <a className="skip-link" href="#contenido">Saltar al contenido</a>
       <aside className={`rail ${menu === "modules" ? "expanded" : ""}`}>
-        <Link className="brand" href={scope + "/agenda"} aria-label="Mambo Jambo · Agenda" onClick={() => setMenu(null)}><span className="monogram" aria-hidden="true">m<span>.</span></span><span>Mambo<br/>Jambo</span></Link>
+        <Link className="brand" href={scope + "/agenda"} aria-label="Mambo Jambo · Agenda" onClick={() => setMenu(null)}><span className="monogram" aria-hidden="true">m<span>.</span></span><span className="brand-name">Mambo<br/>Jambo</span></Link>
         <nav aria-label="Módulos">{modules.map((item, index) => {
           if (!allow(item.name) && item.name !== "Configuración") return null;
           const Icon = icons[index];
@@ -68,9 +69,12 @@ function Shell({ route }: { route: string }) {
       <aside className={`section-nav ${menu === "sections" ? "expanded" : ""}`}>
         <p className="section-title">{group.name}</p>
         <nav aria-label={`Secciones de ${group.name}`}>{group.sections.map((item) => (
+          <Fragment key={item.href}>
+          {groups[item.href] && <p className="section-group">{groups[item.href]}</p>}
           <Link href={scope + "/" + item.href} key={item.href} aria-current={route === item.href ? "page" : undefined} onClick={() => setMenu(null)}>
             {item.href === "equipo/turnos" ? <Clock3 size={16}/> : <ChevronRight size={16}/>}<span>{item.name}</span>
           </Link>
+          </Fragment>
         ))}</nav>
       </aside>
       <main id="contenido" className="content">
