@@ -7,7 +7,7 @@ import Link from "next/link";
 import { href } from "../lib/navigation";
 import { byId, currency, todayAt, upsert, uuid, type DemoAppointment as Appointment, type Status } from "../lib/v2/model";
 import { commit, useDemo } from "../lib/v2/store";
-import { schedule } from "../lib/v2/operations";
+import { covers, schedule } from "../lib/v2/operations";
 import { Action } from "./v2/common";
 import { useQuery } from "../lib/query";
 import { Avatar, Empty, Heading, Panel } from "./ui";
@@ -46,7 +46,7 @@ export function Agenda() {
   const isNew = selected === "nueva";
   const active = branchAppointments.find((event) => event.id === selected);
   const editing = active && params.get("editar") === "1";
-  const close = () => { setPreview(null); update({ cita: null, franja: null, persona: null, editar: null, cliente: null }, true); };
+  const close = () => { setPreview(null); update({ cita: null, franja: null, persona: null, editar: null, cliente: null, diaCita: null }, true); };
   const open = (id: string) => { setNotice(""); update({ cita: id, franja: null, persona: null }); };
 
   useEffect(() => {
@@ -70,12 +70,13 @@ export function Agenda() {
   function add(eventDate = date, minute = opening, employee = (view === "semana" ? weekMember : member ?? staff[0])?.id ?? "") {
     setNotice("");
     setPreview(null);
-    update({ cita: "nueva", fecha: eventDate, franja: String(minute), persona: employee });
+    update({ cita: "nueva", diaCita: eventDate, franja: String(minute), persona: employee });
   }
 
   const requestedSlot = Number(params.get("franja"));
+  const draftDate = params.get("diaCita");
   const draft: Appointment = editing ? active : {
-    id: "", date, minute: slots.includes(requestedSlot) ? requestedSlot : opening,
+    id: "", date: validDate(draftDate) ? draftDate : date, minute: slots.includes(requestedSlot) ? requestedSlot : opening,
     staff: staff.find((person) => person.id === params.get("persona"))?.id ?? member?.id ?? staff[0]?.id ?? "",
     service: "", client: byId(clients, params.get("cliente") ?? "")?.id ?? "", branch: demo.branch, duration: 30, price: 0, label: "", status: "Reservada", notes: "", history: [],
   };
@@ -159,8 +160,8 @@ export function Agenda() {
       commit((current) => schedule(current, event));
       setNotice(editing ? "Cita actualizada." : "Cita de demostración añadida.");
       setPreview(null);
-      const visibleEmployee = view === "semana" || (member && member.id !== event.staff) ? event.staff : member?.id ?? null;
-      update({ fecha: event.date, empleado: visibleEmployee, cita: null, franja: null, persona: null, editar: null, cliente: null }, true);
+      const dateVisible = view === "semana" ? week.includes(event.date) : date === event.date;
+      update({ fecha: dateVisible ? rawDate : event.date, cita: null, franja: null, persona: null, editar: null, cliente: null, diaCita: null }, true);
     }}/>}
     {active && !editing && <AppointmentDetails event={active} close={close} edit={() => update({ editar: "1" })}/>}
     {selected && !active && !isNew && <Panel close={close} title="Cita no disponible"><Empty title="No se encontró la cita" description="Comprueba que la cita corresponda a la sucursal activa." action={<button className="button" onClick={close}>Volver a la agenda</button>}/></Panel>}
@@ -202,17 +203,26 @@ function AppointmentEditor({ initial, close, save, onPreview }: { initial: Appoi
   const demo = useDemo();
   const [draft, setDraft] = useState(initial);
   const [error, setError] = useState("");
+  const submitted = useRef(false);
   const staff = demo.staff.filter((member) => !member.archived && member.branches.includes(draft.branch));
   const service = byId(demo.services, draft.service);
   const eligible = demo.services.filter((item) => (!item.archived || (initial.id && initial.service === item.id)) && item.branches.includes(draft.branch) && item.staff.includes(draft.staff));
   const usesSnapshot = initial.id && initial.service === draft.service;
   const price = usesSnapshot ? initial.price : service?.price ?? 0;
   const duration = usesSnapshot ? initial.duration : service?.duration ?? 0;
+  const slots = Array.from({ length: 96 }, (_, index) => index * 15).filter((minute) =>
+    validDate(draft.date) && covers(demo, { ...draft, minute, duration: duration || 15 }) &&
+      !demo.appointments.some((item) => item.id !== initial.id && item.status === "Reservada" && item.staff === draft.staff && item.date === draft.date && item.minute < minute + (duration || 15) && minute < item.minute + item.duration));
+  const nextSlot = slots.findIndex((minute) => minute >= draft.minute);
+  const firstSlot = nextSlot < 0 ? Math.max(0, slots.length - 4) : Math.max(0, nextSlot - 1);
+  const nearby = slots.slice(firstSlot, firstSlot + 4);
+  const timeError = error.includes("horario") || error.includes("franja") || error.includes("turno");
   function submit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    if (!service) return;
+    if (!service || submitted.current) return;
     try {
       save({ ...draft, id: initial.id || uuid(), duration, price, label: usesSnapshot ? initial.label : service.name, history: [...initial.history, (initial.id ? "Cita editada" : "Cita creada") + " · " + new Date().toLocaleString("es-MX")] });
+      submitted.current = true;
     } catch (failure) { setError((failure as Error).message); }
   }
   function change(fields: Partial<Appointment>) {
@@ -224,20 +234,21 @@ function AppointmentEditor({ initial, close, save, onPreview }: { initial: Appoi
   function cancel() {
     if (draft === initial || window.confirm("¿Descartar los cambios de esta cita de prueba?")) close();
   }
-  return <Panel close={cancel} title={initial.id ? "Editar cita" : "Nueva cita"} footer={<><button className="button" onClick={cancel}>Cancelar</button><button className="button primary" form="appointment-form" type="submit">{initial.id ? "Guardar cambios" : "Añadir cita de prueba"}</button></>}>
+  return <Panel close={cancel} title={initial.id ? "Editar cita" : "Nueva cita"} footer={<>{service && <div className="appointment-footer-total"><span>{duration} min · Total estimado</span><strong>{currency(Math.round(price * 100))} MXN</strong></div>}<button className="button" onClick={cancel}>Cancelar</button><button className="button primary" form="appointment-form" type="submit">{initial.id ? "Guardar cambios" : "Añadir cita de prueba"}</button></>}>
     <form id="appointment-form" className="editor" onSubmit={submit}>
       <fieldset>
         <legend>Horario y servicio</legend>
         <div className="form-pair"><label>Fecha<input type="date" required value={draft.date} onChange={(event) => change({ date: event.target.value })}/></label>
-        <label>Hora<input type="time" required value={time(draft.minute)} onChange={(event) => {const [hour, minute] = event.target.value.split(":").map(Number); if (Number.isFinite(hour * 60 + minute)) change({ minute: hour * 60 + minute });}}/></label></div>
+        <label>Hora<input type="time" required aria-invalid={timeError} aria-describedby={timeError ? "appointment-time-error" : undefined} value={time(draft.minute)} onChange={(event) => {const [hour, minute] = event.target.value.split(":").map(Number); if (Number.isFinite(hour * 60 + minute)) change({ minute: hour * 60 + minute });}}/></label></div>
+        {timeError && <p id="appointment-time-error" className="field-error" role="alert">{error}</p>}
+        {nearby.length > 0 && <div className="appointment-slot-picker"><span>Franjas disponibles</span><div role="group" aria-label="Franjas disponibles">{nearby.map((minute) => <button type="button" className="button" aria-pressed={minute === draft.minute} key={minute} onClick={() => change({ minute })}>{time(minute)}</button>)}</div></div>}
         <label>Profesional<select required value={draft.staff} onChange={(event) => change({ staff: event.target.value, service: "" })}><option value="">Seleccionar profesional</option>{staff.map((person) => <option key={person.id} value={person.id}>{person.name}</option>)}</select></label>
         <label>Servicio<select required value={draft.service} onChange={(event) => change({ service: event.target.value })}><option value="">Seleccionar servicio</option>{eligible.map((item) => <option key={item.id} value={item.id}>{item.name} · {item.duration} min</option>)}</select></label>
         <label>Cliente (opcional)<select value={draft.client} onChange={(event) => change({ client: event.target.value })}><option value="">Sin cliente</option>{demo.clients.filter((client) => !client.archived || client.id === initial.client).map((client) => <option key={client.id} value={client.id}>{client.name}</option>)}</select></label>
         <label>Notas<input value={draft.notes} onChange={(event) => change({ notes: event.target.value })}/></label>
         {!initial.id && <label>Estado inicial<select value={draft.status} onChange={(event) => change({ status: event.target.value as Status })}><option>Reservada</option><option>Completada</option></select></label>}
       </fieldset>
-      {error && <p className="error-box" role="alert">{error}</p>}
+      {error && !timeError && <p className="error-box" role="alert">{error}</p>}
     </form>
-    {service && <div className="editor-total"><span>{duration} min · Total</span><strong>{currency(Math.round(price * 100))}</strong></div>}
   </Panel>;
 }

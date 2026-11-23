@@ -51,7 +51,15 @@ try {
   assert.deepEqual(assetErrors, []);
   assert.deepEqual(pageErrors, []);
   for (const type of ["script", "stylesheet", "font"]) assert.ok(loaded.has(type), `Falta recurso ${type}`);
-  console.log(`URL pública, rutas, recarga y recursos verificados para ${revision}.`);
+  const mobile = await browser.newPage({ viewport: { width: 390, height: 844 }, isMobile: true, hasTouch: true });
+  const mobileCash = await mobile.goto(new URL("ventas/caja/", prefix).href);
+  assert.equal(mobileCash?.status(), 200);
+  await mobile.getByRole("heading", { name: "Caja", exact: true, level: 1 }).waitFor();
+  await mobile.getByRole("button", { name: "Abrir caja", exact: true }).tap();
+  await mobile.getByRole("dialog", { name: "Abrir caja" }).waitFor();
+  assert.equal(await mobile.getByLabel("Efectivo inicial (MXN)").getAttribute("inputmode"), "decimal");
+  assert.ok(await mobile.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth));
+  console.log(`URL pública, rutas, recursos y Caja móvil verificados para ${revision}.`);
 } finally {
   await browser.close();
 }

@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { ChartNoAxesCombined, ChevronRight } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { demoDate, moveDate, time } from "../../lib/demo";
@@ -82,7 +83,7 @@ function FieldControl({ label, value, min, max, change }: { label: string; value
 export function Insights({ route }: { route: string }) {
   if (route === "clientes/segmentos") return <Segments/>;
   if (route === "inicio" || route.endsWith("paneles")) return <Dashboard panels={route !== "inicio"}/>;
-  if (route === "informes") return <><Heading title="Biblioteca de informes"/><div className="library">{reportLinks.map(([name, path, detail]) => <Link className="surface" key={path} href={href(path)}>{name}<small>{detail}</small></Link>)}</div></>;
+  if (route === "informes") return <><Heading title="Biblioteca de informes"/><nav className="surface report-library" aria-label="Informes por operación">{reportLinks.map(([name, path, detail]) => <Link key={path} href={href(path)}><span className="report-icon"><ChartNoAxesCombined size={17}/></span><span><strong>{name}</strong><small>{detail}</small></span><ChevronRight size={17}/></Link>)}</nav></>;
   return <Report route={route}/>;
 }
 

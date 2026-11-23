@@ -374,3 +374,22 @@ button.timeline-row:hover { background: var(--wash); }
   .pos-work > .line-item { grid-template-columns: minmax(0, 1fr) auto; }
   .pos-work .line-item .button { grid-column: 2; }
 }
+.agenda .calendar-heading h2 { font-size: clamp(15px, 1.6vw, 18px); }
+.agenda-controls { margin-bottom: 10px; }
+.appointment-slot-picker { display: grid; gap: 6px; }
+.appointment-slot-picker > span { font-size: 12px; font-weight: 800; }
+.appointment-slot-picker > div { display: flex; flex-wrap: wrap; gap: 5px; }
+.appointment-slot-picker .button[aria-pressed="true"] { background: var(--soft); border-color: var(--accent); }
+.appointment-footer-total { margin-right: auto; display: grid; gap: 2px; }
+.appointment-footer-total span { color: var(--muted); font-size: 11px; }
+.appointment-footer-total strong { font-variant-numeric: tabular-nums; }
+.report-library { max-width: 870px; padding: 4px 12px; }
+.report-library a { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; gap: 10px; align-items: center; padding: 9px 4px; min-height: 56px; }
+.report-library a + a { border-top: 1px solid var(--line); }
+.report-library a:hover { background: var(--wash); }
+.report-library small { display: block; color: var(--muted); margin-top: 2px; }
+.report-icon { display: grid; place-items: center; width: 36px; height: 36px; color: var(--accent); background: var(--soft); border-radius: 7px; }
+@media (max-width: 600px) {
+  .appointment-footer-total { flex: 1 0 100%; }
+  .section-nav.expanded a { min-height: 44px; }
+}

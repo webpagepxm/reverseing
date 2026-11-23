@@ -33,10 +33,10 @@ function Shell({ route }: { route: string }) {
   const branchInLink = params.get("sucursal");
   const linkedBranch = demo.branches.find((item) => item.id === branchInLink)?.id;
   useEffect(() => {
-    if (!linkedBranch || demo.branch === linkedBranch) return;
-    try { commit((current) => ({ ...current, branch: linkedBranch })); }
+    if (!linkedBranch || new URLSearchParams(window.location.search).get("sucursal") !== linkedBranch) return;
+    try { commit((current) => current.branch === linkedBranch ? current : { ...current, branch: linkedBranch }); }
     catch (error) { setStorageError((error as Error).message); }
-  }, [linkedBranch, demo.branch]);
+  }, [linkedBranch]);
   const panel = Boolean(params.get("cita") || (params.get("ficha") && route !== "ventas/nueva"));
   const groups: Record<string, string> = { "ventas": "Operaciones", "ventas/pagos": "Seguimiento", "ventas/caja": "Registro", "catalogo/servicios": "Catálogo", "catalogo/inventario": "Inventario", "equipo/comisiones": "Remuneración", "informes/citas": "Por operación" };
   return (
@@ -56,7 +56,7 @@ function Shell({ route }: { route: string }) {
         <div className="workspace-location"><span className="location-mark"><MapPin size={17}/></span><span><strong>{demo.business.name}</strong><select className="branch-select" aria-label="Sucursal activa" value={demo.branch} onChange={(event) => {
           const branch = event.target.value;
           try {
-            update({ ficha: null, cita: null, citaOrigen: null, editar: null, cliente: null, persona: null, franja: null, empleado: null, sucursal: null }, true);
+            update({ ficha: null, cita: null, citaOrigen: null, editar: null, cliente: null, persona: null, franja: null, diaCita: null, empleado: null, sucursal: null }, true);
             commit((current) => ({ ...current, branch }));
             setStorageError("");
           } catch (error) { setStorageError((error as Error).message); }

@@ -9,7 +9,7 @@ const button = (page: Page, name: string) => page.getByRole("button", { name, ex
 const capture = async (page: Page, name: string) => {
   if (process.env.MAMBO_CAPTURE) {
     await page.evaluate(() => document.fonts.ready);
-    await page.screenshot({ path: "review/v2/" + name + ".png" });
+    await page.screenshot({ path: "review/v3/despues/" + name + ".png" });
   }
 };
 const confirm = (page: Page) => page.once("dialog", (entry) => entry.accept());
@@ -55,6 +55,12 @@ test("navegación global, enlaces directos, calendario, teclado y filtros", asyn
   await expect(event).toBeFocused();
   await button(page, "Semana").click();
   await page.getByRole("combobox", { name: "Empleado", exact: true }).selectOption("luna");
+  await page.getByRole("button", { name: /Nueva cita: Luna Reyes, 20 nov, 15:00/ }).click();
+  await expect(dialog(page).getByLabel("Fecha", { exact: true })).toHaveValue("2026-11-20");
+  await page.keyboard.press("Escape");
+  await expect(page.getByLabel("Fecha de agenda")).toHaveValue("2026-11-18");
+  await expect(button(page, "Semana")).toHaveAttribute("aria-pressed", "true");
+  await expect(page.getByRole("combobox", { name: "Empleado", exact: true })).toHaveValue("luna");
   await expect(page.getByRole("heading", { name: /16.*22/ })).toBeVisible();
   await button(page, "Lista").click();
   await page.getByLabel("Fecha de agenda").fill("2026-11-25");
@@ -136,36 +142,111 @@ test("A · clientes, servicios, turnos y ciclo de cita persistente", async ({ pa
   expect((await snapshot(page)).appointments.filter((item: { status: string; minute: number; label: string }) => item.label === "Corte E2E" && item.minute === 960).length).toBe(2);
 });
 
-test("B · cita, POS, efectivo, movimientos, arqueo e informe", async ({ page }) => {
+test("Caja · apertura, movimientos, faltante y reapertura con valores exactos", async ({ page }) => {
   await page.setViewportSize({ width: 1440, height: 950 });
-  await page.goto(route("ventas/nueva"));
-  await page.getByRole("button", { name: /Agregar Corte de prueba/ }).click();
-  await page.getByLabel("Efectivo recibido (MXN)").fill("40");
-  await button(page, "Confirmar efectivo simulado").click();
-  await expect(page.getByRole("alert").filter({ hasText: "Abre una sesión" })).toBeVisible();
-  await openCash(page);
+  await page.goto(route("ventas/caja"));
+  await expect(page.getByText("Cerrada", { exact: true })).toBeVisible();
+  await capture(page, "caja-cerrada");
+  await button(page, "Abrir caja").click();
+  await dialog(page).getByLabel("Efectivo inicial (MXN)").fill("2000");
+  await capture(page, "apertura");
+  await button(page, "Confirmar apertura").click();
+  await expect(page.getByText("Apertura · Fondo inicial")).toBeVisible();
+  await expect(page.getByRole("status")).toContainText("Caja abierta con $2,000.00");
+  await capture(page, "caja-abierta");
+
   for (const [action, amount, reason] of [["Entrada de efectivo", "200", "Fondo"], ["Salida de efectivo", "50", "Gastos"]]) {
     await button(page, action).click();
-    await dialog(page).getByLabel("Importe (MXN)").fill(amount);
-    await dialog(page).getByLabel("Motivo").fill(reason);
+    const editor = dialog(page);
+    await editor.getByLabel("Importe (MXN)").fill(amount);
     await button(page, "Confirmar movimiento").click();
+    await expect(editor.getByRole("alert")).toContainText("Describe el motivo");
+    await expect(editor.getByLabel("Importe (MXN)")).toHaveValue(amount);
+    await editor.getByLabel("Motivo").fill(reason);
+    if (amount === "200") await capture(page, "movimiento");
+    await button(page, "Confirmar movimiento").click();
+    await expect(editor).toHaveCount(0);
   }
+  await expect(page.getByRole("status")).toContainText("Efectivo esperado $2,150.00");
+  await expect(page.getByText("+$200.00", { exact: true })).toBeVisible();
+  await expect(page.getByText("−$50.00", { exact: true })).toBeVisible();
+  await capture(page, "actividad");
+  const typeFilter = page.getByRole("combobox", { name: "Tipo" });
+  await typeFilter.selectOption("Salida");
+  const line = page.getByRole("button", { name: /Salida · Gastos/ });
+  await line.click();
+  await expect(dialog(page)).toContainText("$2,150.00");
+  await page.keyboard.press("Escape");
+  await expect(typeFilter).toHaveValue("Salida");
+  await expect(line).toBeFocused();
+  await button(page, "Arqueo y cierre").click();
+  const editor = dialog(page);
+  await editor.getByLabel("Efectivo contado (MXN)").fill("1000");
+  await expect(editor.getByText("Faltante", { exact: true })).toBeVisible();
+  await expect(editor.getByText("−$1,150.00 MXN", { exact: true })).toBeVisible();
+  await capture(page, "arqueo");
+  await button(page, "Continuar a distribución").click();
+  await expect(editor.getByRole("alert")).toContainText("motivo de la diferencia");
+  await editor.getByLabel("Motivo de diferencia").fill("Faltante de prueba");
+  await button(page, "Continuar a distribución").click();
+  await editor.getByLabel("Efectivo retenido (MXN)").fill("2000");
+  await button(page, "Revisar cierre").click();
+  await expect(editor.getByRole("alert")).toContainText("no puede superar el contado");
+  await expect(editor.getByLabel("Efectivo retenido (MXN)")).toHaveValue("2000");
+  await editor.getByLabel("Efectivo retenido (MXN)").fill("900");
+  await expect(editor.getByLabel("Efectivo retirado (MXN)")).toHaveValue("100");
+  await editor.getByLabel("Efectivo retirado (MXN)").fill("99");
+  await button(page, "Revisar cierre").click();
+  await expect(editor.getByRole("alert")).toContainText("debe sumar");
+  await editor.getByLabel("Efectivo retirado (MXN)").fill("100");
+  await button(page, "Revisar cierre").click();
+  await expect(editor).toContainText("Faltante de prueba");
+  await capture(page, "cierre");
+  await button(page, "Confirmar cierre").click();
+  await expect(editor).toHaveCount(0);
+  await expect(page.getByRole("status")).toContainText("Caja cerrada");
+  const session = (await snapshot(page)).sessions.find((item: { branch: string }) => item.branch === "roma-norte");
+  expect(session).toMatchObject({ expected: 215000, counted: 100000, kept: 90000, withdrawn: 10000 });
+  await button(page, "Actividad").click();
+  await typeFilter.selectOption("Cierre");
+  await expect(page.getByText("Cierre · Faltante de prueba")).toBeVisible();
+  await page.reload();
+  await expect(page.getByRole("table", { name: "Historial de sesiones" })).toContainText("−$1,150.00");
+  await button(page, "Abrir caja").click();
+  await expect(editor.getByLabel("Efectivo inicial (MXN)")).toHaveValue("900");
+  await editor.getByLabel("Efectivo inicial (MXN)").fill("1000");
+  await button(page, "Confirmar apertura").click();
+  await expect(editor.getByRole("alert")).toContainText("difiere del último cierre");
+  await editor.getByLabel("Motivo del cambio").fill("Cambio entregado al turno");
+  await button(page, "Confirmar apertura").click();
+  await expect(page.getByText("Apertura · Cambio entregado al turno")).toBeVisible();
+});
+
+test("B · cita, POS, recuperación del carrito, efectivo e informe", async ({ page }) => {
+  await page.setViewportSize({ width: 1440, height: 950 });
   await page.goto(route("agenda"));
   await appointment(page, "Corte de prueba · 25 MXN · 90 min", "15:00");
   await page.getByRole("button", { name: /Sin cliente, Corte de prueba/ }).click();
   await dialog(page).getByRole("link", { name: "Cobrar cita" }).click();
   await page.getByLabel("Propina (MXN)").fill("6.25");
+  await button(page, "Continuar a efectivo").click();
+  await expect(page.getByText("Caja cerrada", { exact: true })).toBeVisible();
+  await button(page, "Guardar carrito y abrir caja").click();
+  await dialog(page).getByLabel("Efectivo inicial (MXN)").fill("2000");
+  await button(page, "Confirmar apertura").click();
+  await page.getByRole("link", { name: "Retomar cobro" }).click();
+  await expect(page.getByText("Cita de origen", { exact: false })).toBeVisible();
+  await expect(page.getByText("$31.25 MXN", { exact: true })).toHaveCount(2);
+  await page.getByLabel("Efectivo recibido (MXN)").fill("30");
+  await button(page, "Confirmar efectivo simulado").click();
+  await expect(page.getByRole("alert").filter({ hasText: "cubra el total" })).toBeVisible();
   await page.getByLabel("Efectivo recibido (MXN)").fill("40");
-  await capture(page, "pos");
-  await expect(page.getByText("$31.25", { exact: true })).toBeVisible();
   await expect(page.getByText("$8.75", { exact: true })).toBeVisible();
-  await button(page, "Guardar borrador").click();
-  await page.reload();
-  await expect(page.getByLabel("Propina (MXN)")).toHaveValue("6.25");
-  await page.getByLabel("Efectivo recibido (MXN)").fill("40");
+  await capture(page, "pos");
   await button(page, "Confirmar efectivo simulado").dblclick();
   await expect(page.getByText(/Recibo de demostración/)).toBeVisible();
   await expect(page.getByText("$8.75", { exact: true })).toBeVisible();
+  await capture(page, "recibo");
   const state = await snapshot(page);
   const [sale] = state.sales.filter((item: { branch: string }) => item.branch === "roma-norte");
   const [session] = state.sessions.filter((item: { branch: string }) => item.branch === "roma-norte");
@@ -176,27 +257,20 @@ test("B · cita, POS, efectivo, movimientos, arqueo e informe", async ({ page })
   expect(state.appointments.find((item: { id: string }) => item.id === sale.appointment).status).toBe("Reservada");
   await page.goto(route("ventas"));
   await expect(button(page, "MJ-0002")).toBeVisible();
+  await capture(page, "ventas");
   await page.goto(route("ventas/caja"));
-  await expect(page.getByText("$2,181.25", { exact: true })).toHaveCount(2);
+  await expect(page.locator(".cash-balance")).toContainText("$2,031.25");
   await button(page, "Actividad").click();
-  await expect(page.getByText("Venta · MJ-0002", { exact: true })).toBeVisible();
-  await capture(page, "caja-abierta");
-  await button(page, "Arqueo y cierre").click();
-  await dialog(page).getByLabel("Efectivo contado (MXN)").fill("2000");
-  await dialog(page).getByLabel("Efectivo retenido (MXN)").fill("1800");
-  await dialog(page).getByLabel("Efectivo retirado (MXN)").fill("200");
-  await capture(page, "arqueo");
-  await button(page, "Confirmar cierre").click();
-  await expect(dialog(page).getByRole("alert")).toContainText("motivo de la diferencia");
-  await dialog(page).getByLabel("Motivo de diferencia").fill("Diferencia ficticia");
-  await button(page, "Confirmar cierre").click();
-  await expect(dialog(page)).toHaveCount(0);
-  expect((await snapshot(page)).sessions.find((item: { id: string }) => item.id === session.id)).toMatchObject({ expected: 218125, counted: 200000, kept: 180000, withdrawn: 20000 });
-  await button(page, "Abrir caja").click();
-  await expect(dialog(page).getByLabel("Efectivo inicial (MXN)")).toHaveValue("1800");
-  await button(page, "Cerrar panel").click();
+  await page.getByRole("button", { name: /Venta · Cobro en efectivo · MJ-0002/ }).click();
+  await expect(dialog(page)).toContainText("MJ-0002");
+  await expect(dialog(page)).toContainText("+$31.25");
   await page.goto(route("informes/ventas"));
   await expect(page.getByText("$31.25", { exact: true })).toHaveCount(2);
+  await page.getByRole("combobox", { name: "Sucursal", exact: true }).selectOption("condesa");
+  await expect(button(page, "MJ-0001")).toBeVisible();
+  await expect(button(page, "MJ-0002")).toBeHidden();
+  await button(page, "Restablecer filtros").click();
+  await expect(button(page, "MJ-0002")).toBeVisible();
   await capture(page, "informes");
 });
 
@@ -234,6 +308,7 @@ test("C · proveedor, producto, pedido parcial, venta física y recuento", async
   await page.goto(route("ventas/nueva"));
   await button(page, "Productos").click();
   await button(page, "Agregar Articuló E2E").click();
+  await button(page, "Continuar a efectivo").click();
   await page.getByLabel("Efectivo recibido (MXN)").fill("150");
   await button(page, "Confirmar efectivo simulado").click();
   await expect(page.getByText(/Recibo de demostración/)).toBeVisible();
@@ -273,6 +348,7 @@ test("D y E · comisión, liquidación, segmento y restablecimiento", async ({ p
   await page.getByRole("combobox", { name: "Profesional", exact: true }).selectOption("luna");
   await page.getByRole("combobox", { name: "Cliente", exact: true }).selectOption("alba");
   await page.getByLabel("Propina (MXN)").fill("6.25");
+  await button(page, "Continuar a efectivo").click();
   await page.getByLabel("Efectivo recibido (MXN)").fill("40");
   await button(page, "Confirmar efectivo simulado").click();
   await expect(page.getByText(/Recibo de demostración/)).toBeVisible();
@@ -301,11 +377,62 @@ test("D y E · comisión, liquidación, segmento y restablecimiento", async ({ p
   await expect(dialog(page).getByRole("button", { name: "Alba Torres" })).toBeVisible();
   await page.reload();
   await expect(dialog(page).getByRole("button", { name: "Alba Torres" })).toBeVisible();
+  await page.goto(route("ventas"));
+  await button(page, "MJ-0002").click();
+  confirm(page);
+  await button(page, "Anular venta").click();
+  await expect(dialog(page)).toContainText("Anulada");
+  await page.goto(route("equipo/comisiones"));
+  await expect(page.getByRole("table").last()).toContainText("Ajuste");
   await page.goto(route("configuracion/preferencias"));
   confirm(page);
   await button(page, "Restablecer demostración").click();
   await expect.poll(async () => (await snapshot(page)).sales.length).toBe(1);
   expect((await snapshot(page)).segments).toHaveLength(1);
+});
+
+test("Sucursal y continuidad de ficha por enlace directo", async ({ page }) => {
+  await page.goto(route("ventas/caja") + "?ficha=sesion-muestra&sucursal=condesa");
+  await expect(page.getByLabel("Sucursal activa")).toHaveValue("condesa");
+  await expect(dialog(page)).toContainText("MJ-0001");
+  await page.reload();
+  await expect(dialog(page)).toContainText("MJ-0001");
+  await page.keyboard.press("Escape");
+  await page.getByLabel("Sucursal activa").selectOption("roma-norte");
+  await expect(page.getByRole("table", { name: "Historial de sesiones" })).toHaveCount(0);
+});
+
+test.describe("Controles táctiles", () => {
+  test.use({ viewport: { width: 390, height: 900 }, hasTouch: true, isMobile: true });
+  test("Caja móvil · hoja de acciones, importe decimal y pie tras reducir viewport", async ({ page }) => {
+  await openCash(page, "2000");
+  await capture(page, "caja-movil");
+  await button(page, "Registrar movimiento").tap();
+  await expect(dialog(page)).toHaveCount(1);
+  await capture(page, "hoja-movil");
+  await button(page, "Entrada de efectivo").tap();
+  const editor = dialog(page);
+  await expect(editor.getByLabel("Importe (MXN)")).toHaveAttribute("inputmode", "decimal");
+  await editor.getByLabel("Importe (MXN)").fill("2,50");
+  await editor.getByLabel("Motivo").fill("Cambio");
+  await page.setViewportSize({ width: 390, height: 430 });
+  await expect(button(page, "Confirmar movimiento")).toBeInViewport();
+  await button(page, "Confirmar movimiento").click();
+  await expect(page.getByRole("status")).toContainText("$2,002.50");
+  });
+});
+
+test("vistas secundarias y capturas comparativas", async ({ page }) => {
+  await page.setViewportSize({ width: 1440, height: 950 });
+  for (const [path, name, title] of [
+    ["inicio", "inicio", "Inicio"], ["catalogo/servicios", "servicios", "Servicios"], ["equipo", "equipo", "Miembros"],
+    ["clientes/segmentos", "segmentos", "Segmentos"], ["informes", "biblioteca", "Biblioteca de informes"],
+    ["configuracion/negocio", "configuracion", "Negocio"],
+  ]) {
+    await page.goto(route(path));
+    await expect(page.getByRole("heading", { level: 1 })).toHaveText(title);
+    await capture(page, name);
+  }
 });
 
 for (const width of [360, 390, 768, 1024, 1280, 1440]) {
@@ -319,6 +446,14 @@ for (const width of [360, 390, 768, 1024, 1280, 1440]) {
       await expect(page.getByRole("heading", { level: 1 })).toHaveText(heading);
       expect(await page.evaluate(() => document.documentElement.scrollWidth)).toBeLessThanOrEqual(width);
     }
+    await openCash(page, "2000");
+    await button(page, "Arqueo y cierre").click();
+    await dialog(page).getByLabel("Efectivo contado (MXN)").fill("2000");
+    await expect(dialog(page).getByText("Sin diferencia", { exact: true })).toBeVisible();
+    expect(await page.evaluate(() => document.documentElement.scrollWidth)).toBeLessThanOrEqual(width);
+    await expect(button(page, "Continuar a distribución")).toBeInViewport();
+    await page.keyboard.press("Escape");
+    await expect(button(page, "Arqueo y cierre")).toBeFocused();
     expect(assetFailures).toEqual([]);
     if (width <= 390) {
       await button(page, "Módulos").click();

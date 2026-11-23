@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { ArrowDownLeft, ArrowUpRight, Banknote, ChevronRight, CircleCheck, ClipboardCheck, LockKeyhole, Receipt, Wallet } from "lucide-react";
-import { useRef, useState, type FormEvent, type ReactNode } from "react";
+import { useEffect, useRef, useState, type FormEvent, type ReactNode } from "react";
 import { href } from "../../lib/navigation";
 import { useQuery } from "../../lib/query";
 import { byId, cashFor, currency, openSession, upsert, uuid, type CashMovement, type Demo, type Session } from "../../lib/v2/model";
@@ -85,7 +85,7 @@ export function Cash() {
         </div>
       </section>
       {notice && <p className="cash-notice" role="status"><CircleCheck size={18}/>{notice}</p>}
-      {returnSale && !active && <p className="cash-return">El borrador {returnSale.folio} está guardado. Abre la caja y vuelve al cobro.</p>}
+      {returnSale && !active && <p className="cash-return">El borrador {returnSale.folio} está guardado. Abre la caja y vuelve al cobro. <Link className="text-button" href={href("ventas/nueva", { ficha: returnSale.id })}>Volver al carrito</Link></p>}
       <section className="surface cash-section">
         <header className="cash-tabs"><div className="segmented" role="group" aria-label="Vista de caja">{(["Resumen", "Actividad"] as const).map((item) => <button key={item} aria-pressed={tab === item} onClick={() => setTab(item)}>{item}</button>)}</div>
           {tab === "Actividad" && <label className="cash-filter">Tipo<select value={filter} onChange={(event) => setFilter(event.target.value)}><option value="">Todos</option>{Object.keys(timelineIcon).map((item) => <option key={item}>{item}</option>)}</select></label>}
@@ -225,6 +225,14 @@ function Closing({ session, close, saved }: { session: Session; close: () => voi
   const [errors, setErrors] = useState<{ counted?: string; kept?: string; withdrawn?: string; reason?: string; form?: string }>({});
   const submitted = useRef(false);
   const reviewExpected = useRef<number | null>(null);
+  const steps = useRef<HTMLOListElement>(null);
+  const previousStage = useRef(stage);
+  useEffect(() => {
+    if (previousStage.current === stage) return;
+    previousStage.current = stage;
+    steps.current?.closest(".panel-body")?.scrollTo({ top: 0 });
+    steps.current?.focus({ preventScroll: true });
+  }, [stage]);
   const counted = readMoney(countedText);
   const kept = readMoney(keptText);
   const variance = counted - expected;
@@ -272,7 +280,7 @@ function Closing({ session, close, saved }: { session: Session; close: () => voi
   }
   return <Panel title="Arqueo y cierre" close={close} sheet footer={<><button className="button" onClick={stage === "conteo" ? close : goBack}>{stage === "conteo" ? "Cancelar" : "Atrás"}</button><button form="cash-form" className="button primary">{stage === "conteo" ? "Continuar a distribución" : stage === "distribución" ? "Revisar cierre" : "Confirmar cierre"}</button></>}>
     <form className="editor form-stack" id="cash-form" onSubmit={next}>
-      <ol className="cash-steps" aria-label="Pasos del cierre">{(["conteo", "distribución", "confirmación"] as const).map((item, index) => <li key={item} aria-current={item === stage ? "step" : undefined}><span>{index + 1}</span>{item}</li>)}</ol>
+      <ol ref={steps} tabIndex={-1} className="cash-steps" aria-label={"Pasos del cierre · " + stage}>{(["conteo", "distribución", "confirmación"] as const).map((item, index) => <li key={item} aria-current={item === stage ? "step" : undefined}><span>{index + 1}</span>{item}</li>)}</ol>
       {stage === "conteo" && <>
         <div className="cash-form-callout"><span>Efectivo esperado</span><strong>{currency(expected)} MXN</strong></div>
         <Details fields={breakdown(demo, session)}/>
